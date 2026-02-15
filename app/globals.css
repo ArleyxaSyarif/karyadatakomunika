@@ -47,3 +47,14 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #443328;
 }
+
+/* Custom utilities for TechFuture Hero */
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.95) 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
