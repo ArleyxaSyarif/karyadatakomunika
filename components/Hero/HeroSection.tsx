@@ -4,7 +4,7 @@ import { MdArrowForward, MdPlayCircleOutline } from "react-icons/md";
 
 const HeroSection = () => {
     return (
-        <section className="relative pt-20 pb-24 lg:pt-32 lg:pb-20 overflow-hidden">
+        <section className="relative pt-28 pb-24 lg:pt-32 lg:pb-20 overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 -z-10">
                 <img
