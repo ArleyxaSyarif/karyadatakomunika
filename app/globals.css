@@ -14,6 +14,7 @@
   /* Added for Navbar */
   --color-primary: #ee862b;
   --color-background-light: #f8f7f6;
+  /* mapped to dark for consistency */
   --color-background-dark: #221810;
   --color-surface-dark: #1a1614;
   --font-display: var(--font-manrope);
@@ -22,6 +23,10 @@
   --color-hero-bg: #121212;
   --color-hero-neutral: #1c1c1c;
   --color-hero-accent: #393028;
+
+  /* Added for About Section */
+  --color-about-bg: #181411;
+  --color-about-neutral: #221810;
 }
 
 body {
@@ -36,25 +41,26 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #221810;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #33261d;
+  background: #c1c1c1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #443328;
+  background: #a8a8a8;
 }
 
 /* Custom utilities for TechFuture Hero */
 .hero-overlay {
-  background: linear-gradient(180deg, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.7) 100%);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
