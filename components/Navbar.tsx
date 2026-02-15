@@ -111,7 +111,7 @@ const Navbar = () => {
                         {/* CTA Button */}
                         <Link
                             href="#"
-                            className="relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-orange-500/20 active:scale-95 font-display"
+                            className="relative hidden md:inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-orange-500/20 active:scale-95 font-display"
                         >
                             <span>Mulai Sekarang</span>
                             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500 hover:animate-shimmer"></div>
@@ -179,6 +179,16 @@ const Navbar = () => {
                             className="block rounded-md px-3 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 font-display"
                         >
                             Help Center
+                        </Link>
+                    </div>
+
+                    {/* Mobile CTA */}
+                    <div className="pt-4 pb-2">
+                        <Link
+                            href="#"
+                            className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-primary/90 active:scale-95 font-display"
+                        >
+                            <span>Mulai Sekarang</span>
                         </Link>
                     </div>
                 </div>
