@@ -5,6 +5,7 @@ import ChooseSection from "@/components/Choose/ChooseSection";
 import ExperienceSection from "@/components/Experience/ExperienceSection";
 import LegalitasSection from "@/components/Legalitas/LegalitasSection";
 import PartnerSection from "@/components/Partner/PartnerSection";
+import CtaSection from "@/components/CTA/CtaSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <PartnerSection />
       <ExperienceSection />
       <LegalitasSection />
+      <CtaSection />
     </div>
   );
 }
