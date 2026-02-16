@@ -13,11 +13,11 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ChooseSection />
-      <CtaSection />
       <ServiceSection />
       <PartnerSection />
       <ExperienceSection />
       <LegalitasSection />
+      <CtaSection />
     </div>
   );
 }
