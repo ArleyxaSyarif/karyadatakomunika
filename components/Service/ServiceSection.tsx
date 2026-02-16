@@ -6,7 +6,7 @@ const ServiceSection = () => {
         <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-3xl">
-                    <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Our Expertise</span>
+                    <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Our Services</span>
                     <h1 className="text-neutral-grey text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter">
                         Comprehensive Solutions. <br />
                         <span className="text-primary">Tailored Results.</span>
@@ -45,6 +45,9 @@ const ServiceSection = () => {
                                 Operational Scaling
                             </li>
                         </ul>
+                        <button className="mt-8 bg-primary text-white text-xs font-bold uppercase tracking-widest px-6 py-4 rounded-lg flex items-center gap-2 w-fit cursor-pointer hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20 active:scale-95">
+                            View Details
+                        </button>
                     </div>
                     <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-100 transition-opacity duration-700">
                         <div className="w-full h-full relative rounded-bl-[100px] overflow-hidden">
@@ -84,18 +87,22 @@ const ServiceSection = () => {
                 </div>
 
                 {/* Feature Card 3: Small */}
-                <div className="group relative overflow-hidden bg-white rounded-xl border border-primary/5 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-xl">
-                    <div>
-                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6">
-                            <span className="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                <div className="group relative overflow-hidden bg-[#fffdfb] rounded-xl border border-primary/10 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 hover:border-primary/20">
+                    <div className="relative z-10">
+                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                            <span className="material-symbols-outlined text-3xl">trending_up</span>
                         </span>
                         <h3 className="text-2xl font-extrabold mb-3 text-neutral-grey">Digital Growth</h3>
                         <p className="text-muted-grey text-sm leading-relaxed">
                             Data-driven marketing and performance optimization to scale your brand reach exponentially.
                         </p>
+                        <button className="mt-6 text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn cursor-pointer">
+                            View Details
+                            <span className="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                        </button>
                     </div>
                     <div className="mt-8 rounded-lg overflow-hidden h-32 w-full relative">
-                        <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                        <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                         <Image
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0nYxWyoEGn-_hCUUBh9QeM6x-1aSdxqtwm6g2YbZ-a5iS_QD-jrIPNdZ9fZWbG2rB14LVu8dtu2WDfJk4IX26N5PvM14oCI5bYp2Nj3kFq09zJfotfJorz-Ycl5lJrkIL5QUZxQoI6k5dTkIuKagDE-JzS1hXGiEEbPojWbVgi8i1kW2mVdkMqwejMJ4G4oia91tKr1EnA8xwjr3AqwWRz_jIRyIrhw0JmrfIbrcTv3dpTuuL4d0L-jbiTVDIcDLCNYCRDi1iL6o"
                             alt="Data analytics dashboard"
@@ -106,25 +113,29 @@ const ServiceSection = () => {
                 </div>
 
                 {/* Feature Card 4: Small */}
-                <div className="group relative overflow-hidden bg-white rounded-xl border border-primary/5 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-xl">
-                    <div>
-                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6">
-                            <span className="material-symbols-outlined text-primary text-3xl">code</span>
+                <div className="group relative overflow-hidden bg-[#fffdfb] rounded-xl border border-primary/10 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 hover:border-primary/20">
+                    <div className="relative z-10">
+                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                            <span className="material-symbols-outlined text-3xl">code</span>
                         </span>
                         <h3 className="text-2xl font-extrabold mb-3 text-neutral-grey">Tech Stacks</h3>
                         <p className="text-muted-grey text-sm leading-relaxed">
                             Custom development using the latest frameworks to ensure speed, security, and limitless scalability.
                         </p>
+                        <button className="mt-6 text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn cursor-pointer">
+                            View Details
+                            <span className="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                        </button>
                     </div>
                     <div className="mt-8 flex gap-2">
-                        <div className="flex-1 h-12 bg-background-light rounded flex items-center justify-center">
-                            <span className="text-neutral-grey/20 font-bold text-xs uppercase tracking-tighter">Scalable</span>
+                        <div className="flex-1 h-12 bg-white border border-primary/5 rounded flex items-center justify-center group-hover:border-primary/20 transition-colors">
+                            <span className="text-primary font-bold text-[10px] uppercase tracking-tighter">Scalable</span>
                         </div>
-                        <div className="flex-1 h-12 bg-background-light rounded flex items-center justify-center">
-                            <span className="text-neutral-grey/20 font-bold text-xs uppercase tracking-tighter">Secure</span>
+                        <div className="flex-1 h-12 bg-white border border-primary/5 rounded flex items-center justify-center group-hover:border-primary/20 transition-colors">
+                            <span className="text-primary font-bold text-[10px] uppercase tracking-tighter">Secure</span>
                         </div>
-                        <div className="flex-1 h-12 bg-background-light rounded flex items-center justify-center">
-                            <span className="text-neutral-grey/20 font-bold text-xs uppercase tracking-tighter">Fast</span>
+                        <div className="flex-1 h-12 bg-white border border-primary/5 rounded flex items-center justify-center group-hover:border-primary/20 transition-colors">
+                            <span className="text-primary font-bold text-[10px] uppercase tracking-tighter">Fast</span>
                         </div>
                     </div>
                 </div>
