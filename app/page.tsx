@@ -5,7 +5,7 @@ import ChooseSection from "@/components/Choose/ChooseSection";
 import ExperienceSection from "@/components/Experience/ExperienceSection";
 import LegalitasSection from "@/components/Legalitas/LegalitasSection";
 import PartnerSection from "@/components/Partner/PartnerSection";
-import CtaSection from "@/components/CTA/CtaSection";
+import CtaSection from "@/components/Cta/CtaSection";
 
 export default function Home() {
   return (
