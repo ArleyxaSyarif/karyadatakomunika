@@ -16,7 +16,8 @@
   --color-background-light: #f8f7f6;
   /* mapped to dark for consistency */
   --color-background-dark: #221810;
-  --color-surface-dark: #1a1614;
+  --color-neutral-grey: #1f2937;
+  --color-muted-grey: #6b7280;
   --font-display: var(--font-manrope);
 
   /* Added for Hero Section */
