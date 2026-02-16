@@ -6,7 +6,10 @@ const ServiceSection = () => {
         <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-3xl">
-                    <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Our Services</span>
+                    <div className="flex items-center gap-2">
+                        <div className="w-12 h-[2px] bg-primary"></div>
+                        <span className="text-primary font-bold tracking-widest uppercase text-xs">Legal Center</span>
+                    </div>
                     <h1 className="text-neutral-grey text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter">
                         Comprehensive Solutions. <br />
                         <span className="text-primary">Tailored Results.</span>

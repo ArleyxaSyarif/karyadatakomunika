@@ -79,3 +79,12 @@ body {
 .radial-progress {
   transform: rotate(-90deg);
 }
+
+.card-float {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-float:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(244, 140, 37, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
