@@ -88,3 +88,54 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px -5px rgba(244, 140, 37, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
+
+/* Marquee Animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 50s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 60s linear infinite;
+}
+
+.fade-mask {
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.partner-card {
+  filter: grayscale(100%);
+  opacity: 0.4;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partner-card:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.marquee-row:hover .animate-scroll-left,
+.marquee-row:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
