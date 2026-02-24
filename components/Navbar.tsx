@@ -46,7 +46,7 @@ const Navbar = () => {
                         <div className="flex flex-col">
                             <span className={`text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isScrolled ? "text-neutral-900" : "text-white"
                                 }`}>
-                                Lumina
+                                Karya Data Komunika
                             </span>
                         </div>
                     </Link>

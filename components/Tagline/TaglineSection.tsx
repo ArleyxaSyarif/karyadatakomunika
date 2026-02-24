@@ -1,48 +1,41 @@
+"use client";
+
+import React from 'react';
+import { MdRocketLaunch, MdArrowForward, MdPlayCircle } from "react-icons/md";
+
 export default function TaglineSection() {
     return (
-        <section className="relative overflow-hidden bg-white py-20 px-6 md:py-24">
-            {/* Background Decor - Dibuat sangat tipis agar fokus tetap pada teks solid */}
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] opacity-50"></div>
-            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[120px] opacity-50"></div>
-
-            <div className="max-w-6xl mx-auto text-center relative z-10">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 mb-10 bg-slate-50 border border-slate-100 rounded-full">
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                    </span>
-                    <span className="text-xs font-bold tracking-widest uppercase text-slate-500">
-                        Karya Data Komunika
-                    </span>
-                </div>
-
-                {/* Headline Utama - Warna Solid Tanpa Gradient */}
-                <h1 className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight leading-[1.1]">
-                    Membangun <span className="text-blue-600">Teknologi</span>, <br />
-                    Mendorong <span className="text-emerald-500 italic">Pertumbuhan</span>.
-                </h1>
-
-                {/* Sub-tagline */}
-                <p className="mt-8 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                    KDK menghadirkan sinergi antara infrastruktur digital yang kokoh dan
-                    konektivitas tanpa batas untuk mengakselerasi ekosistem masa depan.
-                </p>
-
-                {/* Tombol Aksi (CTA) */}
-                <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    {/* Biru Solid */}
-                    <button className="w-full sm:w-auto px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-200/50">
-                        Jelajahi Solusi
-                    </button>
-                    {/* Hijau Emerald Solid */}
-                    <button className="w-full sm:w-auto px-10 py-4 bg-white border-2 border-emerald-500 text-emerald-600 hover:bg-emerald-50 font-semibold rounded-xl transition-all">
-                        Hubungkan Bisnis
-                    </button>
-                </div>
+        <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto px-6 py-12">
 
 
+            {/* Headline Utama - Mix Biru & Hijau */}
+            <h1 className="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900">
+                Next-Generation Data <br />
+                <span className="text-[#0b50da]">Architecture</span>{" "}
+                <span className="text-[#10b981]">Solutions</span>
+            </h1>
+
+            {/* Sub-tagline */}
+            <p className="text-lg lg:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Accelerating Future Infrastructure with premium high-tech data solutions
+                and professional-grade digital ecosystems tailored for your growth.
+            </p>
+
+            {/* Tombol Aksi */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 w-full">
+                {/* Button Primary - Biru Tetap Solid sebagai warna utama */}
+                <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0b50da] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-blue-200 transition-all group active:scale-95">
+                    Mulai Sekarang
+                    <MdArrowForward className="text-xl group-hover:translate-x-1 transition-transform" />
+                </button>
+
+                {/* Button Secondary - Ikon pakai warna Hijau */}
+                <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-900 px-8 py-4 rounded-xl font-bold text-base border border-slate-200 shadow-sm transition-all active:scale-95">
+                    <MdPlayCircle className="text-2xl text-[#10b981]" />
+                    Lihat Demo
+                </button>
             </div>
-        </section>
+
+        </div>
     );
 }

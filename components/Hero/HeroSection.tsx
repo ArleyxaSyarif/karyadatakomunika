@@ -28,7 +28,7 @@ const sliderData = [
 
 const HeroSection = () => {
     return (
-        <section className="relative h-[650px] md:h-[600px] lg:h-[700px] w-full overflow-hidden bg-slate-900">
+        <section className="relative h-[650px] md:h-[600px] lg:h-[730px] w-full overflow-hidden bg-slate-900">
             <Swiper
                 modules={[Autoplay, EffectFade, Pagination]}
                 effect="fade"
@@ -63,7 +63,7 @@ const HeroSection = () => {
                                     <span className="animate-ping absolute h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
                                     <span className="relative h-2 w-2 rounded-full bg-green-500"></span>
                                 </span>
-                                KDK INNOVATION LIVE
+                                KARYA DATA KOMUNIKA
                             </div>
 
                             {/* Teks Utama - Responsive font size */}

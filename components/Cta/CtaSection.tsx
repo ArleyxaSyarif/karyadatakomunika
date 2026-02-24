@@ -14,10 +14,7 @@ const CtaSection = () => {
                     <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-80 h-80 bg-[#10b981]/5 rounded-full blur-[80px] pointer-events-none"></div>
 
                     <div className="flex flex-col gap-5 text-center md:text-left relative z-10">
-                        <div className="inline-flex items-center justify-center md:justify-start gap-2">
-                            <span className="w-8 h-[2px] bg-[#10b981]"></span>
-                            <span className="text-[#10b981] font-bold text-xs uppercase tracking-[0.2em]">Scale your vision</span>
-                        </div>
+
                         <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-[1.15]">
                             Siap mengoptimalkan <br className="hidden md:block" />
                             <span className="text-[#0b50da]">Infrastruktur Anda?</span>
