@@ -5,6 +5,7 @@ import ChooseSection from "@/components/Choose/ChooseSection";
 import PartnerSection from "@/components/Partner/PartnerSection";
 import CtaSection from "@/components/Cta/CtaSection";
 import TaglineSection from "@/components/Tagline/TaglineSection";
+import AreaSection from "@/components/Area/AreaSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
 
       <AboutSection />
       <ServiceSection />
+
+      <AreaSection />
 
       <ChooseSection />
       <PartnerSection />
