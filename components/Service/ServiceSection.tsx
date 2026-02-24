@@ -1,166 +1,167 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import {
+    MdOutlineInsights,
+    MdOutlineBrush,
+    MdOutlineTrendingUp,
+    MdOutlineCode,
+    MdOutlineRocketLaunch,
+    MdArrowForward,
+    MdCheckCircle
+} from "react-icons/md";
 
 const ServiceSection = () => {
     return (
-        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
+        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full bg-white">
+            {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-3xl">
-                    <div className="flex items-center gap-2">
-                        <div className="w-12 h-[2px] bg-primary"></div>
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs">Legal Center</span>
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="w-12 h-[2px] bg-[#0b50da]"></div>
+                        <span className="text-[#0b50da] font-bold tracking-widest uppercase text-xs">Our Services</span>
                     </div>
-                    <h1 className="text-neutral-grey text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter">
-                        Comprehensive Solutions. <br />
-                        <span className="text-primary">Tailored Results.</span>
-                    </h1>
+                    <h2 className="text-slate-900 text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter">
+                        Solusi Menyeluruh. <br />
+                        <span className="text-[#0b50da]">Hasil yang Terukur.</span>
+                    </h2>
                 </div>
                 <div className="max-w-xs">
-                    <p className="text-muted-grey text-lg font-medium leading-relaxed mb-6">
-                        We build digital excellence with a focus on strategic growth and architectural design precision.
+                    <p className="text-slate-500 text-lg font-medium leading-relaxed mb-6">
+                        Kami membangun ekselensi digital dengan fokus pada pertumbuhan strategis dan desain arsitektur yang presisi.
                     </p>
-                    <button className="group flex items-center gap-2 text-neutral-grey font-bold text-sm uppercase tracking-wider cursor-pointer">
-                        Explore all services
-                        <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    <button className="group flex items-center gap-2 text-slate-800 font-bold text-sm uppercase tracking-wider cursor-pointer hover:text-[#0b50da] transition-colors">
+                        Lihat Semua Layanan
+                        <MdArrowForward className="transition-transform group-hover:translate-x-1" />
                     </button>
                 </div>
             </div>
 
             {/* Services Grid (Asymmetrical) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Feature Card 1: Large */}
-                <div className="md:col-span-2 group relative overflow-hidden bg-white rounded-xl border border-primary/5 p-10 flex flex-col justify-between min-h-[450px] shadow-sm hover:shadow-xl transition-all duration-500">
+
+                {/* Feature Card 1: Large (Strategic) */}
+                <div className="md:col-span-2 group relative overflow-hidden bg-slate-50 rounded-2xl border border-slate-100 p-10 flex flex-col justify-between min-h-[450px] transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100">
                     <div className="relative z-10 max-w-md">
-                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6">
-                            <span className="material-symbols-outlined text-primary text-3xl">strategy</span>
+                        <span className="p-3 bg-blue-100 rounded-xl inline-flex items-center justify-center mb-6 transition-colors group-hover:bg-[#0b50da] group-hover:text-white">
+                            <MdOutlineInsights className="text-3xl" />
                         </span>
-                        <h3 className="text-3xl font-extrabold mb-4 text-neutral-grey">Strategic Consulting</h3>
-                        <p className="text-muted-grey text-lg leading-relaxed">
-                            High-level business mapping and structural optimization. We analyze your core mechanics to deliver sustainable market dominance.
+                        <h3 className="text-3xl font-bold mb-4 text-slate-900">Strategic Consulting</h3>
+                        <p className="text-slate-600 text-lg leading-relaxed">
+                            Pemetaan bisnis tingkat tinggi dan optimasi struktural. Kami menganalisis mekanik inti untuk memberikan dominasi pasar yang berkelanjutan.
                         </p>
                         <ul className="mt-8 space-y-3">
-                            <li className="flex items-center gap-2 font-semibold text-sm text-neutral-grey">
-                                <span className="material-symbols-outlined text-primary scale-75">check_circle</span>
+                            <li className="flex items-center gap-2 font-semibold text-sm text-slate-700">
+                                <MdCheckCircle className="text-[#10b981] text-xl" />
                                 Market Analysis
                             </li>
-                            <li className="flex items-center gap-2 font-semibold text-sm text-neutral-grey">
-                                <span className="material-symbols-outlined text-primary scale-75">check_circle</span>
+                            <li className="flex items-center gap-2 font-semibold text-sm text-slate-700">
+                                <MdCheckCircle className="text-[#10b981] text-xl" />
                                 Operational Scaling
                             </li>
                         </ul>
-                        <button className="mt-8 bg-primary text-white text-xs font-bold uppercase tracking-widest px-6 py-4 rounded-lg flex items-center gap-2 w-fit cursor-pointer hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/20 active:scale-95">
-                            View Details
+                        <button className="mt-8 bg-[#0b50da] text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl flex items-center gap-2 w-fit cursor-pointer hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-blue-200 active:scale-95">
+                            Lihat Detail
                         </button>
                     </div>
-                    <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-100 transition-opacity duration-700">
-                        <div className="w-full h-full relative rounded-bl-[100px] overflow-hidden">
-                            <Image
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhTIH5Yzfth57lh2zNigbyGdbKY-zhXyyQumBg74FPdQ7gdoVEGU6YNSHrJ3o1yuuV3bhRfWDRH978gfn-Jr6H2C8hw35ih5HCxMjIPNr5uBzq5eZbWxdkuUt9zEynXF-zUKLbkUsSlvz3dOO_WO_BK_HdAxNQ82Yce_OeHGsOXR_Px-BowyCK30jAoVLFK_8Z4jD5VhbBR7rfSgJqo4Zc0jKzf5A4vssNX03tAvF8ophAcJuqrvJnqjQojLaWjt1G3ad1UcdoZnY"
-                                alt="Modern office interior"
-                                fill
-                                className="object-cover"
+
+                    {/* Background Deco Image */}
+                    <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-40 transition-opacity duration-700 hidden lg:block">
+                        <div className="w-full h-full relative rounded-bl-[100px] overflow-hidden grayscale">
+                            <img
+                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069"
+                                alt="Modern Office"
+                                className="object-cover w-full h-full"
                             />
                         </div>
                     </div>
-                    <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
                 </div>
 
-                {/* Feature Card 2: Small */}
-                <div className="group relative overflow-hidden bg-neutral-grey text-white rounded-xl p-8 flex flex-col justify-end min-h-[450px] transition-all duration-500 hover:-translate-y-2">
-                    <div className="absolute inset-0 mix-blend-overlay opacity-40 group-hover:scale-110 transition-transform duration-700">
-                        <Image
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeSfYWtAmxF59U8F4nIusA6tkPX66fKMmi50VJ-i917o5JoqbvrlWaJRfQ4_DzaIZS_ydSbF3WhVjVNlpB0d00fLwSdfesC51bh2zuB-OCrVU6fzVG-daEA0NKPo5K8bUftbdueRw3qDt5B6uYOEJRtp18qHiu5naCKHeunZ75rgjfRpXaD3lFoji29OFVqSrB8owMF-UtyJn1e3NgFNz25zUjWKjeHpWFfD3YQ2QlDajZHXvfQ7RlU1KQNVHqWnHqiMuvO1HsMXE"
-                            alt="Brand design abstract background"
-                            fill
-                            className="object-cover"
+                {/* Feature Card 2: Brand Design (Green Focus) */}
+                <div className="group relative overflow-hidden bg-slate-900 text-white rounded-2xl p-8 flex flex-col justify-end min-h-[450px] transition-all duration-500 hover:-translate-y-2">
+                    <div className="absolute inset-0 mix-blend-overlay opacity-30 group-hover:scale-110 transition-transform duration-700">
+                        <img
+                            src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964"
+                            alt="Design abstract"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                     <div className="relative z-10">
-                        <span className="p-3 bg-white/10 rounded-lg inline-flex items-center justify-center mb-6">
-                            <span className="material-symbols-outlined text-primary text-3xl">brush</span>
+                        <span className="p-3 bg-[#10b981]/20 rounded-xl inline-flex items-center justify-center mb-6 border border-[#10b981]/30">
+                            <MdOutlineBrush className="text-[#10b981] text-3xl" />
                         </span>
-                        <h3 className="text-2xl font-extrabold mb-3">Brand Design</h3>
-                        <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                            Visual identities that resonate with global audiences through precision and emotion.
+                        <h3 className="text-2xl font-bold mb-3">Brand Design</h3>
+                        <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                            Identitas visual yang beresonansi melalui presisi estetika dan emosi brand.
                         </p>
-                        <button className="bg-primary text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-lg flex items-center gap-2 w-fit cursor-pointer hover:bg-primary/90 transition-colors">
-                            View Case Studies
+                        <button className="bg-[#10b981] text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-lg flex items-center gap-2 w-fit cursor-pointer hover:bg-emerald-600 transition-colors">
+                            Case Studies
                         </button>
                     </div>
                 </div>
 
-                {/* Feature Card 3: Small */}
-                <div className="group relative overflow-hidden bg-[#fffdfb] rounded-xl border border-primary/10 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 hover:border-primary/20">
+                {/* Feature Card 3: Digital Growth */}
+                <div className="group relative overflow-hidden bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-100 hover:-translate-y-2 hover:border-[#10b981]/20">
                     <div className="relative z-10">
-                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                            <span className="material-symbols-outlined text-3xl">trending_up</span>
+                        <span className="p-3 bg-emerald-50 rounded-xl inline-flex items-center justify-center mb-6 group-hover:bg-[#10b981] group-hover:text-white transition-colors duration-500">
+                            <MdOutlineTrendingUp className="text-3xl text-[#10b981] group-hover:text-white" />
                         </span>
-                        <h3 className="text-2xl font-extrabold mb-3 text-neutral-grey">Digital Growth</h3>
-                        <p className="text-muted-grey text-sm leading-relaxed">
-                            Data-driven marketing and performance optimization to scale your brand reach exponentially.
+                        <h3 className="text-2xl font-bold mb-3 text-slate-900">Digital Growth</h3>
+                        <p className="text-slate-500 text-sm leading-relaxed">
+                            Pemasaran berbasis data dan optimasi performa untuk skala jangkauan brand secara eksponensial.
                         </p>
-                        <button className="mt-6 text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn cursor-pointer">
+                        <button className="mt-6 text-[#10b981] font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn cursor-pointer">
                             View Details
-                            <span className="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                            <MdArrowForward className="text-sm transition-transform group-hover/btn:translate-x-1" />
                         </button>
-                    </div>
-                    <div className="mt-8 rounded-lg overflow-hidden h-32 w-full relative">
-                        <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                        <Image
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0nYxWyoEGn-_hCUUBh9QeM6x-1aSdxqtwm6g2YbZ-a5iS_QD-jrIPNdZ9fZWbG2rB14LVu8dtu2WDfJk4IX26N5PvM14oCI5bYp2Nj3kFq09zJfotfJorz-Ycl5lJrkIL5QUZxQoI6k5dTkIuKagDE-JzS1hXGiEEbPojWbVgi8i1kW2mVdkMqwejMJ4G4oia91tKr1EnA8xwjr3AqwWRz_jIRyIrhw0JmrfIbrcTv3dpTuuL4d0L-jbiTVDIcDLCNYCRDi1iL6o"
-                            alt="Data analytics dashboard"
-                            fill
-                            className="object-cover"
-                        />
                     </div>
                 </div>
 
-                {/* Feature Card 4: Small */}
-                <div className="group relative overflow-hidden bg-[#fffdfb] rounded-xl border border-primary/10 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2 hover:border-primary/20">
+                {/* Feature Card 4: Tech Stacks */}
+                <div className="group relative overflow-hidden bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2 hover:border-[#0b50da]/20">
                     <div className="relative z-10">
-                        <span className="p-3 bg-primary/10 rounded-lg inline-flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                            <span className="material-symbols-outlined text-3xl">code</span>
+                        <span className="p-3 bg-blue-50 rounded-xl inline-flex items-center justify-center mb-6 group-hover:bg-[#0b50da] group-hover:text-white transition-colors duration-500">
+                            <MdOutlineCode className="text-3xl text-[#0b50da] group-hover:text-white" />
                         </span>
-                        <h3 className="text-2xl font-extrabold mb-3 text-neutral-grey">Tech Stacks</h3>
-                        <p className="text-muted-grey text-sm leading-relaxed">
-                            Custom development using the latest frameworks to ensure speed, security, and limitless scalability.
+                        <h3 className="text-2xl font-bold mb-3 text-slate-900">Tech Stacks</h3>
+                        <p className="text-slate-500 text-sm leading-relaxed">
+                            Pengembangan kustom menggunakan framework terbaru untuk kecepatan, keamanan, dan skalabilitas tanpa batas.
                         </p>
-                        <button className="mt-6 text-primary font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn cursor-pointer">
+                        <button className="mt-6 text-[#0b50da] font-bold text-xs uppercase tracking-widest flex items-center gap-1 group/btn cursor-pointer">
                             View Details
-                            <span className="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+                            <MdArrowForward className="text-sm transition-transform group-hover/btn:translate-x-1" />
                         </button>
                     </div>
                     <div className="mt-8 flex gap-2">
-                        <div className="flex-1 h-12 bg-white border border-primary/5 rounded flex items-center justify-center group-hover:border-primary/20 transition-colors">
-                            <span className="text-primary font-bold text-[10px] uppercase tracking-tighter">Scalable</span>
-                        </div>
-                        <div className="flex-1 h-12 bg-white border border-primary/5 rounded flex items-center justify-center group-hover:border-primary/20 transition-colors">
-                            <span className="text-primary font-bold text-[10px] uppercase tracking-tighter">Secure</span>
-                        </div>
-                        <div className="flex-1 h-12 bg-white border border-primary/5 rounded flex items-center justify-center group-hover:border-primary/20 transition-colors">
-                            <span className="text-primary font-bold text-[10px] uppercase tracking-tighter">Fast</span>
-                        </div>
+                        {["Scalable", "Secure", "Fast"].map((label) => (
+                            <div key={label} className="flex-1 h-10 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center group-hover:border-blue-200 transition-colors">
+                                <span className="text-[#0b50da] font-bold text-[10px] uppercase tracking-tighter">{label}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Feature Card 5: Small */}
-                <div className="group relative overflow-hidden bg-primary rounded-xl p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-primary/40">
-                    <div className="flex justify-between items-start">
-                        <span className="p-3 bg-white/20 rounded-lg inline-flex items-center justify-center text-white">
-                            <span className="material-symbols-outlined text-3xl">rocket_launch</span>
+                {/* Feature Card 5: Rocket/CTA (Blue Background) */}
+                <div className="group relative overflow-hidden bg-[#0b50da] rounded-2xl p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-blue-400">
+                    <div className="flex justify-between items-start relative z-10">
+                        <span className="p-3 bg-white/20 rounded-xl inline-flex items-center justify-center text-white border border-white/20">
+                            <MdOutlineRocketLaunch className="text-3xl" />
                         </span>
-                        <span className="material-symbols-outlined text-white/40 text-4xl">north_east</span>
                     </div>
-                    <div className="text-white">
-                        <h3 className="text-2xl font-extrabold mb-2">Ready to Start?</h3>
-                        <p className="text-white/80 text-sm leading-relaxed mb-6">
-                            Join 200+ global brands scaling with our expertise.
+                    <div className="text-white relative z-10">
+                        <h3 className="text-2xl font-bold mb-2">Siap Memulai?</h3>
+                        <p className="text-blue-100 text-sm leading-relaxed mb-6">
+                            Bergabunglah dengan 200+ brand global yang berkembang bersama keahlian kami.
                         </p>
-                        <button className="bg-white text-primary font-bold px-6 py-3 rounded-lg text-sm w-full transition-transform active:scale-95 cursor-pointer">
-                            Book a Discovery Call
+                        <button className="bg-white text-[#0b50da] font-bold px-6 py-4 rounded-xl text-sm w-full transition-all hover:bg-blue-50 active:scale-95 shadow-xl cursor-pointer">
+                            Jadwalkan Konsultasi
                         </button>
                     </div>
+                    {/* Decorative Circle */}
+                    <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all"></div>
                 </div>
+
             </div>
         </section>
     );

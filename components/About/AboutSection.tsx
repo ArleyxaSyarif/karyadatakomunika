@@ -1,101 +1,118 @@
 "use client";
 
-import { MdVerified, MdVerifiedUser, MdPublic, MdEmojiEvents, MdArrowForward } from "react-icons/md";
+import React from "react";
+import Image from "next/image";
+import {
+    MdBusinessCenter,
+    MdPublic,
+    MdStars,
+    MdArrowForward
+} from "react-icons/md";
 
 const AboutSection = () => {
     return (
-        <section className="bg-white text-neutral-900 antialiased">
-            <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    {/* Left Side: Professional Image */}
-                    <div className="relative group">
-                        <div className="absolute -inset-4 bg-primary/10 rounded-xl blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
-                        <div className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
-                            <img
-                                alt="A diverse professional team collaborating in a modern glass-walled office space"
-                                className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMY0ieDJSbCVMc7uRA048qEqBCeT9g-7c1ab735j5QMSrErrmNLk2HKRNV-rSC0dIffTNFIYC_qyvrDWWif3WSuALNcpSXOpDG9vohM5Vny9VIz2di_Bae4Z1V-gyDgmvP48hggypAo0rMubR5RxxqE0LMu20N4VmdgDy7yZNN7_v4r4WEX_xrKBBxCFNzy8DYlrWF5K-eDWwWyJFY35-ufj1LtHNREmHmTTXrd-bR8Ho7Jtv6U5I9Hoi_vLO7CczSzuJ7gbZ-SQM"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background-light/80 via-transparent to-transparent"></div>
-                            <div className="absolute bottom-8 left-8 right-8">
-                                <div className="bg-white/90 backdrop-blur-md p-4 rounded-lg inline-flex items-center gap-3 shadow-lg">
-                                    <MdVerified className="text-primary font-bold" />
-                                    <p className="text-primary text-sm font-extrabold uppercase tracking-widest font-display">
-                                        Est. 2012
-                                    </p>
-                                </div>
-                            </div>
+        <section className="relative py-15 px-6 overflow-hidden bg-white" id="about-us">
+            {/* Background Accents (Glows) */}
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-[300px] h-[300px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    {/* LEFT COLUMN: Content */}
+                    <div className="space-y-8">
+                        {/* Overline */}
+                        <div className="flex items-center gap-3">
+                            <span className="h-px w-8 bg-blue-500"></span>
+                            <span className="text-blue-600 font-bold tracking-widest uppercase text-xs">
+                                Our Story
+                            </span>
                         </div>
-                    </div>
-                    {/* Right Side: Content Stack */}
-                    <div className="flex flex-col space-y-8">
-                        <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <span className="h-px w-8 bg-primary"></span>
-                                <span className="text-primary text-xs font-extrabold uppercase tracking-[0.2em] font-display">
-                                    Our Story
-                                </span>
-                            </div>
-                            <h1 className="text-4xl lg:text-6xl font-black text-neutral-900 leading-[1.1] tracking-tight font-display">
-                                Who We Are
-                            </h1>
-                            <p className="text-neutral-600 text-lg leading-relaxed max-w-xl font-display">
-                                We are a dedicated team of innovators committed to delivering professional excellence and modern solutions that drive global impact. Our mission is to bridge the gap between complex technology and intuitive user experiences.
-                            </p>
-                            <p className="text-neutral-600 text-lg leading-relaxed max-w-xl font-display">
-                                Through collaborative design and strategic engineering, we help industry leaders navigate the digital landscape with confidence and clarity.
-                            </p>
-                        </div>
-                        {/* Benefits List */}
-                        <div className="grid gap-6">
-                            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-neutral-100 transition-colors border border-transparent hover:border-neutral-200 group">
-                                <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                                    <MdVerifiedUser className="text-primary text-2xl" />
+
+                        {/* Main Headline */}
+                        <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-slate-900 tracking-tight">
+                            Membangun Masa Depan <span className="text-blue-500">Digital</span>
+                        </h2>
+
+                        {/* Description */}
+                        <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+                            Kami adalah tim inovator yang berdedikasi untuk memberikan solusi modern yang mendorong dampak global. Misi kami adalah menjembatani kesenjangan antara teknologi kompleks dan pengalaman pengguna yang intuitif.
+                        </p>
+
+                        {/* Key Benefits List */}
+                        <div className="grid grid-cols-1 gap-6">
+
+                            {/* Benefit 1: Industry Experts */}
+                            <div className="group flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-slate-50 hover:shadow-sm border border-transparent hover:border-slate-100">
+                                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-50 rounded-xl group-hover:bg-blue-600 transition-colors duration-300">
+                                    <MdBusinessCenter className="text-blue-600 text-2xl group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                    <h4 className="text-neutral-900 font-bold text-lg font-display">
-                                        Industry Leading Experts
-                                    </h4>
-                                    <p className="text-neutral-500 text-sm font-display">
-                                        Decades of combined experience in high-growth markets.
-                                    </p>
+                                    <h3 className="font-bold text-slate-900">Industry Leading Experts</h3>
+                                    <p className="text-sm text-slate-500">Berpengalaman dalam menangani infrastruktur data skala besar.</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-neutral-100 transition-colors border border-transparent hover:border-neutral-200 group">
-                                <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                                    <MdPublic className="text-primary text-2xl" />
+
+                            {/* Benefit 2: Global Reach */}
+                            <div className="group flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-slate-50 hover:shadow-sm border border-transparent hover:border-slate-100">
+                                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-emerald-50 rounded-xl group-hover:bg-emerald-500 transition-colors duration-300">
+                                    <MdPublic className="text-emerald-600 text-2xl group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                    <h4 className="text-neutral-900 font-bold text-lg font-display">
-                                        Global Reach & Impact
-                                    </h4>
-                                    <p className="text-neutral-500 text-sm font-display">
-                                        Managing large-scale operations across six continents.
-                                    </p>
+                                    <h3 className="font-bold text-slate-900">Global Reach & Impact</h3>
+                                    <p className="text-sm text-slate-500">Solusi kami dirancang untuk skalabilitas lintas benua.</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-neutral-100 transition-colors border border-transparent hover:border-neutral-200 group">
-                                <div className="size-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                                    <MdEmojiEvents className="text-primary text-2xl" />
+
+                            {/* Benefit 3: Award Winning */}
+                            <div className="group flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 hover:bg-slate-50 hover:shadow-sm border border-transparent hover:border-slate-100">
+                                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-blue-50 rounded-xl group-hover:bg-blue-600 transition-colors duration-300">
+                                    <MdStars className="text-blue-600 text-2xl group-hover:text-white transition-colors" />
                                 </div>
                                 <div>
-                                    <h4 className="text-neutral-900 font-bold text-lg font-display">
-                                        Award-Winning Solutions
-                                    </h4>
-                                    <p className="text-neutral-500 text-sm font-display">
-                                        Recognized for innovation in user experience and efficiency.
-                                    </p>
+                                    <h3 className="font-bold text-slate-900">Award-Winning Solutions</h3>
+                                    <p className="text-sm text-slate-500">Diakui secara internasional atas inovasi dan kualitas teknis.</p>
                                 </div>
                             </div>
+
                         </div>
-                        {/* CTA */}
+
+                        {/* CTA Button */}
                         <div className="pt-4">
-                            <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-extrabold transition-all group font-display shadow-lg shadow-primary/20">
-                                <span>Learn More About Our Team</span>
-                                <MdArrowForward className="transition-transform group-hover:translate-x-1" />
+                            <button className="inline-flex items-center justify-center px-8 py-4 bg-[#0b50da] text-white font-bold rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 group">
+                                Pelajari Lebih Lanjut
+                                <MdArrowForward className="ml-2 text-xl transition-transform group-hover:translate-x-1" />
                             </button>
                         </div>
                     </div>
+
+                    {/* RIGHT COLUMN: Visual */}
+                    <div className="relative">
+                        {/* Main Image Container */}
+                        <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 border-8 border-white">
+                            <img
+                                alt="Karya Data Komunika Team Collaboration"
+                                className="w-full h-auto object-cover min-h-[450px]"
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071"
+                            />
+                        </div>
+
+                        {/* Decorative Floating Elements */}
+                        <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500 opacity-20 rounded-full blur-3xl -z-10"></div>
+                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600 opacity-20 rounded-full blur-3xl -z-10"></div>
+
+                        {/* Abstract Card Overlay */}
+                        <div className="absolute -bottom-6 right-6 bg-white p-6 rounded-2xl shadow-2xl z-20 hidden sm:block border border-slate-100 transition-transform hover:scale-105 duration-300">
+                            <div className="flex items-center gap-4">
+                                <div className="relative flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </div>
+                                <span className="text-slate-800 font-bold">99.9% Uptime Guaranteed</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

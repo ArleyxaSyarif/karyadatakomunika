@@ -1,6 +1,6 @@
 export default function TaglineSection() {
     return (
-        <section className="relative overflow-hidden bg-white py-20 px-6 md:py-32">
+        <section className="relative overflow-hidden bg-white py-20 px-6 md:py-24">
             {/* Background Decor - Dibuat sangat tipis agar fokus tetap pada teks solid */}
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[500px] h-[500px] bg-blue-50 rounded-full blur-[120px] opacity-50"></div>
             <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[120px] opacity-50"></div>
@@ -41,21 +41,7 @@ export default function TaglineSection() {
                     </button>
                 </div>
 
-                {/* Stats Singkat */}
-                <div className="mt-20 pt-10 border-t border-slate-100 flex flex-wrap justify-center gap-12 lg:gap-20">
-                    <div className="text-center">
-                        <p className="text-3xl font-bold text-blue-600">99.9%</p>
-                        <p className="text-sm text-slate-400 font-medium uppercase tracking-wider">Uptime Trust</p>
-                    </div>
-                    <div className="text-center">
-                        <p className="text-3xl font-bold text-emerald-500">500+</p>
-                        <p className="text-sm text-slate-400 font-medium uppercase tracking-wider">Connected Nodes</p>
-                    </div>
-                    <div className="text-center">
-                        <p className="text-3xl font-bold text-blue-600">24/7</p>
-                        <p className="text-sm text-slate-400 font-medium uppercase tracking-wider">Smart Support</p>
-                    </div>
-                </div>
+
             </div>
         </section>
     );
