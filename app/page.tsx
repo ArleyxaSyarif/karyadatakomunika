@@ -6,11 +6,14 @@ import PartnerSection from "@/components/Partner/PartnerSection";
 import CtaSection from "@/components/Cta/CtaSection";
 import TaglineSection from "@/components/Tagline/TaglineSection";
 import AreaSection from "@/components/Area/AreaSection";
+import StatistikSection from "@/components/Statistik/StatistikSection";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
+      <PartnerSection />
+
       <TaglineSection />
 
       <AboutSection />
@@ -23,7 +26,7 @@ export default function Home() {
 
       <ChooseSection />
 
-      <PartnerSection />
+      <StatistikSection />
 
       <CtaSection />
     </div>

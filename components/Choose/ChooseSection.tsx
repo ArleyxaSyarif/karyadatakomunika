@@ -12,7 +12,7 @@ import {
 
 const ChooseSection = () => {
     return (
-        <section className="relative w-full py-20 lg:py-32 overflow-hidden bg-neutral-100">
+        <section className="relative w-full py-20 lg:py-32 overflow-hidden">
             {/* Background Accents - Subtle Grey Strip */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -z-10 hidden lg:block"></div>
 
