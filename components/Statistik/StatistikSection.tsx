@@ -35,7 +35,7 @@ const StatistikSection = () => {
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="text-[#0b50da] font-bold tracking-widest text-xs uppercase mb-3 block"
                     >
                         Enterprise Excellence
@@ -43,7 +43,7 @@ const StatistikSection = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.2 }}
                         className="text-slate-900 text-4xl md:text-5xl font-black mb-4 tracking-tight"
                     >
@@ -52,7 +52,7 @@ const StatistikSection = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.3 }}
                         className="text-slate-500 text-lg leading-relaxed"
                     >
@@ -65,7 +65,7 @@ const StatistikSection = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, amount: 0.2, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full"
                 >
 
@@ -80,7 +80,7 @@ const StatistikSection = () => {
                                 <motion.circle
                                     initial={{ strokeDasharray: "0, 100" }}
                                     whileInView={{ strokeDasharray: "85, 100" }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
                                     className="stroke-[#0b50da]"
                                     cx="18" cy="18" fill="none" r="16"
@@ -108,7 +108,7 @@ const StatistikSection = () => {
                                 <motion.circle
                                     initial={{ strokeDasharray: "0, 100" }}
                                     whileInView={{ strokeDasharray: "99.9, 100" }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
                                     className="stroke-[#10b981]"
                                     cx="18" cy="18" fill="none" r="16"
@@ -149,7 +149,7 @@ const StatistikSection = () => {
                                 <motion.div
                                     initial={{ width: 0 }}
                                     whileInView={{ width: "88%" }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 1.2, delay: 0.9, ease: "easeOut" }}
                                     className="bg-gradient-to-r from-[#0b50da] to-blue-400 h-full rounded-full"
                                 ></motion.div>
@@ -181,7 +181,7 @@ const StatistikSection = () => {
                                 <motion.div
                                     initial={{ width: 0 }}
                                     whileInView={{ width: "75%" }}
-                                    viewport={{ once: true }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     transition={{ duration: 1.2, delay: 1.1, ease: "easeOut" }}
                                     className="bg-gradient-to-r from-[#10b981] to-teal-400 h-full rounded-full"
                                 ></motion.div>

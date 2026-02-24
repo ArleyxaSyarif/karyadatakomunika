@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { MdArrowForward, MdPlayCircleOutline } from "react-icons/md";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -58,34 +59,57 @@ const HeroSection = () => {
                             <div className="h-20 md:hidden"></div>
 
                             {/* Badge - Responsive margin */}
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-green-400 text-[10px] md:text-xs font-bold mb-6 md:mb-8">
+                            <motion.div
+                                initial={{ opacity: 0, y: -20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.1 }}
+                                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-green-400 text-[10px] md:text-xs font-bold mb-6 md:mb-8"
+                            >
                                 <span className="flex h-2 w-2">
                                     <span className="animate-ping absolute h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
                                     <span className="relative h-2 w-2 rounded-full bg-green-500"></span>
                                 </span>
                                 KARYA DATA KOMUNIKA
-                            </div>
+                            </motion.div>
 
                             {/* Teks Utama - Responsive font size */}
-                            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-white mb-4 md:mb-6 leading-tight select-none">
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.1 }}
+                                transition={{ delay: 0.2 }}
+                                className="text-4xl md:text-7xl font-extrabold tracking-tight text-white mb-4 md:mb-6 leading-tight select-none"
+                            >
                                 {slide.title} <br className="hidden md:block" />
                                 <span className="text-blue-500"> {slide.accent}</span>
-                            </h1>
+                            </motion.h1>
 
                             {/* Deskripsi - Responsive width and visibility */}
-                            <p className="text-sm md:text-xl text-slate-200 mb-8 md:mb-10 max-w-md md:max-w-2xl leading-relaxed font-medium">
+                            <motion.p
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: false, amount: 0.1 }}
+                                transition={{ delay: 0.3 }}
+                                className="text-sm md:text-xl text-slate-200 mb-8 md:mb-10 max-w-md md:max-w-2xl leading-relaxed font-medium"
+                            >
                                 Kami menghadirkan sinergi antara teknologi mutakhir dan pertumbuhan strategis untuk mengakselerasi bisnis Anda.
-                            </p>
+                            </motion.p>
 
                             {/* Buttons - Mobile Full Width */}
-                            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto px-4 sm:px-0">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: false, amount: 0.1 }}
+                                transition={{ delay: 0.4 }}
+                                className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto px-4 sm:px-0"
+                            >
                                 <button className="flex items-center justify-center gap-2 px-8 py-3.5 md:py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/25 active:scale-95 text-sm md:text-base">
                                     Mulai Sekarang <MdArrowForward size={20} />
                                 </button>
                                 <button className="flex items-center justify-center gap-2 px-8 py-3.5 md:py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl backdrop-blur-sm border border-white/20 transition-all text-sm md:text-base">
                                     <MdPlayCircleOutline size={24} className="text-green-400" /> Lihat Video
                                 </button>
-                            </div>
+                            </motion.div>
                         </div>
                     </SwiperSlide>
                 ))}

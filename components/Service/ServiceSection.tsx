@@ -50,7 +50,7 @@ const ServiceSection = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         className="flex items-center gap-2 mb-4"
                     >
                         <div className="w-12 h-[2px] bg-[#0b50da]"></div>
@@ -59,7 +59,7 @@ const ServiceSection = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.2 }}
                         className="text-slate-900 text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter"
                     >
@@ -70,7 +70,7 @@ const ServiceSection = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ delay: 0.3 }}
                     className="max-w-xs"
                 >

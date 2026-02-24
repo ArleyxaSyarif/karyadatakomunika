@@ -43,7 +43,7 @@ const PartnerSection = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className="mb-4 flex items-center gap-2"
                 >
                     <span className="h-[1px] w-6 bg-blue-200"></span>
@@ -57,7 +57,7 @@ const PartnerSection = () => {
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ delay: 0.2 }}
                     className="text-2xl md:text-4xl font-bold text-slate-800 tracking-tight text-center"
                 >
@@ -69,7 +69,7 @@ const PartnerSection = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 1 }}
                 className="space-y-6 relative"
             >
@@ -106,7 +106,7 @@ const PartnerSection = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ delay: 0.5 }}
                 className="mt-12 text-center"
             >

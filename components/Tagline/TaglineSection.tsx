@@ -9,7 +9,7 @@ export default function TaglineSection() {
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto px-6 py-12"
         >
@@ -30,7 +30,7 @@ export default function TaglineSection() {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 w-full"
             >

@@ -44,24 +44,24 @@ const AreaSection = () => {
                         <motion.span
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-100"
                         >
                             Coverage Area
                         </motion.span>
-                        <motion.h1
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
                             className="text-slate-900 text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
                         >
                             Jangkauan <span className="text-[#0b50da]">Global</span> Kami
-                        </motion.h1>
+                        </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
                             className="text-slate-600 text-lg leading-relaxed"
                         >
@@ -71,7 +71,7 @@ const AreaSection = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.4 }}
                         className="w-full lg:w-96"
                     >
@@ -93,7 +93,7 @@ const AreaSection = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.8 }}
                     className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl mb-12 group"
                 >
@@ -109,7 +109,7 @@ const AreaSection = () => {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ delay: 0.6 }}
                                 className="absolute top-1/4 left-1/4 group-hover:scale-110 transition-transform duration-500"
                             >
@@ -126,7 +126,7 @@ const AreaSection = () => {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ delay: 0.8 }}
                                 className="absolute top-1/3 left-[52%] group-hover:scale-110 transition-transform duration-500"
                             >
@@ -143,7 +143,7 @@ const AreaSection = () => {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ delay: 1 }}
                                 className="absolute bottom-1/3 right-1/4 group-hover:scale-110 transition-transform duration-500"
                             >
@@ -176,7 +176,7 @@ const AreaSection = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 1.2 }}
                         className="absolute bottom-6 left-6 hidden sm:block"
                     >
@@ -195,7 +195,7 @@ const AreaSection = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, amount: 0.2, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-3 gap-6"
                 >
                     {/* Card 1 */}

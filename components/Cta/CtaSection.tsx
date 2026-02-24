@@ -11,7 +11,7 @@ const CtaSection = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="bg-white rounded-[2.5rem] shadow-[0_32px_64px_-12px_rgba(11,80,218,0.12)] border border-slate-100 p-8 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative"
                 >
@@ -24,7 +24,7 @@ const CtaSection = () => {
                         <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
                             className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-[1.15]"
                         >
@@ -34,7 +34,7 @@ const CtaSection = () => {
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
                             className="text-lg text-slate-500 max-w-md leading-relaxed"
                         >
@@ -45,7 +45,7 @@ const CtaSection = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.4 }}
                         className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative z-10"
                     >

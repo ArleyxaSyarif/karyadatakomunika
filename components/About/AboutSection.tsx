@@ -41,7 +41,7 @@ const AboutSection = () => {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             className="flex items-center gap-3"
                         >
                             <span className="h-px w-8 bg-blue-500"></span>
@@ -54,7 +54,7 @@ const AboutSection = () => {
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
                             className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-slate-900 tracking-tight"
                         >
@@ -65,7 +65,7 @@ const AboutSection = () => {
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
                             className="text-lg text-slate-600 leading-relaxed max-w-xl"
                         >
@@ -77,7 +77,7 @@ const AboutSection = () => {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             className="grid grid-cols-1 gap-6"
                         >
 
@@ -129,7 +129,7 @@ const AboutSection = () => {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.6 }}
                             className="pt-4"
                         >
@@ -144,7 +144,7 @@ const AboutSection = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ duration: 0.8 }}
                         className="relative"
                     >
@@ -165,7 +165,7 @@ const AboutSection = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.8 }}
                             className="absolute -bottom-6 right-6 bg-white p-6 rounded-2xl shadow-2xl z-20 hidden sm:block border border-slate-100 transition-transform hover:scale-105 duration-300"
                         >

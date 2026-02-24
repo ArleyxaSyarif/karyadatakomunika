@@ -45,7 +45,7 @@ const ChooseSection = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 className="flex items-center gap-2"
                             >
                                 <div className="w-12 h-[2px] bg-[#0b50da]"></div>
@@ -54,7 +54,7 @@ const ChooseSection = () => {
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ delay: 0.2 }}
                                 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight"
                             >
@@ -64,7 +64,7 @@ const ChooseSection = () => {
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, amount: 0.2 }}
                                 transition={{ delay: 0.3 }}
                                 className="text-slate-500 text-lg max-w-lg leading-relaxed"
                             >
@@ -76,7 +76,7 @@ const ChooseSection = () => {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
                             className="relative group mt-4"
                         >
@@ -105,7 +105,7 @@ const ChooseSection = () => {
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
+                            viewport={{ once: false, amount: 0.2, margin: "-100px" }}
                             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
                         >
                             {/* Card 1: Scalability */}
