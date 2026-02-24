@@ -37,7 +37,7 @@ const PartnerSection = () => {
     };
 
     return (
-        <section className="py-16 bg-white overflow-hidden border-y border-slate-50">
+        <section className="py-16 bg-blue-50 overflow-hidden border-y border-slate-50">
             <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col items-center">
                 {/* Badge Kecil yang Halus */}
                 <motion.div
@@ -74,14 +74,12 @@ const PartnerSection = () => {
                 className="space-y-6 relative"
             >
                 {/* Fade Mask Overlay - Lebih halus */}
-                <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
-                <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
 
                 {/* Lane 1 */}
                 <div className="flex overflow-hidden group">
                     <div className="flex animate-scroll-left whitespace-nowrap gap-16 md:gap-28 items-center py-2">
                         {[...lane1Partners, ...lane1Partners, ...lane1Partners].map((url, idx) => (
-                            <div key={`lane1-${idx}`} className="w-24 md:w-32 h-10 flex items-center justify-center grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+                            <div key={`lane1-${idx}`} className="w-24 md:w-32 h-10 flex items-center justify-center hover:opacity-100 hover:grayscale-0 transition-all duration-500">
                                 <div className="relative w-full h-full">
                                     <Image src={url} alt="Partner Logo" fill className="object-contain" />
                                 </div>
@@ -94,7 +92,7 @@ const PartnerSection = () => {
                 <div className="flex overflow-hidden">
                     <div className="flex animate-scroll-right whitespace-nowrap gap-16 md:gap-28 items-center py-2">
                         {[...lane2Partners, ...lane2Partners, ...lane2Partners].map((url, idx) => (
-                            <div key={`lane2-${idx}`} className="w-24 md:w-32 h-10 flex items-center justify-center grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+                            <div key={`lane2-${idx}`} className="w-24 md:w-32 h-10 flex items-center justify-center hover:opacity-100 hover:grayscale-0 transition-all duration-500">
                                 <div className="relative w-full h-full">
                                     <Image src={url} alt="Partner Logo" fill className="object-contain" />
                                 </div>
