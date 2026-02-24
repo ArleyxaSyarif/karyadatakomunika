@@ -1,57 +1,115 @@
 "use client";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 import { MdArrowForward, MdPlayCircleOutline } from "react-icons/md";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/pagination";
+
+const sliderData = [
+    {
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072",
+        title: "Konektivitas Tanpa",
+        accent: "Hambatan",
+    },
+    {
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000",
+        title: "Infrastruktur Data",
+        accent: "Terpercaya",
+    },
+    {
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072",
+        title: "Konektivitas Tanpa",
+        accent: "Hambatan",
+    },
+];
 
 const HeroSection = () => {
     return (
-        <section className="relative pt-28 pb-24 lg:pt-32 lg:pb-20 overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 -z-10">
-                <img
-                    alt="Modern Workspace Background"
-                    className="w-full h-full object-cover object-center"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSEFtpmoBEBLRfJtgVmHFJbIGX3RgrFhY4hd8McWglwbkZwJ4ixB5pLfnbkawGvTkXQQZ6Ba5ZfcNUusG3e7TjRls2sh_r2NUDQnp2DUEmdJmidImoK4SPlLnNQ-FCcPaCyRHVm_6nSnC3tgRNidi_NeIs0_vAOhBN7MstlrXb4h-fJIePXuMsfMpdPP04q1v71V7pGeK1HMkwiP75ongAiSIrMdXzJj87FODsOXj6CKmghu07mjcqR5nY_xUssAHaDmDwy3gpyXo"
-                />
-                <div className="absolute inset-0 bg-gray-900/60 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 via-transparent to-gray-900/60"></div>
-            </div>
+        <section className="relative h-[650px] md:h-[600px] lg:h-[700px] w-full overflow-hidden bg-slate-900">
+            <Swiper
+                modules={[Autoplay, EffectFade, Pagination]}
+                effect="fade"
+                fadeEffect={{ crossFade: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                loop={true}
+                className="h-full w-full"
+            >
+                {sliderData.map((slide, index) => (
+                    <SwiperSlide key={index} className="relative h-full w-full overflow-hidden">
+                        {/* Background */}
+                        <div className="absolute inset-0">
+                            <img
+                                alt={slide.title}
+                                className="w-full h-full object-cover scale-105"
+                                src={slide.image}
+                            />
+                            <div className="absolute inset-0 bg-slate-900/60"></div>
+                            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/80"></div>
+                        </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-orange-200 text-sm font-semibold mb-8">
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    v2.0 is now live
-                </div>
+                        {/* Content Container */}
+                        <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-center text-center antialiased">
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-8 max-w-4xl mx-auto leading-tight drop-shadow-sm font-display">
-                    Transform Your Workflow with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-400">Speed & Precision</span>
-                </h1>
+                            {/* Spacer untuk Mobile (Agar tidak tertutup Navbar) */}
+                            <div className="h-20 md:hidden"></div>
 
-                <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-sm font-display">
-                    Join thousands of professionals who have streamlined their daily tasks. Our platform offers the intelligent tools you need to succeed in a fast-paced environment.
-                </p>
+                            {/* Badge - Responsive margin */}
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-green-400 text-[10px] md:text-xs font-bold mb-6 md:mb-8">
+                                <span className="flex h-2 w-2">
+                                    <span className="animate-ping absolute h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative h-2 w-2 rounded-full bg-green-500"></span>
+                                </span>
+                                KDK INNOVATION LIVE
+                            </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                    <a
-                        href="#"
-                        className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-primary hover:bg-orange-600 transition-all shadow-lg shadow-orange-900/20 hover:shadow-orange-900/40 transform hover:-translate-y-0.5 border border-transparent font-display"
-                    >
-                        Get Started Free
-                        <MdArrowForward className="text-sm ml-2" />
-                    </a>
-                    <a
-                        href="#"
-                        className="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all shadow-sm font-display"
-                    >
-                        <MdPlayCircleOutline className="text-primary mr-2" />
-                        Watch Video
-                    </a>
-                </div>
+                            {/* Teks Utama - Responsive font size */}
+                            <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-white mb-4 md:mb-6 leading-tight select-none">
+                                {slide.title} <br className="hidden md:block" />
+                                <span className="text-blue-500"> {slide.accent}</span>
+                            </h1>
 
+                            {/* Deskripsi - Responsive width and visibility */}
+                            <p className="text-sm md:text-xl text-slate-200 mb-8 md:mb-10 max-w-md md:max-w-2xl leading-relaxed font-medium">
+                                Kami menghadirkan sinergi antara teknologi mutakhir dan pertumbuhan strategis untuk mengakselerasi bisnis Anda.
+                            </p>
 
-            </div>
+                            {/* Buttons - Mobile Full Width */}
+                            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full sm:w-auto px-4 sm:px-0">
+                                <button className="flex items-center justify-center gap-2 px-8 py-3.5 md:py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/25 active:scale-95 text-sm md:text-base">
+                                    Mulai Sekarang <MdArrowForward size={20} />
+                                </button>
+                                <button className="flex items-center justify-center gap-2 px-8 py-3.5 md:py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl backdrop-blur-sm border border-white/20 transition-all text-sm md:text-base">
+                                    <MdPlayCircleOutline size={24} className="text-green-400" /> Lihat Video
+                                </button>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+            <style jsx global>{`
+                .swiper-slide {
+                    backface-visibility: hidden;
+                    -webkit-backface-visibility: hidden;
+                }
+                .swiper-pagination-bullet {
+                    background: rgba(255, 255, 255, 0.5) !important;
+                    opacity: 1 !important;
+                }
+                .swiper-pagination-bullet-active {
+                    background: #3b82f6 !important;
+                    width: 20px !important;
+                    border-radius: 5px !important;
+                }
+                /* Mengatur posisi pagination agar tidak terlalu mepet di mobile */
+                .swiper-pagination {
+                    bottom: 20px !important;
+                }
+            `}</style>
         </section>
     );
 };

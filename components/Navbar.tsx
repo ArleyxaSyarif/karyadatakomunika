@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-
 import { MdLayers, MdExpandMore, MdSearch, MdClose, MdMenu } from "react-icons/md";
 
 const Navbar = () => {
@@ -17,79 +16,59 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Tutup menu mobile jika layar di-resize ke desktop
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <nav
-            className={`fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md transition-all duration-300 ${isScrolled ? "shadow-lg" : ""
+            className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled
+                ? "bg-white border-b border-gray-200 shadow-lg py-0"
+                : "bg-transparent border-b border-transparent py-2"
                 }`}
         >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between">
+
                     {/* Left: Logo Area */}
                     <Link href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-                        <div className="relative flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                            <MdLayers className="text-primary text-2xl" />
+                        <div className={`relative flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 ${isScrolled ? "bg-blue-600/10" : "bg-white/20"
+                            }`}>
+                            <MdLayers className={`text-2xl transition-colors ${isScrolled ? "text-blue-600" : "text-white"}`} />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-xl font-bold tracking-tight text-neutral-900 font-display">
+                            <span className={`text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isScrolled ? "text-neutral-900" : "text-white"
+                                }`}>
                                 Lumina
                             </span>
                         </div>
                     </Link>
 
-                    {/* Center: Navigation Links */}
-                    {/* Hidden on mobile, flex on desktop */}
+                    {/* Center: Navigation Links (Desktop) */}
                     <div className="hidden md:block">
                         <div className="flex items-center space-x-8">
-                            {/* Active Link */}
-                            <Link
-                                href="#"
-                                className="group relative px-1 py-2 text-sm font-medium text-neutral-900 transition-colors hover:text-primary font-display"
-                            >
-                                Beranda
-                                <span className="absolute inset-x-0 bottom-0 h-0.5 w-full scale-x-100 bg-primary transition-transform duration-300"></span>
-                            </Link>
+                            <NavLink href="#" label="Beranda" active isScrolled={isScrolled} />
+                            <NavLink href="#" label="Layanan" isScrolled={isScrolled} />
+                            <NavLink href="#" label="Portofolio" isScrolled={isScrolled} />
 
-                            {/* Inactive Links */}
-                            <Link
-                                href="#"
-                                className="group relative px-1 py-2 text-sm font-medium text-gray-500 transition-colors hover:text-neutral-900 font-display"
-                            >
-                                Layanan
-                                <span className="absolute inset-x-0 bottom-0 h-0.5 w-full scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100"></span>
-                            </Link>
-                            <Link
-                                href="#"
-                                className="group relative px-1 py-2 text-sm font-medium text-gray-500 transition-colors hover:text-neutral-900 font-display"
-                            >
-                                Portofolio
-                                <span className="absolute inset-x-0 bottom-0 h-0.5 w-full scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100"></span>
-                            </Link>
+                            {/* Dropdown Desktop */}
                             <div className="relative group">
-                                <button className="flex items-center gap-1 px-1 py-2 text-sm font-medium text-gray-500 transition-colors hover:text-neutral-900 font-display">
+                                <button className={`flex items-center gap-1 px-1 py-2 text-sm font-medium transition-colors font-display ${isScrolled ? "text-gray-500 hover:text-blue-600" : "text-white/80 hover:text-white"
+                                    }`}>
                                     Resources
                                     <MdExpandMore className="text-lg transition-transform group-hover:rotate-180" />
                                 </button>
-                                {/* Dropdown Menu */}
                                 <div className="absolute left-1/2 mt-2 w-48 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                                     <div className="rounded-xl bg-white border border-gray-100 p-2 shadow-xl ring-1 ring-black ring-opacity-5">
-                                        <Link
-                                            href="#"
-                                            className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-display"
-                                        >
-                                            Blog
-                                        </Link>
-                                        <Link
-                                            href="#"
-                                            className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-display"
-                                        >
-                                            Case Studies
-                                        </Link>
-                                        <Link
-                                            href="#"
-                                            className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-display"
-                                        >
-                                            Help Center
-                                        </Link>
+                                        <Link href="#" className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">Blog</Link>
+                                        <Link href="#" className="block rounded-lg px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">Case Studies</Link>
                                     </div>
                                 </div>
                             </div>
@@ -97,98 +76,69 @@ const Navbar = () => {
                     </div>
 
                     {/* Right: Actions */}
-                    <div className="flex items-center gap-4 sm:gap-6">
+                    <div className="flex items-center gap-2 sm:gap-4">
                         {/* Search Icon */}
-                        <button className="group flex h-10 w-10 items-center justify-center rounded-full text-gray-500 transition-all hover:bg-gray-100 hover:text-primary">
+                        <button className={`group flex h-10 w-10 items-center justify-center rounded-full transition-all ${isScrolled ? "text-gray-500 hover:bg-blue-50 hover:text-blue-600" : "text-white hover:bg-white/10"
+                            }`}>
                             <MdSearch className="text-2xl" />
                         </button>
 
-                        {/* Divider */}
-                        <div className="hidden h-6 w-px bg-gray-200 sm:block"></div>
+                        <div className={`hidden h-6 w-px sm:block ${isScrolled ? "bg-gray-200" : "bg-white/20"}`}></div>
 
                         {/* CTA Button */}
                         <Link
                             href="#"
-                            className="relative hidden md:inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-orange-500/20 active:scale-95 font-display"
+                            className="relative hidden sm:inline-flex items-center justify-center overflow-hidden rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 active:scale-95 font-display"
                         >
-                            <span>Mulai Sekarang</span>
-                            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-500 hover:animate-shimmer"></div>
+                            Kontak
                         </Link>
 
-                        {/* Mobile Menu Button */}
+                        {/* Mobile Menu Toggle */}
                         <div className="flex md:hidden">
                             <button
                                 type="button"
-                                className="inline-flex items-center justify-center rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                                className={`inline-flex items-center justify-center rounded-lg p-2 transition-colors ${isScrolled || isMobileMenuOpen ? "text-gray-600 hover:bg-gray-100" : "text-white hover:bg-white/10"
+                                    }`}
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             >
-                                <span className="sr-only">Open main menu</span>
-                                {isMobileMenuOpen ? (
-                                    <MdClose className="text-2xl" />
-                                ) : (
-                                    <MdMenu className="text-2xl" />
-                                )}
+                                {isMobileMenuOpen ? <MdClose className="text-2xl" /> : <MdMenu className="text-2xl" />}
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu Panel */}
             <div
-                className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                className={`md:hidden absolute w-full bg-white transition-all duration-300 ease-in-out border-b border-gray-100 shadow-2xl ${isMobileMenuOpen ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
                     }`}
             >
-                <div className="space-y-1 px-4 pb-3 pt-2 bg-white border-t border-gray-100">
-                    <Link
-                        href="#"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-neutral-900 bg-gray-50 font-display"
-                    >
+                <div className="space-y-2 px-4 pb-8 pt-4">
+                    <Link href="#" className="block rounded-lg px-4 py-3 text-base font-semibold text-blue-600 bg-blue-50 font-display">
                         Beranda
                     </Link>
-                    <Link
-                        href="#"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-primary font-display"
-                    >
+                    <Link href="#" className="block rounded-lg px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">
                         Layanan
                     </Link>
-                    <Link
-                        href="#"
-                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50 hover:text-primary font-display"
-                    >
+                    <Link href="#" className="block rounded-lg px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">
                         Portofolio
                     </Link>
-                    <div className="pl-3 space-y-1 border-l-2 border-gray-100 ml-3 mt-2 mb-2">
-                        <div className="px-3 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider font-display">
-                            Resources
+
+                    {/* Accordion-like for mobile resources */}
+                    <div className="pt-4 border-t border-gray-100">
+                        <span className="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Resources</span>
+                        <div className="mt-2 grid grid-cols-1 gap-1">
+                            <Link href="#" className="block px-4 py-2 text-gray-600 hover:text-blue-600 font-medium">Blog</Link>
+                            <Link href="#" className="block px-4 py-2 text-gray-600 hover:text-blue-600 font-medium">Case Studies</Link>
                         </div>
-                        <Link
-                            href="#"
-                            className="block rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50 font-display"
-                        >
-                            Blog
-                        </Link>
-                        <Link
-                            href="#"
-                            className="block rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50 font-display"
-                        >
-                            Case Studies
-                        </Link>
-                        <Link
-                            href="#"
-                            className="block rounded-md px-3 py-2 text-sm font-medium text-gray-500 hover:text-primary hover:bg-gray-50 font-display"
-                        >
-                            Help Center
-                        </Link>
                     </div>
 
-                    {/* Mobile CTA */}
-                    <div className="pt-4 pb-2">
+                    <div className="mt-6">
                         <Link
                             href="#"
-                            className="relative flex w-full items-center justify-center overflow-hidden rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-primary/90 active:scale-95 font-display"
+                            className="flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-center text-base font-bold text-white shadow-lg shadow-blue-600/30 active:scale-[0.98] transition-transform"
                         >
-                            <span>Mulai Sekarang</span>
+                            Kontak Kami
                         </Link>
                     </div>
                 </div>
@@ -196,5 +146,26 @@ const Navbar = () => {
         </nav>
     );
 };
+
+interface NavLinkProps {
+    href: string;
+    label: string;
+    active?: boolean;
+    isScrolled: boolean;
+}
+
+const NavLink = ({ href, label, active, isScrolled }: NavLinkProps) => (
+    <Link
+        href={href}
+        className={`group relative px-1 py-2 text-sm font-semibold transition-all duration-300 font-display ${isScrolled
+            ? (active ? "text-blue-600" : "text-gray-500 hover:text-blue-600")
+            : (active ? "text-white" : "text-white/80 hover:text-white")
+            }`}
+    >
+        {label}
+        <span className={`absolute inset-x-0 -bottom-1 h-0.5 w-full transition-transform duration-300 transform ${active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+            } ${!isScrolled && active ? "bg-white" : "bg-blue-600"}`}></span>
+    </Link>
+);
 
 export default Navbar;

@@ -2,21 +2,22 @@ import HeroSection from "@/components/Hero/HeroSection";
 import AboutSection from "@/components/About/AboutSection";
 import ServiceSection from "@/components/Service/ServiceSection";
 import ChooseSection from "@/components/Choose/ChooseSection";
-import ExperienceSection from "@/components/Experience/ExperienceSection";
-import LegalitasSection from "@/components/Legalitas/LegalitasSection";
 import PartnerSection from "@/components/Partner/PartnerSection";
 import CtaSection from "@/components/Cta/CtaSection";
+import TaglineSection from "@/components/Tagline/TaglineSection";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
+      <TaglineSection />
+
       <AboutSection />
-      <ChooseSection />
       <ServiceSection />
+
+      <ChooseSection />
       <PartnerSection />
-      <ExperienceSection />
-      <LegalitasSection />
+
       <CtaSection />
     </div>
   );
