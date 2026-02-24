@@ -15,11 +15,13 @@ import {
 
 const Footer = () => {
     return (
-        <footer className="relative w-full border-t border-slate-100 bg-white pt-20 pb-10 antialiased font-sans">
+        /* Menambahkan shadow-2xl di atas dan border yang lebih gelap sedikit (slate-200) */
+        <footer className="relative w-full border-t border-slate-200 bg-white pt-20 pb-10 antialiased font-sans shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)]">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
                 {/* Top Section: Main Content Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-slate-50">
+                {/* Border-b dibuat lebih terlihat dengan slate-200 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-slate-200">
 
                     {/* Brand Column */}
                     <div className="lg:col-span-4 flex flex-col gap-6">
@@ -36,7 +38,7 @@ const Footer = () => {
                         </p>
                         <div className="flex gap-3">
                             {[MdLanguage, MdShare, MdChat].map((Icon, idx) => (
-                                <a key={idx} className="w-10 h-10 rounded-xl bg-slate-50 hover:bg-[#0b50da] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 border border-slate-100" href="#">
+                                <a key={idx} className="w-10 h-10 rounded-xl bg-slate-50 hover:bg-[#0b50da] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 border border-slate-200" href="#">
                                     <Icon className="text-xl" />
                                 </a>
                             ))}
@@ -64,8 +66,7 @@ const Footer = () => {
 
                     {/* Newsletter Column */}
                     <div className="lg:col-span-4 flex flex-col gap-6">
-                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 relative overflow-hidden group">
-                            {/* Decorative glow */}
+                        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 relative overflow-hidden group">
                             <div className="absolute -top-12 -right-12 w-32 h-32 bg-blue-100/50 rounded-full blur-3xl group-hover:bg-blue-200/50 transition-all duration-500"></div>
 
                             <h4 className="text-sm font-bold text-slate-900 mb-2 italic">Tetap Terhubung</h4>
@@ -75,7 +76,7 @@ const Footer = () => {
                                 <div className="relative">
                                     <MdMail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl" />
                                     <input
-                                        className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-[#0b50da]/20 focus:border-[#0b50da] outline-none transition-all"
+                                        className="w-full pl-12 pr-4 py-4 bg-white border border-slate-300 rounded-2xl text-sm focus:ring-2 focus:ring-[#0b50da]/20 focus:border-[#0b50da] outline-none transition-all placeholder:text-slate-400"
                                         placeholder="Email Anda"
                                         type="email"
                                     />
@@ -89,7 +90,7 @@ const Footer = () => {
                 </div>
 
                 {/* Middle Section: Contact Details */}
-                <div className="py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border-b border-slate-50">
+                <div className="py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border-b border-slate-200">
                     {[
                         { icon: MdCall, label: 'Telepon', value: '+62 (21) 000-0000' },
                         { icon: MdAlternateEmail, label: 'Email', value: 'hello@lumina.id' },
@@ -97,7 +98,7 @@ const Footer = () => {
                         { icon: MdSchedule, label: 'Jam Kerja', value: 'Sen - Jum, 9am - 6pm' },
                     ].map((item, idx) => (
                         <div key={idx} className="flex items-center gap-4">
-                            <div className="w-10 h-10 flex items-center justify-center text-[#0b50da] bg-blue-50 rounded-xl">
+                            <div className="w-10 h-10 flex items-center justify-center text-[#0b50da] bg-blue-50 rounded-xl border border-blue-100">
                                 <item.icon className="text-xl" />
                             </div>
                             <div>
@@ -109,22 +110,23 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Section: Sub-footer */}
-                <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
+                {/* Diberi background sedikit berbeda untuk memisahkan area hak cipta */}
+                <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
                     <p>© 2024 Lumina Digital. Seluruh hak cipta dilindungi.</p>
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-8 font-medium">
                         <a className="hover:text-[#0b50da] transition-colors" href="#">Privasi</a>
                         <a className="hover:text-[#0b50da] transition-colors" href="#">Syarat</a>
-                        <div className="flex items-center gap-2 px-4 py-1.5 bg-emerald-50 rounded-full border border-emerald-100">
+                        <div className="flex items-center gap-2 px-4 py-1.5 bg-emerald-50 rounded-full border border-emerald-200 shadow-sm">
                             <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse"></span>
-                            <span className="text-[#10b981] text-xs font-bold tracking-tight">System Operational</span>
+                            <span className="text-[#10b981] text-xs font-bold tracking-tight uppercase">System Operational</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Abstract Decorative Glows */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-50/40 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/30 rounded-full blur-[140px] pointer-events-none"></div>
+            {/* Abstract Decorative Glows - Opacity dikurangi agar tidak menutupi teks */}
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-50/20 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-50/20 rounded-full blur-[140px] pointer-events-none"></div>
         </footer>
     );
 };
