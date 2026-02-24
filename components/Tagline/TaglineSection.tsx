@@ -2,12 +2,17 @@
 
 import React from 'react';
 import { MdRocketLaunch, MdArrowForward, MdPlayCircle } from "react-icons/md";
+import { motion } from "framer-motion";
 
 export default function TaglineSection() {
     return (
-        <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto px-6 py-12">
-
-
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto px-6 py-12"
+        >
             {/* Headline Utama - Mix Biru & Hijau */}
             <h1 className="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900">
                 Next-Generation Data <br />
@@ -22,7 +27,13 @@ export default function TaglineSection() {
             </p>
 
             {/* Tombol Aksi */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 w-full">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 w-full"
+            >
                 {/* Button Primary - Biru Tetap Solid sebagai warna utama */}
                 <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#0b50da] hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-blue-200 transition-all group active:scale-95">
                     Mulai Sekarang
@@ -34,8 +45,7 @@ export default function TaglineSection() {
                     <MdPlayCircle className="text-2xl text-[#10b981]" />
                     Lihat Demo
                 </button>
-            </div>
-
-        </div>
+            </motion.div>
+        </motion.div>
     );
 }

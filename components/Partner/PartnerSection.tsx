@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from "framer-motion";
 
 const PartnerSection = () => {
     const lane1Partners = [
@@ -16,26 +17,62 @@ const PartnerSection = () => {
 
     const lane2Partners = [...lane1Partners].reverse();
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.5 }
+        }
+    };
+
     return (
         <section className="py-16 bg-white overflow-hidden border-y border-slate-50">
             <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col items-center">
                 {/* Badge Kecil yang Halus */}
-                <div className="mb-4 flex items-center gap-2">
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-4 flex items-center gap-2"
+                >
                     <span className="h-[1px] w-6 bg-blue-200"></span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-blue-500">
                         Strategic Alliance
                     </span>
                     <span className="h-[1px] w-6 bg-blue-200"></span>
-                </div>
+                </motion.div>
 
                 {/* Judul yang Lebih Proporsional */}
-                <h2 className="text-2xl md:text-4xl font-bold text-slate-800 tracking-tight text-center">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-2xl md:text-4xl font-bold text-slate-800 tracking-tight text-center"
+                >
                     Dipercaya oleh  <span className="text-[#0b50da]">70+ perusahaan</span>
-                </h2>
+                </motion.h2>
             </div>
 
             {/* Container Marquee */}
-            <div className="space-y-6 relative">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="space-y-6 relative"
+            >
                 {/* Fade Mask Overlay - Lebih halus */}
                 <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
                 <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
@@ -65,14 +102,20 @@ const PartnerSection = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Footer Kecil */}
-            <div className="mt-12 text-center">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="mt-12 text-center"
+            >
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-slate-300">
                     & More than 500+ worldwide partners
                 </p>
-            </div>
+            </motion.div>
 
             <style jsx>{`
                 @keyframes scroll-left {

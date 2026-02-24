@@ -1,33 +1,79 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
 import {
+    MdOutlineWebhook,
+    MdOutlineCloudQueue,
+    MdOutlineSecurity,
+    MdOutlineDevices,
+    MdOutlineAutoGraph,
+    MdOutlineDns,
+    MdArrowForward,
     MdOutlineInsights,
     MdOutlineBrush,
     MdOutlineTrendingUp,
     MdOutlineCode,
     MdOutlineRocketLaunch,
-    MdArrowForward,
     MdCheckCircle
 } from "react-icons/md";
+import { motion, Variants } from "framer-motion";
 
 const ServiceSection = () => {
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const cardVariants: Variants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12
+            }
+        }
+    };
+
     return (
-        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
+        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full" id="services">
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-3xl">
-                    <div className="flex items-center gap-2 mb-4">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="flex items-center gap-2 mb-4"
+                    >
                         <div className="w-12 h-[2px] bg-[#0b50da]"></div>
                         <span className="text-[#0b50da] font-bold tracking-widest uppercase text-xs">Our Services</span>
-                    </div>
-                    <h2 className="text-slate-900 text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter">
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="text-slate-900 text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter"
+                    >
                         Solusi Menyeluruh. <br />
                         <span className="text-[#0b50da]">Hasil yang Terukur.</span>
-                    </h2>
+                    </motion.h2>
                 </div>
-                <div className="max-w-xs">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
+                    className="max-w-xs"
+                >
                     <p className="text-slate-500 text-lg font-medium leading-relaxed mb-6">
                         Kami membangun ekselensi digital dengan fokus pada pertumbuhan strategis dan desain arsitektur yang presisi.
                     </p>
@@ -35,14 +81,23 @@ const ServiceSection = () => {
                         Lihat Semua Layanan
                         <MdArrowForward className="transition-transform group-hover:translate-x-1" />
                     </button>
-                </div>
+                </motion.div>
             </div>
 
             {/* Services Grid (Asymmetrical) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
 
                 {/* Feature Card 1: Large (Strategic) */}
-                <div className="md:col-span-2 group relative overflow-hidden bg-slate-50 rounded-2xl border border-slate-100 p-10 flex flex-col justify-between min-h-[450px] transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100">
+                <motion.div
+                    variants={cardVariants}
+                    className="md:col-span-2 group relative overflow-hidden bg-slate-50 rounded-2xl border border-slate-100 p-10 flex flex-col justify-between min-h-[450px] transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100"
+                >
                     <div className="relative z-10 max-w-md">
                         <span className="p-3 bg-blue-100 rounded-xl inline-flex items-center justify-center mb-6 transition-colors group-hover:bg-[#0b50da] group-hover:text-white">
                             <MdOutlineInsights className="text-3xl" />
@@ -76,10 +131,13 @@ const ServiceSection = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Feature Card 2: Brand Design (Green Focus) */}
-                <div className="group relative overflow-hidden bg-slate-900 text-white rounded-2xl p-8 flex flex-col justify-end min-h-[450px] transition-all duration-500 hover:-translate-y-2">
+                <motion.div
+                    variants={cardVariants}
+                    className="group relative overflow-hidden bg-slate-900 text-white rounded-2xl p-8 flex flex-col justify-end min-h-[450px] transition-all duration-500 hover:-translate-y-2"
+                >
                     <div className="absolute inset-0 mix-blend-overlay opacity-30 group-hover:scale-110 transition-transform duration-700">
                         <img
                             src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964"
@@ -99,10 +157,13 @@ const ServiceSection = () => {
                             Case Studies
                         </button>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Feature Card 3: Digital Growth */}
-                <div className="group relative overflow-hidden bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-100 hover:-translate-y-2 hover:border-[#10b981]/20">
+                <motion.div
+                    variants={cardVariants}
+                    className="group relative overflow-hidden bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-emerald-100 hover:-translate-y-2 hover:border-[#10b981]/20"
+                >
                     <div className="relative z-10">
                         <span className="p-3 bg-emerald-50 rounded-xl inline-flex items-center justify-center mb-6 group-hover:bg-[#10b981] group-hover:text-white transition-colors duration-500">
                             <MdOutlineTrendingUp className="text-3xl text-[#10b981] group-hover:text-white" />
@@ -116,10 +177,13 @@ const ServiceSection = () => {
                             <MdArrowForward className="text-sm transition-transform group-hover/btn:translate-x-1" />
                         </button>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Feature Card 4: Tech Stacks */}
-                <div className="group relative overflow-hidden bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2 hover:border-[#0b50da]/20">
+                <motion.div
+                    variants={cardVariants}
+                    className="group relative overflow-hidden bg-white rounded-2xl border border-slate-100 p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2 hover:border-[#0b50da]/20"
+                >
                     <div className="relative z-10">
                         <span className="p-3 bg-blue-50 rounded-xl inline-flex items-center justify-center mb-6 group-hover:bg-[#0b50da] group-hover:text-white transition-colors duration-500">
                             <MdOutlineCode className="text-3xl text-[#0b50da] group-hover:text-white" />
@@ -140,10 +204,13 @@ const ServiceSection = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Feature Card 5: Rocket/CTA (Blue Background) */}
-                <div className="group relative overflow-hidden bg-[#0b50da] rounded-2xl p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-blue-400">
+                <motion.div
+                    variants={cardVariants}
+                    className="group relative overflow-hidden bg-[#0b50da] rounded-2xl p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-blue-400"
+                >
                     <div className="flex justify-between items-start relative z-10">
                         <span className="p-3 bg-white/20 rounded-xl inline-flex items-center justify-center text-white border border-white/20">
                             <MdOutlineRocketLaunch className="text-3xl" />
@@ -160,9 +227,9 @@ const ServiceSection = () => {
                     </div>
                     {/* Decorative Circle */}
                     <div className="absolute -top-12 -right-12 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all"></div>
-                </div>
+                </motion.div>
 
-            </div>
+            </motion.div>
         </section>
     );
 };

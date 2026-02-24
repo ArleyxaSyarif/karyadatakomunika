@@ -12,8 +12,28 @@ import {
     MdMyLocation,
     MdHub
 } from "react-icons/md";
+import { motion, Variants } from "framer-motion";
 
 const AreaSection = () => {
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    };
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5 }
+        }
+    };
+
     return (
         <section className="bg-white text-slate-900 antialiased overflow-x-hidden">
             <main className="max-w-7xl mx-auto w-full px-6 py-12 lg:py-20">
@@ -21,17 +41,40 @@ const AreaSection = () => {
                 {/* Header & Search */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
                     <div className="max-w-2xl">
-                        <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-100">
+                        <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-100"
+                        >
                             Coverage Area
-                        </span>
-                        <h1 className="text-slate-900 text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4">
+                        </motion.span>
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-slate-900 text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
+                        >
                             Jangkauan <span className="text-[#0b50da]">Global</span> Kami
-                        </h1>
-                        <p className="text-slate-600 text-lg leading-relaxed">
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="text-slate-600 text-lg leading-relaxed"
+                        >
                             Rasakan konektivitas tanpa batas dengan infrastruktur jaringan kelas enterprise. Kami telah membangun tulang punggung yang tangguh di seluruh benua untuk memastikan data Anda tetap bergerak.
-                        </p>
+                        </motion.p>
                     </div>
-                    <div className="w-full lg:w-96">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                        className="w-full lg:w-96"
+                    >
                         <label className="flex flex-col gap-2">
                             <span className="text-sm font-bold text-slate-700 px-1">Cari node terdekat</span>
                             <div className="relative flex items-center">
@@ -43,11 +86,17 @@ const AreaSection = () => {
                                 />
                             </div>
                         </label>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Interactive Map Visual */}
-                <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl mb-12 group">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl mb-12 group"
+                >
                     {/* Background Map Simulation */}
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
@@ -57,7 +106,13 @@ const AreaSection = () => {
                         <div className="relative w-full h-full p-12">
 
                             {/* Node: San Francisco */}
-                            <div className="absolute top-1/4 left-1/4 group-hover:scale-110 transition-transform duration-500">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.6 }}
+                                className="absolute top-1/4 left-1/4 group-hover:scale-110 transition-transform duration-500"
+                            >
                                 <div className="relative flex h-4 w-4">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-4 w-4 bg-[#0b50da] border-2 border-white"></span>
@@ -65,10 +120,16 @@ const AreaSection = () => {
                                 <div className="absolute top-6 left-0 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl text-[10px] font-bold whitespace-nowrap border border-white">
                                     San Francisco PoP
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Node: London */}
-                            <div className="absolute top-1/3 left-[52%] group-hover:scale-110 transition-transform duration-500">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.8 }}
+                                className="absolute top-1/3 left-[52%] group-hover:scale-110 transition-transform duration-500"
+                            >
                                 <div className="relative flex h-4 w-4">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-4 w-4 bg-[#10b981] border-2 border-white"></span>
@@ -76,10 +137,16 @@ const AreaSection = () => {
                                 <div className="absolute top-6 left-0 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl text-[10px] font-bold whitespace-nowrap border border-white">
                                     London Hub
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Node: Singapore */}
-                            <div className="absolute bottom-1/3 right-1/4 group-hover:scale-110 transition-transform duration-500">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 1 }}
+                                className="absolute bottom-1/3 right-1/4 group-hover:scale-110 transition-transform duration-500"
+                            >
                                 <div className="relative flex h-4 w-4">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-4 w-4 bg-[#0b50da] border-2 border-white"></span>
@@ -87,7 +154,7 @@ const AreaSection = () => {
                                 <div className="absolute top-6 left-0 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl text-[10px] font-bold whitespace-nowrap border border-white">
                                     Singapore Edge
                                 </div>
-                            </div>
+                            </motion.div>
 
                         </div>
                     </div>
@@ -106,7 +173,13 @@ const AreaSection = () => {
                     </div>
 
                     {/* Status Badge */}
-                    <div className="absolute bottom-6 left-6 hidden sm:block">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 1.2 }}
+                        className="absolute bottom-6 left-6 hidden sm:block"
+                    >
                         <div className="bg-slate-800/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl max-w-xs">
                             <div className="flex items-center gap-3 mb-2">
                                 <div className="size-2 rounded-full bg-[#10b981] animate-pulse"></div>
@@ -114,13 +187,23 @@ const AreaSection = () => {
                             </div>
                             <p className="text-[11px] text-slate-300 leading-relaxed">Visualisasi real-time dari node aktif dan aliran trafik kami di seluruh tulang punggung Global.</p>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Stats Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                >
                     {/* Card 1 */}
-                    <div className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-300">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -5 }}
+                        className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-300"
+                    >
                         <div className="size-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#0b50da] mb-2">
                             <MdLanguage size={28} />
                         </div>
@@ -132,10 +215,14 @@ const AreaSection = () => {
                             </span>
                         </div>
                         <p className="text-slate-500 text-sm">Berlokasi strategis untuk latensi rendah.</p>
-                    </div>
+                    </motion.div>
 
                     {/* Card 2 */}
-                    <div className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-50 transition-all duration-300">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -5 }}
+                        className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-50 transition-all duration-300"
+                    >
                         <div className="size-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-[#10b981] mb-2">
                             <MdPublic size={28} />
                         </div>
@@ -147,10 +234,14 @@ const AreaSection = () => {
                             </span>
                         </div>
                         <p className="text-slate-500 text-sm">Menghubungkan hub bisnis utama dunia.</p>
-                    </div>
+                    </motion.div>
 
                     {/* Card 3 */}
-                    <div className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-300">
+                    <motion.div
+                        variants={itemVariants}
+                        whileHover={{ y: -5 }}
+                        className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-300"
+                    >
                         <div className="size-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#0b50da] mb-2">
                             <MdVerified size={28} />
                         </div>
@@ -162,8 +253,8 @@ const AreaSection = () => {
                             </span>
                         </div>
                         <p className="text-slate-500 text-sm">Keandalan terjamin dengan Enterprise SLA.</p>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
 
             </main>
