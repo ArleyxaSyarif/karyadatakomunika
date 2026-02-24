@@ -14,11 +14,15 @@ export default function Home() {
       <TaglineSection />
 
       <AboutSection />
-      <ServiceSection />
+
+      <div className="bg-gray-50">
+        <ServiceSection />
+      </div>
 
       <AreaSection />
 
       <ChooseSection />
+
       <PartnerSection />
 
       <CtaSection />

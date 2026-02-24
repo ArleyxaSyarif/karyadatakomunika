@@ -14,7 +14,7 @@ import {
 
 const ServiceSection = () => {
     return (
-        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full bg-white">
+        <section className="max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full">
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-3xl">
@@ -22,7 +22,7 @@ const ServiceSection = () => {
                         <div className="w-12 h-[2px] bg-[#0b50da]"></div>
                         <span className="text-[#0b50da] font-bold tracking-widest uppercase text-xs">Our Services</span>
                     </div>
-                    <h2 className="text-slate-900 text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter">
+                    <h2 className="text-slate-900 text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter">
                         Solusi Menyeluruh. <br />
                         <span className="text-[#0b50da]">Hasil yang Terukur.</span>
                     </h2>

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 
@@ -22,75 +23,78 @@ const PartnerSection = () => {
     const lane2Partners = [...lane1Partners].reverse();
 
     return (
-        <section className="py-24 bg-slate-50 overflow-hidden" data-purpose="partners-section">
+        <section className="py-24 bg-white overflow-hidden border-t border-slate-100">
             <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-                <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#FF6B00] uppercase bg-orange-100/50 border border-orange-200 rounded-full font-manrope">
+                {/* Badge - Warna Biru Muda Transparan */}
+                <div className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-[#0b50da] uppercase bg-blue-50 border border-blue-100 rounded-full">
                     Global Collaboration
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight font-manrope">
-                    Trusted by <span className="text-[#FF6B00]">Global Leaders</span>
+
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+                    Dipercaya oleh <span className="text-[#0b50da]">Pemimpin Global</span>
                 </h2>
-                <p className="max-w-2xl mx-auto text-[#4B5563] text-lg md:text-xl leading-relaxed font-manrope">
-                    We power the world's most ambitious teams through strategic partnerships and innovative technical integration.
+
+                <p className="max-w-2xl mx-auto text-slate-500 text-lg md:text-xl leading-relaxed">
+                    Kami mendukung tim paling ambisius di dunia melalui kemitraan strategis dan integrasi teknis yang inovatif.
                 </p>
             </div>
 
-            <div className="space-y-8" data-purpose="dual-lane-wrapper">
-                {/* Lane 1: Left Scroll */}
-                <div className="marquee-row relative w-full overflow-hidden fade-mask py-4" data-purpose="lane-top">
-                    <div className="flex items-center whitespace-nowrap animate-scroll-left w-max">
-                        <div className="flex items-center gap-12 md:gap-24 px-12">
-                            {lane1Partners.map((url, idx) => (
-                                <div key={`lane1-${idx}`} className="w-32 md:w-44 h-20 flex items-center justify-center partner-card">
-                                    <div className="relative w-full h-full">
-                                        <Image src={url} alt={`Partner ${idx + 1}`} fill className="object-contain" />
-                                    </div>
+            {/* Container Marquee */}
+            <div className="space-y-8 relative">
+                {/* Fade Mask Overlay - Memberikan efek blur di pinggir kiri dan kanan */}
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+                {/* Lane 1: Scroll Left */}
+                <div className="flex overflow-hidden">
+                    <div className="flex animate-scroll-left whitespace-nowrap gap-12 md:gap-24 items-center py-4">
+                        {[...lane1Partners, ...lane1Partners].map((url, idx) => (
+                            <div key={`lane1-${idx}`} className="w-32 md:w-44 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                                <div className="relative w-full h-full">
+                                    <Image src={url} alt="Partner Logo" fill className="object-contain" />
                                 </div>
-                            ))}
-                        </div>
-                        {/* Duplicate for seamless loop */}
-                        <div aria-hidden="true" className="flex items-center gap-12 md:gap-24 px-12">
-                            {lane1Partners.map((url, idx) => (
-                                <div key={`lane1-dup-${idx}`} className="w-32 md:w-44 h-20 flex items-center justify-center partner-card">
-                                    <div className="relative w-full h-full">
-                                        <Image src={url} alt={`Partner ${idx + 1} Duplicate`} fill className="object-contain" />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Lane 2: Right Scroll */}
-                <div className="marquee-row relative w-full overflow-hidden fade-mask py-4" data-purpose="lane-bottom">
-                    <div className="flex items-center whitespace-nowrap animate-scroll-right w-max">
-                        <div className="flex items-center gap-12 md:gap-24 px-12">
-                            {lane2Partners.map((url, idx) => (
-                                <div key={`lane2-${idx}`} className="w-32 md:w-44 h-20 flex items-center justify-center partner-card">
-                                    <div className="relative w-full h-full">
-                                        <Image src={url} alt={`Partner ${lane2Partners.length - idx}`} fill className="object-contain" />
-                                    </div>
+                {/* Lane 2: Scroll Right */}
+                <div className="flex overflow-hidden">
+                    <div className="flex animate-scroll-right whitespace-nowrap gap-12 md:gap-24 items-center py-4">
+                        {[...lane2Partners, ...lane2Partners].map((url, idx) => (
+                            <div key={`lane2-${idx}`} className="w-32 md:w-44 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                                <div className="relative w-full h-full">
+                                    <Image src={url} alt="Partner Logo" fill className="object-contain" />
                                 </div>
-                            ))}
-                        </div>
-                        {/* Duplicate for seamless loop */}
-                        <div aria-hidden="true" className="flex items-center gap-12 md:gap-24 px-12">
-                            {lane2Partners.map((url, idx) => (
-                                <div key={`lane2-dup-${idx}`} className="w-32 md:w-44 h-20 flex items-center justify-center partner-card">
-                                    <div className="relative w-full h-full">
-                                        <Image src={url} alt={`Partner ${lane2Partners.length - idx} Duplicate`} fill className="object-contain" />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
 
+            {/* Bottom Accent */}
             <div className="mt-24 flex flex-col items-center gap-4">
-                <div className="w-24 h-1.5 bg-[#FF6B00]/20 rounded-full"></div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400 font-manrope">Expanding the ecosystem</p>
+                <div className="w-24 h-1.5 bg-blue-100 rounded-full"></div>
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-slate-400">Expanding the ecosystem</p>
             </div>
+
+            {/* CSS Animasi (Gunakan Global CSS atau Tailwind Config) */}
+            <style jsx>{`
+                @keyframes scroll-left {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                @keyframes scroll-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                }
+                .animate-scroll-left {
+                    animation: scroll-left 40s linear infinite;
+                }
+                .animate-scroll-right {
+                    animation: scroll-right 40s linear infinite;
+                }
+            `}</style>
         </section>
     );
 };
