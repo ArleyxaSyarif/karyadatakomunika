@@ -98,14 +98,21 @@ const ServiceSection = () => {
                     variants={cardVariants}
                     className="md:col-span-2 group relative overflow-hidden bg-slate-50 rounded-2xl border border-slate-100 p-10 flex flex-col justify-between min-h-[450px] transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100"
                 >
-                    <div className="relative z-10 max-w-md">
+                    {/* Tambahkan pr-10 atau pr-20 untuk memberi jarak dari gambar di kanan */}
+                    <div className="relative z-10 max-w-md pr-8 md:pr-12">
                         <span className="p-3 bg-blue-100 rounded-xl inline-flex items-center justify-center mb-6 transition-colors group-hover:bg-[#0b50da] group-hover:text-white">
                             <MdOutlineInsights className="text-3xl" />
                         </span>
-                        <h3 className="text-3xl font-bold mb-4 text-slate-900">Strategic Consulting</h3>
-                        <p className="text-slate-600 text-lg leading-relaxed">
+
+                        <h3 className="text-3xl font-bold mb-4 text-slate-900 leading-tight">
+                            Strategic Consulting
+                        </h3>
+
+                        {/* Teks deskripsi dibatasi lebarnya agar tidak menabrak gambar */}
+                        <p className="text-slate-600 text-lg leading-relaxed max-w-[90%]">
                             Pemetaan bisnis tingkat tinggi dan optimasi struktural. Kami menganalisis mekanik inti untuk memberikan dominasi pasar yang berkelanjutan.
                         </p>
+
                         <ul className="mt-8 space-y-3">
                             <li className="flex items-center gap-2 font-semibold text-sm text-slate-700">
                                 <MdCheckCircle className="text-[#10b981] text-xl" />
@@ -116,6 +123,7 @@ const ServiceSection = () => {
                                 Operational Scaling
                             </li>
                         </ul>
+
                         <button className="mt-8 bg-[#0b50da] text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-xl flex items-center gap-2 w-fit cursor-pointer hover:bg-blue-700 transition-all hover:shadow-lg hover:shadow-blue-200 active:scale-95">
                             Lihat Detail
                         </button>

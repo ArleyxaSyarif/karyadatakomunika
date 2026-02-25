@@ -54,7 +54,8 @@ const Navbar = () => {
                     {/* Center: Navigation Links (Desktop) */}
                     <div className="hidden md:block">
                         <div className="flex items-center space-x-8">
-                            <NavLink href="#" label="Beranda" active isScrolled={isScrolled} />
+                            <NavLink href="/" label="Beranda" active isScrolled={isScrolled} />
+                            <NavLink href="/area" label="Area" isScrolled={isScrolled} />
                             <NavLink href="#" label="Layanan" isScrolled={isScrolled} />
                             <NavLink href="#" label="Portofolio" isScrolled={isScrolled} />
 
