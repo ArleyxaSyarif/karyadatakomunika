@@ -7,8 +7,8 @@ export default function KotaArea() {
         <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-12 font-display">
             {/* Area Details Grid */}
             <div>
-                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Detail Layanan Per Wilayah</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8">Detail Layanan Per Wilayah</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                     <AreaCard
                         title="Pulau Jawa"
                         desc="Cakupan penuh Fiber Optic di seluruh kota utama dan kabupaten."

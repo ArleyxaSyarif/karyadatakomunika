@@ -44,7 +44,7 @@ const Navbar = () => {
                             <MdLayers className={`text-2xl transition-colors ${isScrolled ? "text-blue-600" : "text-white"}`} />
                         </div>
                         <div className="flex flex-col">
-                            <span className={`text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isScrolled ? "text-neutral-900" : "text-white"
+                            <span className={`text-lg sm:text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isScrolled ? "text-neutral-900" : "text-white"
                                 }`}>
                                 Karya Data Komunika
                             </span>

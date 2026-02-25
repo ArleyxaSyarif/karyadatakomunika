@@ -61,7 +61,7 @@ const RealMap = ({ nodes, focusLocation }: RealMapProps) => {
     if (!isMounted) return <div className="w-full h-full bg-slate-900/10 animate-pulse" />;
 
     return (
-        <div className="w-full h-full relative" style={{ minHeight: '400px' }}>
+        <div className="w-full h-full relative" style={{ minHeight: '350px' }}>
             <MapContainer
                 center={defaultCenter}
                 zoom={5}

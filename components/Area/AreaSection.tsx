@@ -69,7 +69,7 @@ const AreaSection = () => {
 
     return (
         <section className="bg-white text-slate-900 antialiased overflow-x-hidden">
-            <main className="max-w-7xl mx-auto w-full px-6 py-12 lg:py-20">
+            <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-10 lg:py-20">
 
                 {/* Header & Search */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
@@ -77,28 +77,28 @@ const AreaSection = () => {
                         <motion.span
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-100"
+                            viewport={{ once: true, amount: 0.2 }}
+                            className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 border border-blue-100"
                         >
                             Coverage Area
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
-                            className="text-slate-900 text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
+                            className="text-slate-900 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
                         >
                             Jangkauan <span className="text-[#0b50da]">Global</span> Kami
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
-                            className="text-slate-600 text-lg leading-relaxed"
+                            className="text-slate-600 text-base sm:text-lg leading-relaxed"
                         >
-                            Rasakan konektivitas tanpa batas dengan infrastruktur jaringan kelas enterprise. Kami telah membangun tulang punggung yang tangguh di seluruh benua untuk memastikan data Anda tetap bergerak.
+                            Rasakan konektivitas tanpa batas dengan infrastruktur jaringan kelas enterprise. Kami telah membangun tulang punggung yang tangguh di seluruh benua.
                         </motion.p>
                     </div>
                     <motion.div
@@ -113,7 +113,7 @@ const AreaSection = () => {
                             <div className="relative flex items-center">
                                 <MdLocationOn className="absolute left-4 text-[#0b50da] text-xl" />
                                 <input
-                                    className="w-full h-14 rounded-2xl border-slate-200 bg-slate-50 pl-12 pr-4 text-base focus:border-[#0b50da] focus:ring-1 focus:ring-[#0b50da] shadow-sm transition-all outline-none"
+                                    className="w-full h-12 sm:h-14 rounded-xl sm:rounded-2xl border-slate-200 bg-slate-50 pl-12 pr-4 text-sm sm:text-base focus:border-[#0b50da] focus:ring-1 focus:ring-[#0b50da] shadow-sm transition-all outline-none"
                                     placeholder="Cari Lokasi (cth. Jakarta, Medan)"
                                     type="text"
                                     value={searchQuery}
@@ -123,21 +123,21 @@ const AreaSection = () => {
                             </div>
                         </label>
 
-                        {/* Dropdown Hasil Pencarian */}
+                        {/* Dropdown Hasil Pencarian - Perbaikan tap target di mobile */}
                         {isDropdownOpen && filteredLocations.length > 0 && (
-                            <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white rounded-2xl border border-slate-100 shadow-2xl py-2 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                            <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xl py-1.5 sm:py-2 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                                 {filteredLocations.map((loc) => (
                                     <button
                                         key={loc.id}
                                         onClick={() => handleSelectLocation(loc)}
-                                        className="w-full flex items-center gap-4 px-4 py-3 hover:bg-blue-50 transition-colors text-left group"
+                                        className="w-full flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3 sm:py-3.5 hover:bg-blue-50 transition-colors text-left group"
                                     >
-                                        <div className="size-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-100 group-hover:text-[#0b50da] transition-all">
+                                        <div className="size-10 sm:size-11 rounded-lg sm:rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-100 group-hover:text-[#0b50da] transition-all shrink-0">
                                             <MdLocationOn size={20} />
                                         </div>
-                                        <div>
-                                            <p className="text-sm font-bold text-slate-900">{loc.nama}</p>
-                                            <p className="text-[11px] text-slate-500 italic">{loc.info}</p>
+                                        <div className="min-w-0">
+                                            <p className="text-sm sm:text-base font-bold text-slate-900 truncate">{loc.nama}</p>
+                                            <p className="text-[11px] sm:text-xs text-slate-500 italic truncate">{loc.info}</p>
                                         </div>
                                     </button>
                                 ))}
@@ -152,10 +152,10 @@ const AreaSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.8 }}
-                    className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xl mb-12 group z-0"
+                    className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl lg:rounded-3xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xl mb-12 group z-0"
                 >
                     {/* Real Leaflet Map */}
-                    <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 z-0 h-full w-full">
                         <Map
                             nodes={filteredLocations}
                             focusLocation={selectedLocation?.posisi}
