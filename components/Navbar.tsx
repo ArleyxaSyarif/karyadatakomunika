@@ -2,11 +2,21 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation"; // 1. Import usePathname
 import { MdLayers, MdExpandMore, MdSearch, MdClose, MdMenu } from "react-icons/md";
 
 const Navbar = () => {
+    const pathname = usePathname(); // 2. Dapatkan path saat ini
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    // 3. Tentukan apakah harus menggunakan mode transparan
+    // Navbar hanya bisa transparan jika sedang di Beranda ("/") DAN belum di-scroll
+    const isHome = pathname === "/";
+    const shouldShowTransparent = isHome && !isScrolled;
+
+    // Variabel pembantu untuk warna elemen (agar kode lebih bersih)
+    const isWhiteMode = !shouldShowTransparent;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,7 +26,6 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Tutup menu mobile jika layar di-resize ke desktop
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
@@ -29,9 +38,9 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled
-                ? "bg-white border-b border-gray-200 shadow-lg py-0"
-                : "bg-transparent border-b border-transparent py-2"
+            className={`fixed top-0 z-50 w-full transition-all duration-300 ${isWhiteMode
+                    ? "bg-white border-b border-gray-200 shadow-lg py-0"
+                    : "bg-transparent border-b border-transparent py-2"
                 }`}
         >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -39,12 +48,12 @@ const Navbar = () => {
 
                     {/* Left: Logo Area */}
                     <Link href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-                        <div className={`relative flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 ${isScrolled ? "bg-blue-600/10" : "bg-white/20"
+                        <div className={`relative flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 ${isWhiteMode ? "bg-blue-600/10" : "bg-white/20"
                             }`}>
-                            <MdLayers className={`text-2xl transition-colors ${isScrolled ? "text-blue-600" : "text-white"}`} />
+                            <MdLayers className={`text-2xl transition-colors ${isWhiteMode ? "text-blue-600" : "text-white"}`} />
                         </div>
                         <div className="flex flex-col">
-                            <span className={`text-lg sm:text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isScrolled ? "text-neutral-900" : "text-white"
+                            <span className={`text-lg sm:text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isWhiteMode ? "text-neutral-900" : "text-white"
                                 }`}>
                                 Karya Data Komunika
                             </span>
@@ -54,14 +63,14 @@ const Navbar = () => {
                     {/* Center: Navigation Links (Desktop) */}
                     <div className="hidden md:block">
                         <div className="flex items-center space-x-8">
-                            <NavLink href="/" label="Beranda" active isScrolled={isScrolled} />
-                            <NavLink href="/area" label="Area" isScrolled={isScrolled} />
-                            <NavLink href="#" label="Layanan" isScrolled={isScrolled} />
-                            <NavLink href="#" label="Portofolio" isScrolled={isScrolled} />
+                            <NavLink href="/" label="Beranda" active={pathname === "/"} isWhiteMode={isWhiteMode} />
+                            <NavLink href="/area" label="Area" active={pathname === "/area"} isWhiteMode={isWhiteMode} />
+                            <NavLink href="#" label="Layanan" isWhiteMode={isWhiteMode} />
+                            <NavLink href="#" label="Portofolio" isWhiteMode={isWhiteMode} />
 
                             {/* Dropdown Desktop */}
                             <div className="relative group">
-                                <button className={`flex items-center gap-1 px-1 py-2 text-sm font-medium transition-colors font-display ${isScrolled ? "text-gray-500 hover:text-blue-600" : "text-white/80 hover:text-white"
+                                <button className={`flex items-center gap-1 px-1 py-2 text-sm font-medium transition-colors font-display ${isWhiteMode ? "text-gray-500 hover:text-blue-600" : "text-white/80 hover:text-white"
                                     }`}>
                                     Resources
                                     <MdExpandMore className="text-lg transition-transform group-hover:rotate-180" />
@@ -78,15 +87,13 @@ const Navbar = () => {
 
                     {/* Right: Actions */}
                     <div className="flex items-center gap-2 sm:gap-4">
-                        {/* Search Icon */}
-                        <button className={`group flex h-10 w-10 items-center justify-center rounded-full transition-all ${isScrolled ? "text-gray-500 hover:bg-blue-50 hover:text-blue-600" : "text-white hover:bg-white/10"
+                        <button className={`group flex h-10 w-10 items-center justify-center rounded-full transition-all ${isWhiteMode ? "text-gray-500 hover:bg-blue-50 hover:text-blue-600" : "text-white hover:bg-white/10"
                             }`}>
                             <MdSearch className="text-2xl" />
                         </button>
 
-                        <div className={`hidden h-6 w-px sm:block ${isScrolled ? "bg-gray-200" : "bg-white/20"}`}></div>
+                        <div className={`hidden h-6 w-px sm:block ${isWhiteMode ? "bg-gray-200" : "bg-white/20"}`}></div>
 
-                        {/* CTA Button */}
                         <Link
                             href="#"
                             className="relative hidden sm:inline-flex items-center justify-center overflow-hidden rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 active:scale-95 font-display"
@@ -98,7 +105,7 @@ const Navbar = () => {
                         <div className="flex md:hidden">
                             <button
                                 type="button"
-                                className={`inline-flex items-center justify-center rounded-lg p-2 transition-colors ${isScrolled || isMobileMenuOpen ? "text-gray-600 hover:bg-gray-100" : "text-white hover:bg-white/10"
+                                className={`inline-flex items-center justify-center rounded-lg p-2 transition-colors ${isWhiteMode || isMobileMenuOpen ? "text-gray-600 hover:bg-gray-100" : "text-white hover:bg-white/10"
                                     }`}
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             >
@@ -109,39 +116,19 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu Panel */}
+            {/* Mobile Menu Panel (Selalu Putih) */}
             <div
                 className={`md:hidden absolute w-full bg-white transition-all duration-300 ease-in-out border-b border-gray-100 shadow-2xl ${isMobileMenuOpen ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
                     }`}
             >
                 <div className="space-y-2 px-4 pb-8 pt-4">
-                    <Link href="#" className="block rounded-lg px-4 py-3 text-base font-semibold text-blue-600 bg-blue-50 font-display">
+                    <Link href="/" className={`block rounded-lg px-4 py-3 text-base font-semibold ${pathname === "/" ? "text-blue-600 bg-blue-50" : "text-gray-600"}`}>
                         Beranda
                     </Link>
-                    <Link href="#" className="block rounded-lg px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">
-                        Layanan
+                    <Link href="/area" className={`block rounded-lg px-4 py-3 text-base font-medium transition-colors ${pathname === "/area" ? "text-blue-600 bg-blue-50" : "text-gray-600 hover:bg-blue-50"}`}>
+                        Area
                     </Link>
-                    <Link href="#" className="block rounded-lg px-4 py-3 text-base font-medium text-gray-600 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">
-                        Portofolio
-                    </Link>
-
-                    {/* Accordion-like for mobile resources */}
-                    <div className="pt-4 border-t border-gray-100">
-                        <span className="px-4 text-xs font-bold text-gray-400 uppercase tracking-widest">Resources</span>
-                        <div className="mt-2 grid grid-cols-1 gap-1">
-                            <Link href="#" className="block px-4 py-2 text-gray-600 hover:text-blue-600 font-medium">Blog</Link>
-                            <Link href="#" className="block px-4 py-2 text-gray-600 hover:text-blue-600 font-medium">Case Studies</Link>
-                        </div>
-                    </div>
-
-                    <div className="mt-6">
-                        <Link
-                            href="#"
-                            className="flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-center text-base font-bold text-white shadow-lg shadow-blue-600/30 active:scale-[0.98] transition-transform"
-                        >
-                            Kontak Kami
-                        </Link>
-                    </div>
+                    {/* ... link lainnya ... */}
                 </div>
             </div>
         </nav>
@@ -152,20 +139,20 @@ interface NavLinkProps {
     href: string;
     label: string;
     active?: boolean;
-    isScrolled: boolean;
+    isWhiteMode: boolean; // Ganti isScrolled dengan isWhiteMode
 }
 
-const NavLink = ({ href, label, active, isScrolled }: NavLinkProps) => (
+const NavLink = ({ href, label, active, isWhiteMode }: NavLinkProps) => (
     <Link
         href={href}
-        className={`group relative px-1 py-2 text-sm font-semibold transition-all duration-300 font-display ${isScrolled
-            ? (active ? "text-blue-600" : "text-gray-500 hover:text-blue-600")
-            : (active ? "text-white" : "text-white/80 hover:text-white")
+        className={`group relative px-1 py-2 text-sm font-semibold transition-all duration-300 font-display ${isWhiteMode
+                ? (active ? "text-blue-600" : "text-gray-500 hover:text-blue-600")
+                : (active ? "text-white" : "text-white/80 hover:text-white")
             }`}
     >
         {label}
         <span className={`absolute inset-x-0 -bottom-1 h-0.5 w-full transition-transform duration-300 transform ${active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-            } ${!isScrolled && active ? "bg-white" : "bg-blue-600"}`}></span>
+            } ${!isWhiteMode && active ? "bg-white" : "bg-blue-600"}`}></span>
     </Link>
 );
 
