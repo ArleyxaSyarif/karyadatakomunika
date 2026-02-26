@@ -9,6 +9,7 @@ import {
     MdArrowForward
 } from "react-icons/md";
 import { motion, Variants } from "framer-motion";
+import { div } from "framer-motion/client";
 
 const AboutSection = () => {
     const containerVariants: Variants = {
