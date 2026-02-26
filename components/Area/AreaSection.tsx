@@ -2,41 +2,74 @@
 
 import React from 'react';
 import {
-    MdLanguage,
-    MdPublic,
-    MdVerified,
-    MdTrendingUp,
     MdLocationOn,
     MdAdd,
     MdRemove,
     MdMyLocation,
-    MdHub
 } from "react-icons/md";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import dynamic from 'next/dynamic';
+
+const Map = dynamic(() => import('./RealMap'), {
+    ssr: false,
+    loading: () => <div className="w-full h-full bg-slate-800 animate-pulse" />
+});
+
+// Definisi Tipe untuk Lokasi agar konsisten
+export interface LocationData {
+    id: number;
+    nama: string;
+    posisi: [number, number];
+    info: string;
+}
+
+const dataLokasi: LocationData[] = [
+    { id: 1, nama: "Jakarta PoP", posisi: [-6.2088, 106.8456], info: "Pusat Jaringan Utama" },
+    { id: 2, nama: "Singapore Edge", posisi: [1.3521, 103.8198], info: "Gerbang Internasional" },
+    { id: 3, nama: "Surabaya Node", posisi: [-7.2575, 112.7521], info: "Hub Jawa Timur" },
+    { id: 4, nama: "Medan Hub", posisi: [3.5952, 98.6722], info: "PoP Sumatera Utara" },
+    { id: 5, nama: "Makassar PoP", posisi: [-5.1476, 119.4327], info: "Gerbang Indonesia Timur" },
+];
+
+
 
 const AreaSection = () => {
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15
-            }
+    const [searchQuery, setSearchQuery] = React.useState("");
+    const [filteredLocations, setFilteredLocations] = React.useState<LocationData[]>(dataLokasi);
+    const [selectedLocation, setSelectedLocation] = React.useState<LocationData | null>(null);
+    const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+
+    // Fungsi pencarian/filter
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const query = e.target.value;
+        setSearchQuery(query);
+
+        if (query.trim() === "") {
+            setFilteredLocations(dataLokasi);
+            setIsDropdownOpen(false);
+        } else {
+            const lowQuery = query.toLowerCase();
+            const filtered = dataLokasi.filter(loc =>
+                loc.nama.toLowerCase().includes(lowQuery) ||
+                loc.info.toLowerCase().includes(lowQuery)
+            );
+            setFilteredLocations(filtered);
+            setIsDropdownOpen(true);
         }
     };
 
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5 }
-        }
+    // Fungsi saat lokasi dipilih dari dropdown
+    const handleSelectLocation = (loc: LocationData) => {
+        setSearchQuery(loc.nama);
+        setSelectedLocation(loc);
+        setFilteredLocations([loc]);
+        setIsDropdownOpen(false);
     };
+
 
     return (
         <section className="bg-white text-slate-900 antialiased overflow-x-hidden">
-            <main className="max-w-7xl mx-auto w-full px-6 py-12 lg:py-20">
+            <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 py-10 lg:py-20">
 
                 {/* Header & Search */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
@@ -44,28 +77,28 @@ const AreaSection = () => {
                         <motion.span
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-xs font-bold uppercase tracking-wider mb-4 border border-blue-100"
+                            viewport={{ once: true, amount: 0.2 }}
+                            className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 border border-blue-100"
                         >
                             Coverage Area
                         </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
-                            className="text-slate-900 text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
+                            className="text-slate-900 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
                         >
                             Jangkauan <span className="text-[#0b50da]">Global</span> Kami
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
-                            className="text-slate-600 text-lg leading-relaxed"
+                            className="text-slate-600 text-base sm:text-lg leading-relaxed"
                         >
-                            Rasakan konektivitas tanpa batas dengan infrastruktur jaringan kelas enterprise. Kami telah membangun tulang punggung yang tangguh di seluruh benua untuk memastikan data Anda tetap bergerak.
+                            Rasakan konektivitas tanpa batas dengan infrastruktur jaringan kelas enterprise. Kami telah membangun tulang punggung yang tangguh di seluruh benua.
                         </motion.p>
                     </div>
                     <motion.div
@@ -73,19 +106,43 @@ const AreaSection = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.4 }}
-                        className="w-full lg:w-96"
+                        className="w-full lg:w-96 relative z-50"
                     >
                         <label className="flex flex-col gap-2">
                             <span className="text-sm font-bold text-slate-700 px-1">Cari node terdekat</span>
                             <div className="relative flex items-center">
                                 <MdLocationOn className="absolute left-4 text-[#0b50da] text-xl" />
                                 <input
-                                    className="w-full h-14 rounded-2xl border-slate-200 bg-slate-50 pl-12 pr-4 text-base focus:border-[#0b50da] focus:ring-1 focus:ring-[#0b50da] shadow-sm transition-all"
-                                    placeholder="Cari Lokasi (cth. Jakarta, Tokyo)"
+                                    className="w-full h-12 sm:h-14 rounded-xl sm:rounded-2xl border-slate-200 bg-slate-50 pl-12 pr-4 text-sm sm:text-base focus:border-[#0b50da] focus:ring-1 focus:ring-[#0b50da] shadow-sm transition-all outline-none"
+                                    placeholder="Cari Lokasi (cth. Jakarta, Medan)"
                                     type="text"
+                                    value={searchQuery}
+                                    onChange={handleSearch}
+                                    onFocus={() => searchQuery && setIsDropdownOpen(true)}
                                 />
                             </div>
                         </label>
+
+                        {/* Dropdown Hasil Pencarian - Perbaikan tap target di mobile */}
+                        {isDropdownOpen && filteredLocations.length > 0 && (
+                            <div className="absolute top-[calc(100%+8px)] left-0 w-full bg-white rounded-xl sm:rounded-2xl border border-slate-100 shadow-2xl py-1.5 sm:py-2 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                                {filteredLocations.map((loc) => (
+                                    <button
+                                        key={loc.id}
+                                        onClick={() => handleSelectLocation(loc)}
+                                        className="w-full flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3 sm:py-3.5 hover:bg-blue-50 transition-colors text-left group"
+                                    >
+                                        <div className="size-10 sm:size-11 rounded-lg sm:rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-100 group-hover:text-[#0b50da] transition-all shrink-0">
+                                            <MdLocationOn size={20} />
+                                        </div>
+                                        <div className="min-w-0">
+                                            <p className="text-sm sm:text-base font-bold text-slate-900 truncate">{loc.nama}</p>
+                                            <p className="text-[11px] sm:text-xs text-slate-500 italic truncate">{loc.info}</p>
+                                        </div>
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </motion.div>
                 </div>
 
@@ -93,168 +150,20 @@ const AreaSection = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.8 }}
-                    className="relative w-full aspect-[16/9] lg:aspect-[21/9] rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 shadow-2xl mb-12 group"
+                    className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl lg:rounded-3xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xl mb-12 group z-0"
                 >
-                    {/* Background Map Simulation */}
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
-
-                    {/* Map Nodes */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="relative w-full h-full p-12">
-
-                            {/* Node: San Francisco */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                transition={{ delay: 0.6 }}
-                                className="absolute top-1/4 left-1/4 group-hover:scale-110 transition-transform duration-500"
-                            >
-                                <div className="relative flex h-4 w-4">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-[#0b50da] border-2 border-white"></span>
-                                </div>
-                                <div className="absolute top-6 left-0 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl text-[10px] font-bold whitespace-nowrap border border-white">
-                                    San Francisco PoP
-                                </div>
-                            </motion.div>
-
-                            {/* Node: London */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                transition={{ delay: 0.8 }}
-                                className="absolute top-1/3 left-[52%] group-hover:scale-110 transition-transform duration-500"
-                            >
-                                <div className="relative flex h-4 w-4">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-[#10b981] border-2 border-white"></span>
-                                </div>
-                                <div className="absolute top-6 left-0 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl text-[10px] font-bold whitespace-nowrap border border-white">
-                                    London Hub
-                                </div>
-                            </motion.div>
-
-                            {/* Node: Singapore */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                transition={{ delay: 1 }}
-                                className="absolute bottom-1/3 right-1/4 group-hover:scale-110 transition-transform duration-500"
-                            >
-                                <div className="relative flex h-4 w-4">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-[#0b50da] border-2 border-white"></span>
-                                </div>
-                                <div className="absolute top-6 left-0 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-xl text-[10px] font-bold whitespace-nowrap border border-white">
-                                    Singapore Edge
-                                </div>
-                            </motion.div>
-
-                        </div>
+                    {/* Real Leaflet Map */}
+                    <div className="absolute inset-0 z-0 h-full w-full">
+                        <Map
+                            nodes={filteredLocations}
+                            focusLocation={selectedLocation?.posisi}
+                        />
                     </div>
-
-                    {/* Map Controls */}
-                    <div className="absolute bottom-6 right-6 flex flex-col gap-2">
-                        <button className="flex size-10 items-center justify-center rounded-xl bg-white shadow-lg text-slate-600 hover:text-[#0b50da] transition-all active:scale-90">
-                            <MdAdd size={20} />
-                        </button>
-                        <button className="flex size-10 items-center justify-center rounded-xl bg-white shadow-lg text-slate-600 hover:text-[#0b50da] transition-all active:scale-90">
-                            <MdRemove size={20} />
-                        </button>
-                        <button className="flex size-10 items-center justify-center rounded-xl bg-[#0b50da] shadow-lg text-white hover:bg-blue-700 transition-all mt-2 active:scale-90">
-                            <MdMyLocation size={20} />
-                        </button>
-                    </div>
-
-                    {/* Status Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 1.2 }}
-                        className="absolute bottom-6 left-6 hidden sm:block"
-                    >
-                        <div className="bg-slate-800/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl max-w-xs">
-                            <div className="flex items-center gap-3 mb-2">
-                                <div className="size-2 rounded-full bg-[#10b981] animate-pulse"></div>
-                                <span className="text-xs font-bold text-white uppercase tracking-wider">Status Sistem: Optimal</span>
-                            </div>
-                            <p className="text-[11px] text-slate-300 leading-relaxed">Visualisasi real-time dari node aktif dan aliran trafik kami di seluruh tulang punggung Global.</p>
-                        </div>
-                    </motion.div>
                 </motion.div>
 
-                {/* Stats Cards */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
-                >
-                    {/* Card 1 */}
-                    <motion.div
-                        variants={itemVariants}
-                        whileHover={{ y: -5 }}
-                        className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-300"
-                    >
-                        <div className="size-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#0b50da] mb-2">
-                            <MdLanguage size={28} />
-                        </div>
-                        <p className="text-slate-500 text-sm font-bold uppercase tracking-wider">Global PoPs</p>
-                        <div className="flex items-baseline gap-2">
-                            <p className="text-slate-900 text-4xl font-black leading-tight">200+</p>
-                            <span className="text-[#10b981] text-sm font-bold flex items-center gap-1">
-                                <MdTrendingUp /> 15%
-                            </span>
-                        </div>
-                        <p className="text-slate-500 text-sm">Berlokasi strategis untuk latensi rendah.</p>
-                    </motion.div>
 
-                    {/* Card 2 */}
-                    <motion.div
-                        variants={itemVariants}
-                        whileHover={{ y: -5 }}
-                        className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-emerald-50 transition-all duration-300"
-                    >
-                        <div className="size-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-[#10b981] mb-2">
-                            <MdPublic size={28} />
-                        </div>
-                        <p className="text-slate-500 text-sm font-bold uppercase tracking-wider">Negara</p>
-                        <div className="flex items-baseline gap-2">
-                            <p className="text-slate-900 text-4xl font-black leading-tight">50+</p>
-                            <span className="text-[#10b981] text-sm font-bold flex items-center gap-1">
-                                <MdTrendingUp /> 5%
-                            </span>
-                        </div>
-                        <p className="text-slate-500 text-sm">Menghubungkan hub bisnis utama dunia.</p>
-                    </motion.div>
-
-                    {/* Card 3 */}
-                    <motion.div
-                        variants={itemVariants}
-                        whileHover={{ y: -5 }}
-                        className="flex flex-col gap-3 rounded-3xl p-8 bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-50 transition-all duration-300"
-                    >
-                        <div className="size-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#0b50da] mb-2">
-                            <MdVerified size={28} />
-                        </div>
-                        <p className="text-slate-500 text-sm font-bold uppercase tracking-wider">Network Uptime</p>
-                        <div className="flex items-baseline gap-2">
-                            <p className="text-slate-900 text-4xl font-black leading-tight">99.9%</p>
-                            <span className="text-[#10b981] text-sm font-bold flex items-center">
-                                stable
-                            </span>
-                        </div>
-                        <p className="text-slate-500 text-sm">Keandalan terjamin dengan Enterprise SLA.</p>
-                    </motion.div>
-                </motion.div>
 
 
             </main>
