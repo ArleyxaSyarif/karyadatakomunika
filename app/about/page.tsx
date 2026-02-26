@@ -4,6 +4,7 @@ import NilaiAbout from "./components/NilaiAbout";
 import StrukturAbout from "./components/StrukturAbout";
 import DireksiAbout from "./components/DireksiAbout";
 import LegalitasAbout from "./components/LegalitasAbout";
+import TimelineAbout from "./components/TimelineAbout";
 
 export default function About() {
   return (
@@ -14,6 +15,7 @@ export default function About() {
       <StrukturAbout />
       <DireksiAbout />
       <LegalitasAbout />
+      <TimelineAbout />
     </main>
   );
 }
