@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function OrganizationalStructure() {
+export default function StrukturAbout() {
   return (
     <>
       <main className="mx-auto w-full max-w-7xl flex-grow px-6 py-10 bg-white">

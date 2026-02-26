@@ -62,7 +62,7 @@ const certifications = [
   }
 ];
 
-export default function LegalitasSection() {
+export default function LegalitasAbout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ title: "", desc: "", imgSrc: "" });
 

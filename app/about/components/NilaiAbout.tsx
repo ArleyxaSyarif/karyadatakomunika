@@ -28,7 +28,7 @@ const companyValues = [
   },
 ];
 
-export default function CompanyValuesPage() {
+export default function NilaiAbout() {
   return (
     <div className="min-h-screen bg-[#f5f7f8] text-slate-900 selection:bg-blue-100">
       {/* Import Material Symbols Google Fonts */}
@@ -47,7 +47,7 @@ export default function CompanyValuesPage() {
               <span className="text-xs font-bold tracking-widest uppercase">Eksplorasi Budaya</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-              Nilai-Nilai Perusahaan Kami
+              Nilai-Nilai <span className='text-blue-600'> Perusahaan Kami</span>
             </h1>
             <p className="text-slate-600 text-lg leading-relaxed">
               Kami berkomitmen untuk memberikan standar tertinggi dalam setiap aspek operasional kami melalui prinsip-prinsip utama yang membentuk identitas kami.

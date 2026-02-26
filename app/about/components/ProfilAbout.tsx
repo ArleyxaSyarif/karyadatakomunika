@@ -26,7 +26,7 @@ const focusAreas = [
   },
 ];
 
-export default function AboutPage() {
+export default function ProfilAbout() {
   return (
     <div className="bg-white text-slate-900 selection:bg-green-100">
       {/* Import Material Symbols Google Fonts */}

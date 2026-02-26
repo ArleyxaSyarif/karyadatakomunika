@@ -5,7 +5,7 @@ import React from 'react';
  * Menggunakan Tailwind CSS & Material Symbols
  */
 
-export default function CorporatePage() {
+export default function VisiMisiAbout() {
   const stats = [
     { label: 'Client Retention', value: '98%', color: 'text-[#137fec]' },
     { label: 'Projects Done', value: '150+', color: 'text-[#22c55e]' },

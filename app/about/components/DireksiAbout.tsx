@@ -39,7 +39,7 @@ const commissioners = [
   },
 ];
 
-export default function LeadershipSection() {
+export default function DireksiAbout() {
   return (
     <>
       {/* Memuat ikon Material Symbols */}
