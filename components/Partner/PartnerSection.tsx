@@ -4,18 +4,9 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from "framer-motion";
 
-const PartnerSection = () => {
-    const lane1Partners = [
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBHOhzPnExBPK4b2i1mm-XoWrSKDkjxbQA_sepjH0xu-MNwhWmMtYY7_oe9dhuH85Hp6CDwYIB_ahm0Wvtziv8LRZPIjoX-oGgtd4ZkAkLfe0OO9x2Q_cCb6JrgOs4MMEKYBd8yNMU717Ons5ZmZawbyL4cW33GxvgURbJzZT1vHmTfqPPJXtFehxJnRdHch07eQnsMiFt0Z9G-2bkBskDgf2oPdufvZQM8iRR3PAsvsgtXc9sRrSBUlsuoHMP605gpPKAz2as7ewo",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDI6rungQqpLa6IYSwO1wTTrXohCP3pbtnj-CpJ3MlYyvBgzR7CUU66wkaHKWlmC4V0PW_HwI7UMv5wEF9kGn3N5UqiWgFiG92cqM-_zlVeP2CZvBTuLxhInc8krX_nhOd-Zce73JSMCmywmQvRw5fs-sDHW0eumeoBVr3WB6kUznaiVm9BUAgMX6rvFCWbBKdvZ1Qk-ZzbMEPyowy4BRnvpEkhaFcrQTTmb6LmLLYHNnRInZ5C_r-j7Jjskdcz1O8Szro5mGgLRh4",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBU4xHhAtV-wudK_Lj3J-Y-KyuMd-nLCNzxgz5m09VuS69tuMi7PmkY0SHKGJF2eLLq-2gsfaz8lQLp1wURyZLkUITvj-bS_wUgNYVBiYlJzRMvLWsQRnvyYDQRlBXVuKoIbua-EOxu3uVWPdfLB54WK5zv8t7NNJ-a1el0_Q5GgPitLQ6ga-FzH6Vm3Fie47m2f6oTTQqkBvC_yg1XhQ8DVpsuOQBWqTeCrlDYGbEUDTNP4rM7EMKbfJBWekJZEF9jRICiJK6MW9o",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCR-YqnzaJh8tPEtOWABv65sKfJOaAbjEJyIrDdLC5P6ztrh1UVuKR1tPVG1zjF-78pqW3BBtMULBhU7J12eXTMdOWvh7LtIRlZVg7dMBZVMvlbYOooAq6nhnQx2SszmqWZZX13iJ-bTZNI4MP7kPv59gJrJLiDGsYUzKHBUv8d25pN55RidRYISXcbUtD3m4WoLYlUo8ZahN9q-aqgo1C5LVXGv3mtV4jVrTY8mp0Dh1g_HecE_PMSwJL2x5gPFNiDteYNvj9cazo",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuBPY3mD_Qlap2VY2v-1LjEnKHY3wZ0VERnUVj34iMaB11bjM22M0y83zH__FHPCiWKzrStETtUWZt3ADsRgdeFIydn9d_lpGn4GjuBoCwN7oFTjgnnWQQhZusGmqfXYh4FVNzUgmQ6TR87ZZaqyk8Hsy3bcNMPsyv2OmFEvmaH6zgH_H9d_iHnsh8M6eBXTyVG_jAwvGEgu9W4hCYKUmG4nx-cHxJfRDXO-9mPo3_Lv7drk18zBP4WM73zomud6LwgwmGzoATeGoHA",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDtIvK6KO8ShiCp-F3uzJlyZ6ze_vU_uLNkwHPifrrLv4b56PLfq0dsMC_Oxdzx4V5pWfwcIrYgEpkiFrnSq9Beo8e0kYg_nBi4049fSa935HJ_oe0WQejqSze8h7IIyxfqnTYwZ5T9n4AePYbRupTPqmAa2YqMxFCGRBOsWyvyvp9ynIJC3KmUkFdv1PkuiYXp__0V4SuAqsV0A-vEIsaijG8gpWM4mO-lHHC1dQEQUAmVpxrhmH23RkNEIxTayhTqsPcS2lRZLv8",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuAtOsRvF1WGvI1gJtoK5Y2EO3RqTDPKPfYq8ZCNGC2kzPFe9rE68kspRp9orPz7yZrK74GJ3ZqsUAWYYzXWN1JBzBgaS-LkSQgXh1rbKsn-0UHNPs7OyyhpWLiELFofs0gzFAXYyrnaZLvzMeNXkLGK-0_KlE5aD-oKjzvnlRF7EorUx4P-4GojronP2PxJPqMJ1a1nt0qIdhMdgNtpan0EA7j834NkQ7jTPyieqTEela97MXNe6qHRoRj8ae_be4dF4US3aH9hPwg"
-    ];
+import { lane1Partners, lane2Partners } from '@/data/partner';
 
-    const lane2Partners = [...lane1Partners].reverse();
+const PartnerSection = () => {
 
     const containerVariants = {
         hidden: { opacity: 0 },

@@ -28,7 +28,7 @@ const focusAreas = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#f8fdf9] dark:bg-[#061009] text-slate-900 dark:text-slate-100 selection:bg-green-100">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-green-100">
       {/* Import Material Symbols Google Fonts */}
       <link
         rel="stylesheet"
@@ -38,7 +38,7 @@ export default function AboutPage() {
       <section className="relative py-16 px-4 md:px-8 lg:px-40 overflow-hidden font-['Public_Sans',sans-serif]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
-            
+
             {/* Content Side */}
             <div className="flex-1 space-y-8">
               <div className="space-y-4">
@@ -49,9 +49,9 @@ export default function AboutPage() {
                 <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight">
                   Dedikasi Untuk <span className="text-[#2563eb]">Masa Depan Hijau</span>
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed opacity-90 font-light">
-                  Kami adalah pelopor dalam solusi teknologi berkelanjutan yang berfokus pada pelestarian ekosistem bumi. 
-                  Dimulai sejak satu dekade lalu, misi kami adalah menghadirkan inovasi hijau yang membantu masyarakat 
+                <p className="text-slate-600 text-lg leading-relaxed opacity-90 font-light">
+                  Kami adalah pelopor dalam solusi teknologi berkelanjutan yang berfokus pada pelestarian ekosistem bumi.
+                  Dimulai sejak satu dekade lalu, misi kami adalah menghadirkan inovasi hijau yang membantu masyarakat
                   hidup selaras dengan alam melalui efisiensi energi dan pengurangan jejak karbon secara signifikan.
                 </p>
               </div>
@@ -59,8 +59,8 @@ export default function AboutPage() {
               {/* Stats Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {stats.map((stat, index) => (
-                  <div key={index} className="flex flex-col gap-2 rounded-2xl p-6 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md shadow-sm border border-white/20 dark:border-slate-800/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#16a34a]/30 group">
-                    <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">{stat.label}</p>
+                  <div key={index} className="flex flex-col gap-2 rounded-2xl p-6 bg-white/70 backdrop-blur-md shadow-sm border border-white/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#16a34a]/30 group">
+                    <p className="text-slate-500 text-sm font-medium">{stat.label}</p>
                     <div className="flex items-baseline gap-2">
                       <p className="text-3xl font-bold text-[#16a34a]">{stat.value}</p>
                       <span className="text-xs font-bold text-[#16a34a]/80">{stat.growth}</span>
@@ -83,15 +83,15 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="rounded-3xl overflow-hidden aspect-[3/4] shadow-xl group bg-slate-200">
-                    <img 
-                      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600" 
+                    <img
+                      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600"
                       alt="Forest"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="rounded-3xl overflow-hidden aspect-square shadow-xl group bg-slate-200">
-                    <img 
-                      src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600" 
+                    <img
+                      src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600"
                       alt="Solar Panels"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -99,15 +99,15 @@ export default function AboutPage() {
                 </div>
                 <div className="space-y-4 pt-8">
                   <div className="rounded-3xl overflow-hidden aspect-square shadow-xl group bg-slate-200">
-                    <img 
-                      src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=600" 
+                    <img
+                      src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=600"
                       alt="Urban Farm"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <div className="rounded-3xl overflow-hidden aspect-[3/4] shadow-xl group bg-slate-200">
-                    <img 
-                      src="https://images.unsplash.com/photo-1466611653911-954ffea113ad?auto=format&fit=crop&q=80&w=600" 
+                    <img
+                      src="https://images.unsplash.com/photo-1466611653911-954ffea113ad?auto=format&fit=crop&q=80&w=600"
                       alt="Wind Turbines"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -120,13 +120,13 @@ export default function AboutPage() {
           {/* Focus Areas Sub-section */}
           <div className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
-              <div key={index} className="flex gap-4 p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-[#16a34a]/20 transition-colors">
+              <div key={index} className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-100 hover:border-[#16a34a]/20 transition-colors">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center bg-[#16a34a]/10 text-[#16a34a]">
                   <span className="material-symbols-outlined">{area.icon}</span>
                 </div>
                 <div>
-                  <h4 className="text-slate-900 dark:text-slate-100 font-bold mb-1">{area.title}</h4>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">{area.desc}</p>
+                  <h4 className="text-slate-900 font-bold mb-1">{area.title}</h4>
+                  <p className="text-slate-500 text-sm">{area.desc}</p>
                 </div>
               </div>
             ))}

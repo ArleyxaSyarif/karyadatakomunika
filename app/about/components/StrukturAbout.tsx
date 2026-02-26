@@ -3,7 +3,7 @@ import React from "react";
 export default function OrganizationalStructure() {
   return (
     <>
-      <main className="mx-auto w-full max-w-7xl flex-grow px-6 py-10">
+      <main className="mx-auto w-full max-w-7xl flex-grow px-6 py-10 bg-white">
         {/* Hero Section */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -14,20 +14,20 @@ export default function OrganizationalStructure() {
               </span>
               Corporate Architecture
             </div>
-            <h2 className="text-4xl font-black text-slate-900 dark:text-white sm:text-5xl">
+            <h2 className="text-4xl font-black text-slate-900 sm:text-5xl font-display">
               Organizational Structure
             </h2>
-            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              Visualizing the professional hierarchy and team dynamics of Global Corp. 
+            <p className="mt-4 text-lg text-slate-600 leading-relaxed font-light">
+              Visualizing the professional hierarchy and team dynamics of Global Corp.
               Manage reporting lines, department overlaps, and resource allocation in one view.
             </p>
           </div>
           <div className="flex gap-3">
-            <button className="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-800 px-5 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm border border-slate-200 dark:border-slate-700 hover:bg-slate-50 transition-all">
+            <button className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-slate-700 shadow-sm border border-slate-200 hover:bg-slate-50 transition-all font-display">
               <span className="material-symbols-outlined text-lg">download</span>
               Export PDF
             </button>
-            <button className="flex items-center gap-2 rounded-xl bg-primary px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:opacity-90 transition-all">
+            <button className="flex items-center gap-2 rounded-xl bg-[#2563eb] px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 hover:opacity-90 transition-all font-display">
               <span className="material-symbols-outlined text-lg">add_circle</span>
               Add Member
             </button>
@@ -35,31 +35,31 @@ export default function OrganizationalStructure() {
         </div>
 
         {/* Filter Bar */}
-        <div className="mb-10 flex flex-wrap items-center gap-4 bg-white dark:bg-slate-900/50 p-4 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+        <div className="mb-10 flex flex-wrap items-center gap-4 bg-white p-4 rounded-2xl border border-slate-200/60 shadow-sm">
           <div className="flex-grow min-w-[300px]">
-            <div className="flex w-full items-center rounded-xl bg-slate-50 dark:bg-slate-800 px-4 py-2.5 focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+            <div className="flex w-full items-center rounded-xl bg-slate-50 px-4 py-2.5 focus-within:ring-2 focus-within:ring-blue-600/20 transition-all">
               <span className="material-symbols-outlined text-slate-400 mr-2">search</span>
               <input
-                className="w-full border-none bg-transparent text-sm focus:ring-0 outline-none"
+                className="w-full border-none bg-transparent text-sm focus:ring-0 outline-none font-display"
                 placeholder="Search by name, role, or department..."
                 type="text"
               />
             </div>
           </div>
           <div className="flex gap-2 overflow-x-auto pb-1 md:pb-0 no-scrollbar">
-            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-bold text-white">
+            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-[#2563eb] px-4 py-2.5 text-sm font-bold text-white font-display">
               <span className="material-symbols-outlined text-lg">grid_view</span>
               All Teams
             </button>
-            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 transition-colors border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-primary/5 active:scale-95">
-              <span className="material-symbols-outlined text-lg text-primary">developer_mode_tv</span>
+            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-slate-50 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors border border-slate-200 hover:border-blue-600/50 hover:bg-blue-600/5 active:scale-95 font-display">
+              <span className="material-symbols-outlined text-lg text-[#2563eb]">developer_mode_tv</span>
               Engineering
             </button>
-            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 transition-colors border border-slate-200 dark:border-slate-700 hover:border-accent-green/50 hover:bg-accent-green/5 active:scale-95">
-              <span className="material-symbols-outlined text-lg text-accent-green">campaign</span>
+            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-slate-50 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors border border-slate-200 hover:border-[#16a34a]/50 hover:bg-[#16a34a]/5 active:scale-95 font-display">
+              <span className="material-symbols-outlined text-lg text-[#16a34a]">campaign</span>
               Marketing
             </button>
-            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-slate-50 dark:bg-slate-800 px-4 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 transition-colors border border-slate-200 dark:border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/5 active:scale-95">
+            <button className="flex shrink-0 items-center gap-2 rounded-xl bg-slate-50 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors border border-slate-200 hover:border-amber-500/50 hover:bg-amber-500/5 active:scale-95 font-display">
               <span className="material-symbols-outlined text-lg text-amber-500">inventory_2</span>
               Product
             </button>
@@ -71,63 +71,63 @@ export default function OrganizationalStructure() {
           {/* CEO Section */}
           <div className="flex flex-col items-center">
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent-green rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-              <div className="relative flex w-80 flex-col items-center rounded-2xl bg-white dark:bg-slate-900 p-6 text-center shadow-xl border border-slate-100 dark:border-slate-800">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#2563eb] to-[#16a34a] rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <div className="relative flex w-80 flex-col items-center rounded-2xl bg-white p-6 text-center shadow-xl border border-slate-100">
                 <div className="relative mb-4">
-                  <div className="h-24 w-24 overflow-hidden rounded-full ring-4 ring-primary/10">
+                  <div className="h-24 w-24 overflow-hidden rounded-full ring-4 ring-blue-600/10">
                     <img
                       className="h-full w-full object-cover"
                       alt="CEO Sarah Chen looking confident"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ9LSvpXotiDLwK08nvF4TVLrG6CLSSXb2QSUGKX9K5zrKXwz8-TRYy0u4-WX3M1bVvC8ZhpA3fmS4trVhBHHo3V3rW8kJwNSW0mEdxOr5Eb_NkxXyc9NLdWbEcUcPsZljcX-UA9LfG5Al5GvGK6quu54zsf4IXJAAuW8qL-6yQnsEzEyw8dQjCqE5o-J239I3BRmkuQCSQxPtCzR8rnLVVVtKnPqEMPQbBObHh1t1GPPdtN4lKr21gOn2SNheTvijfMpFkX4qY_HN"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
                     />
                   </div>
-                  <div className="absolute -bottom-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-accent-green text-white shadow-md ring-4 ring-white dark:ring-slate-900">
+                  <div className="absolute -bottom-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#16a34a] text-white shadow-md ring-4 ring-white">
                     <span className="material-symbols-outlined text-sm">verified</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">Sarah Chen</h3>
-                <p className="text-sm font-medium text-primary">Chief Executive Officer</p>
+                <h3 className="text-xl font-bold text-slate-900 font-display">Sarah Chen</h3>
+                <p className="text-sm font-medium text-[#2563eb] font-display">Chief Executive Officer</p>
                 <div className="mt-4 flex gap-2">
-                  <span className="rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Board Member</span>
-                  <span className="rounded-lg bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary">Founder</span>
+                  <span className="rounded-lg bg-slate-100 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500 font-display">Board Member</span>
+                  <span className="rounded-lg bg-blue-600/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#2563eb] font-display">Founder</span>
                 </div>
               </div>
             </div>
-            <div className="h-12 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
-            <div className="h-0.5 w-full max-w-4xl bg-slate-200 dark:bg-slate-800"></div>
+            <div className="h-12 w-0.5 bg-slate-200"></div>
+            <div className="h-0.5 w-full max-w-4xl bg-slate-200"></div>
           </div>
 
           {/* Leadership Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory no-scrollbar">
-            
+
             {/* VP Engineering */}
             <div className="flex flex-col items-center min-w-[320px] md:min-w-[380px] snap-center shrink-0">
-              <div className="h-10 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
-              <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-lg border border-slate-100 dark:border-slate-800 hover:shadow-primary/5 transition-all group">
-                <div className="h-2 bg-primary"></div>
+              <div className="h-10 w-0.5 bg-slate-200"></div>
+              <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-blue-600/5 transition-all group">
+                <div className="h-2 bg-[#2563eb]"></div>
                 <div className="p-6">
                   <div className="flex items-center gap-4">
                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-slate-100">
                       <img
                         className="h-full w-full object-cover"
                         alt="Portrait of VP Engineering Marcus Rodriguez"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjm-dkz7qyCrBri_0aMepNfL67ulpAidmtk48FV1ahVsprpg-aiXvztCvoknsdrCCemcRnAxVloJ49ZDR2jFs7Ni_KM-uJDwj_CTp_3hFP_K2vXswvJBL5qaydTGi04q51rklqCE0yN270Fs2S4x_habRZwlbU2HOsn3sUXLsq-SSoMc8q1mkVoEhKVkilGh-eQ_5q1PaHboQitdmeAw-dAw8LXhjX1VOHgziAmITXyJPcED90HM9wp-lJvx3AsmVPWH7Do5kvh1xg"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"
                       />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white">Marcus Rodriguez</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">VP of Engineering</p>
+                      <h4 className="font-bold text-slate-900 font-display">Marcus Rodriguez</h4>
+                      <p className="text-sm text-slate-500 font-display">VP of Engineering</p>
                     </div>
-                    <button className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 hover:text-primary transition-colors">
+                    <button className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-[#2563eb] transition-colors">
                       <span className="material-symbols-outlined text-lg">info</span>
                     </button>
                   </div>
-                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4 text-xs font-semibold text-slate-500">
+                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-semibold text-slate-500 font-display">
                     <div className="flex items-center gap-1">
                       <span className="material-symbols-outlined text-sm">groups</span>
                       <span>42 Reports</span>
                     </div>
-                    <div className="flex items-center gap-1 text-accent-green">
+                    <div className="flex items-center gap-1 text-[#16a34a]">
                       <span className="material-symbols-outlined text-sm">circle</span>
                       <span>Active</span>
                     </div>
@@ -136,27 +136,27 @@ export default function OrganizationalStructure() {
               </div>
               {/* Leads */}
               <div className="mt-4 flex w-full flex-col gap-3">
-                <div className="mx-auto h-6 w-0.5 bg-slate-200 dark:bg-slate-800/50"></div>
-                <div className="rounded-xl border border-dashed border-slate-200 dark:border-slate-800 p-4 bg-slate-50/50 dark:bg-slate-900/30">
+                <div className="mx-auto h-6 w-0.5 bg-slate-200/50"></div>
+                <div className="rounded-xl border border-dashed border-slate-200 p-4 bg-slate-50/50">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="h-10 w-10 overflow-hidden rounded-lg">
-                      <img className="h-full w-full object-cover" alt="Senior Developer Emily Watson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBXW9NctNk06b7sS9JdPbT2PqlBmMr-jHi9CDKF0_foipCdT4iRm3zZPOGm5n2IKQ5yqNarjhMSeVaAJbS8Py958bIcarRZA_hcq5vAZ1zjK3bCOkDAF70IXAKUWjOTr-IkyUP2yeClgGZ9hWDm7JWch6jo59F8ZDTA_s115C34qeWNNSnbh1EeT5MjR3zOJZgenYBbzWT-c14QlAqHS5S_2DFJa9RgQBrXCf_8Za8gKyfE2LrgLcsE6mrd4eeddJGEpLmFFQOwfp2" />
+                      <img className="h-full w-full object-cover" alt="Senior Developer Emily Watson" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold">Emily Watson</p>
-                      <p className="text-[10px] font-medium text-slate-500">Frontend Lead</p>
+                      <p className="text-sm font-bold font-display">Emily Watson</p>
+                      <p className="text-[10px] font-medium text-slate-500 font-display">Frontend Lead</p>
                     </div>
-                    <span className="ml-auto h-2 w-2 rounded-full bg-accent-green"></span>
+                    <span className="ml-auto h-2 w-2 rounded-full bg-[#16a34a]"></span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 overflow-hidden rounded-lg">
-                      <img className="h-full w-full object-cover" alt="Backend Architect David Park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1eWQIU1FGdSHGUeUsm7ZpuM2f2LPsdVx0bLSm9HKRGXS5DzIdbIPzeeLpFLZjS8ctMEKHluFB4BsNVw3727TtS0wq0RysVKPLQ_ng2F2NmQxY0D9ul8n6zlozAegdddr6S9O02fJueuDTz4yoJ4QTtJN9Z1MKbuBrShrwYNKW-RmkMhPQUeRshIJSHvxWBIhZiEgK7qqIM8JPSD1yMsDGUJfVfzNHcpR3vK8rO4f4ERQHXlB9_B_ExXSO9QE6NbfodaogjOOxaDnS" />
+                      <img className="h-full w-full object-cover" alt="Backend Architect David Park" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold">David Park</p>
-                      <p className="text-[10px] font-medium text-slate-500">Backend Architect</p>
+                      <p className="text-sm font-bold font-display">David Park</p>
+                      <p className="text-[10px] font-medium text-slate-500 font-display">Backend Architect</p>
                     </div>
-                    <span className="ml-auto h-2 w-2 rounded-full bg-accent-green"></span>
+                    <span className="ml-auto h-2 w-2 rounded-full bg-[#16a34a]"></span>
                   </div>
                 </div>
               </div>
@@ -164,32 +164,32 @@ export default function OrganizationalStructure() {
 
             {/* VP Marketing */}
             <div className="flex flex-col items-center min-w-[320px] md:min-w-[380px] snap-center shrink-0">
-              <div className="h-10 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
-              <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-lg border border-slate-100 dark:border-slate-800 hover:shadow-accent-green/5 transition-all group">
-                <div className="h-2 bg-accent-green"></div>
+              <div className="h-10 w-0.5 bg-slate-200"></div>
+              <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-[#16a34a]/5 transition-all group">
+                <div className="h-2 bg-[#16a34a]"></div>
                 <div className="p-6">
                   <div className="flex items-center gap-4">
                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-slate-100">
                       <img
                         className="h-full w-full object-cover"
                         alt="Portrait of VP Marketing Elena Petrova"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_4DaQ0xdimE2h6IJ2zJ1rqNg2Si4F3TJMuERGn7132M69qxd0dwBdchiHJ7LPnnKo8wAZ5fXSvmCnwY8JjT4EsWU2A3L7du4K7D6IEg-VL0tVVYz4BD-4RusL3tTopbN_XPg7jXNw4Psm3aToYKSpnZZCSB9yBh1uoSS_3PTlPIxWLTfnkta1V3Ew-yyXNoyMbnpNo-rtb5qGgZk1gtREEiNhtPqtxdKS2ctRbC86SyDOfG5wjAlw-GX3JUdNYe7qiiZ6jABBDrST"
+                        src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=200"
                       />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white">Elena Petrova</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">VP of Marketing</p>
+                      <h4 className="font-bold text-slate-900 font-display">Elena Petrova</h4>
+                      <p className="text-sm text-slate-500 font-display">VP of Marketing</p>
                     </div>
-                    <button className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 hover:text-accent-green transition-colors">
+                    <button className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-[#16a34a] transition-colors">
                       <span className="material-symbols-outlined text-lg">info</span>
                     </button>
                   </div>
-                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4 text-xs font-semibold text-slate-500">
+                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-semibold text-slate-500 font-display">
                     <div className="flex items-center gap-1">
                       <span className="material-symbols-outlined text-sm">groups</span>
                       <span>28 Reports</span>
                     </div>
-                    <div className="flex items-center gap-1 text-accent-green">
+                    <div className="flex items-center gap-1 text-[#16a34a]">
                       <span className="material-symbols-outlined text-sm">circle</span>
                       <span>Remote</span>
                     </div>
@@ -198,25 +198,25 @@ export default function OrganizationalStructure() {
               </div>
               {/* Leads */}
               <div className="mt-4 flex w-full flex-col gap-3">
-                <div className="mx-auto h-6 w-0.5 bg-slate-200 dark:bg-slate-800/50"></div>
-                <div className="rounded-xl border border-dashed border-slate-200 dark:border-slate-800 p-4 bg-slate-50/50 dark:bg-slate-900/30">
+                <div className="mx-auto h-6 w-0.5 bg-slate-200/50"></div>
+                <div className="rounded-xl border border-dashed border-slate-200 p-4 bg-slate-50/50">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="h-10 w-10 overflow-hidden rounded-lg">
-                      <img className="h-full w-full object-cover" alt="Content Strategist Mia Wong" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBluy4Q-rRqIcUhqQyIFCdZtH4aI7i3Y7Us7DC5NtXhmkBr0_O7XFiHXijgSiGc1oC-wSTWeN6BeahO7odYcAVskm3DpBfoonNS0Kf_DqogytP3LIeC1yUEUCGGDZLBxL8sKkvfldGI39vS0KI3A8RAZaUKc3Z0mWmexElIxW5x3Ez2VJLgaLTtsfldymYJty8NkvU4DEDYMFkQnimJupNEWEEqGEATSBnXYtWNy_494ETl27oyHI1FCkuMrH0-E7wVeYpEheGKZKvQ" />
+                      <img className="h-full w-full object-cover" alt="Content Strategist Mia Wong" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold">Mia Wong</p>
-                      <p className="text-[10px] font-medium text-slate-500">Content Strategist</p>
+                      <p className="text-sm font-bold font-display">Mia Wong</p>
+                      <p className="text-[10px] font-medium text-slate-500 font-display">Content Strategist</p>
                     </div>
-                    <span className="ml-auto h-2 w-2 rounded-full bg-accent-green"></span>
+                    <span className="ml-auto h-2 w-2 rounded-full bg-[#16a34a]"></span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 overflow-hidden rounded-lg">
-                      <img className="h-full w-full object-cover" alt="Ad Performance Lead Jason Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCuO88yQSVnANzBAYb2TzclBdoyy4mtD58gHqwoqyx_8V0nfxU5gwGvunjOo-i3SwHV9dEM9QotTwFw2FkBp0wvbgfB1CRXHh4_fZ8VqzzPSTtiEh0JJPX-YH93Ywo_IOI4I2M2F_lf8_Ra3sxBj1ik3oVye2bzgTnkiGLOv9fBCxOSA3Du13qxhX1_xS4hTfxO5kob8wBmaMV7-haJ2-4PK3dicylWvExCtzFXiDErBec6QXwareBQAcTJb38N-My9mIpK73zZTdm" />
+                      <img className="h-full w-full object-cover" alt="Ad Performance Lead Jason Smith" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold">Jason Smith</p>
-                      <p className="text-[10px] font-medium text-slate-500">Ad Performance</p>
+                      <p className="text-sm font-bold font-display">Jason Smith</p>
+                      <p className="text-[10px] font-medium text-slate-500 font-display">Ad Performance</p>
                     </div>
                     <span className="ml-auto h-2 w-2 rounded-full bg-amber-400"></span>
                   </div>
@@ -226,8 +226,8 @@ export default function OrganizationalStructure() {
 
             {/* Chief Product Officer */}
             <div className="flex flex-col items-center min-w-[320px] md:min-w-[380px] snap-center shrink-0">
-              <div className="h-10 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
-              <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-lg border border-slate-100 dark:border-slate-800 hover:shadow-amber-500/5 transition-all group">
+              <div className="h-10 w-0.5 bg-slate-200"></div>
+              <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white shadow-lg border border-slate-100 hover:shadow-amber-500/5 transition-all group">
                 <div className="h-2 bg-amber-500"></div>
                 <div className="p-6">
                   <div className="flex items-center gap-4">
@@ -235,23 +235,23 @@ export default function OrganizationalStructure() {
                       <img
                         className="h-full w-full object-cover"
                         alt="Portrait of CPO Alex Thompson"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6BiFn5jNN_KaAzkAAk9Nr1uozWR1tGezcr4rPX1_tdY0JIILthG3gN6bQuTsyiRL4QMhXZ32bNDoNv_FUpOSmK7AqM0--YzX2AQBXjAsnhJuMzt9SRDgN8o9o9CyVqkX9tSSGZLerDk_2V5DWTZ95iF_hvVnlXSbn0MRvXaKn1dPCLkCftJ98A-WFBkbPNN-NdWixu27Rlgv9Bq67jSzx85HG0WFR9vzXNAslfYqnrdYa6dwSbyPbqu_-HMdTLG5e1ALHe8qZHozS"
+                        src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200"
                       />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white">Alex Thompson</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Chief Product Officer</p>
+                      <h4 className="font-bold text-slate-900 font-display">Alex Thompson</h4>
+                      <p className="text-sm text-slate-500 font-display">Chief Product Officer</p>
                     </div>
-                    <button className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 hover:text-amber-500 transition-colors">
+                    <button className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:text-amber-500 transition-colors">
                       <span className="material-symbols-outlined text-lg">info</span>
                     </button>
                   </div>
-                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 pt-4 text-xs font-semibold text-slate-500">
+                  <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-semibold text-slate-500 font-display">
                     <div className="flex items-center gap-1">
                       <span className="material-symbols-outlined text-sm">groups</span>
                       <span>15 Reports</span>
                     </div>
-                    <div className="flex items-center gap-1 text-accent-green">
+                    <div className="flex items-center gap-1 text-[#16a34a]">
                       <span className="material-symbols-outlined text-sm">circle</span>
                       <span>HQ</span>
                     </div>
@@ -260,61 +260,61 @@ export default function OrganizationalStructure() {
               </div>
               {/* Leads */}
               <div className="mt-4 flex w-full flex-col gap-3">
-                <div className="mx-auto h-6 w-0.5 bg-slate-200 dark:bg-slate-800/50"></div>
-                <div className="rounded-xl border border-dashed border-slate-200 dark:border-slate-800 p-4 bg-slate-50/50 dark:bg-slate-900/30">
+                <div className="mx-auto h-6 w-0.5 bg-slate-200/50"></div>
+                <div className="rounded-xl border border-dashed border-slate-200 p-4 bg-slate-50/50">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="h-10 w-10 overflow-hidden rounded-lg">
-                      <img className="h-full w-full object-cover" alt="Design Lead Sophia Loren" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZnrURBTyzG7LNlxoyQ0YxIxnKLheP0yQ_E9gXF5u8pvA2pBcJBpTV4xR0NwOo58c0KpF8AprOfiYF-R-FeZLXdXWG0dXn31GFk2qdkWfNF1KE__2z7GWrohpEu6YHPp0JkvLtO6lvwTd6sXGpow5Jp8gCpfeVJOQ1gErRt8pFqeta6zwy3NoC6zN5HdPq713iIN0Q8Xmmb1p5QQ7sqISXldKpRhPwW38fgclpn89TZsrIlDtmQfU2CAHLzfp-WVGvfxjgHl0QgpSL" />
+                      <img className="h-full w-full object-cover" alt="Design Lead Sophia Loren" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold">Sophia Loren</p>
-                      <p className="text-[10px] font-medium text-slate-500">Design Lead</p>
+                      <p className="text-sm font-bold font-display">Sophia Loren</p>
+                      <p className="text-[10px] font-medium text-slate-500 font-display">Design Lead</p>
                     </div>
-                    <span className="ml-auto h-2 w-2 rounded-full bg-accent-green"></span>
+                    <span className="ml-auto h-2 w-2 rounded-full bg-[#16a34a]"></span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 overflow-hidden rounded-lg">
-                      <img className="h-full w-full object-cover" alt="Product Manager Liam Neeson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgYgli9FfCPglAz3ZZdEkWlaW1VmSCwbY9TlreWTqtWGmIFmRkP8qagEJTLqf5_KpsSNtmf6AcvdBhOiaYxqYE0NnKckflIOitp7EY9zGyuRpR1DIurAVEBzrLzcplaSWVA0E-GfJYvJAwgfWx21zQN73Cx9gmmdoxEKfszY_6G2dT9T1l52OAnS-sIUNVH1NHePwSGNacBwgDe2c_taetaLeiPmkGiv4LyFq6HonbCj683IiovFy7A7EOSuDVNxjPIL1U2bMgehyp" />
+                      <img className="h-full w-full object-cover" alt="Product Manager Liam Neeson" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=100" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold">Liam Neeson</p>
-                      <p className="text-[10px] font-medium text-slate-500">Product Manager</p>
+                      <p className="text-sm font-bold font-display">Liam Neeson</p>
+                      <p className="text-[10px] font-medium text-slate-500 font-display">Product Manager</p>
                     </div>
                     <span className="ml-auto h-2 w-2 rounded-full bg-slate-300"></span>
                   </div>
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
 
         {/* Recent Changes / Stats Footer */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/60 dark:border-slate-800 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Total Employees</p>
+          <div className="rounded-2xl bg-white p-6 border border-slate-200/60 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">Total Employees</p>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl font-black text-slate-900 dark:text-white">1,248</span>
-              <span className="text-sm font-bold text-accent-green">+12%</span>
+              <span className="text-3xl font-black text-slate-900 font-display">1,248</span>
+              <span className="text-sm font-bold text-[#16a34a] font-display">+12%</span>
             </div>
           </div>
-          <div className="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/60 dark:border-slate-800 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Departments</p>
+          <div className="rounded-2xl bg-white p-6 border border-slate-200/60 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">Departments</p>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl font-black text-slate-900 dark:text-white">8</span>
-              <span className="text-sm font-bold text-slate-500">Global</span>
+              <span className="text-3xl font-black text-slate-900 font-display">8</span>
+              <span className="text-sm font-bold text-slate-500 font-display">Global</span>
             </div>
           </div>
-          <div className="rounded-2xl bg-white dark:bg-slate-900 p-6 border border-slate-200/60 dark:border-slate-800 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Open Roles</p>
+          <div className="rounded-2xl bg-white p-6 border border-slate-200/60 shadow-sm">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">Open Roles</p>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl font-black text-slate-900 dark:text-white">34</span>
-              <span className="text-sm font-bold text-primary">Hiring</span>
+              <span className="text-3xl font-black text-slate-900 font-display">34</span>
+              <span className="text-sm font-bold text-[#2563eb] font-display">Hiring</span>
             </div>
           </div>
-          <div className="rounded-2xl bg-primary p-6 shadow-xl shadow-primary/20 flex flex-col justify-between">
-            <p className="text-xs font-bold uppercase tracking-widest text-white/70">Next Team Sync</p>
-            <div className="mt-2 text-white">
+          <div className="rounded-2xl bg-[#2563eb] p-6 shadow-xl shadow-blue-600/20 flex flex-col justify-between">
+            <p className="text-xs font-bold uppercase tracking-widest text-white/70 font-display">Next Team Sync</p>
+            <div className="mt-2 text-white font-display">
               <p className="text-xl font-bold">Tomorrow, 10:00 AM</p>
               <p className="text-sm opacity-80">All Hands Meeting</p>
             </div>
@@ -322,16 +322,16 @@ export default function OrganizationalStructure() {
         </div>
       </main>
 
-      <footer className="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-8">
+      <footer className="mt-auto border-t border-slate-200 bg-white py-8">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary">hub</span>
-            <span className="text-sm font-semibold text-slate-500">© 2024 Global Corp Org Chart. All rights reserved.</span>
+            <span className="material-symbols-outlined text-[#2563eb]">hub</span>
+            <span className="text-sm font-semibold text-slate-500 font-display">© 2024 Global Corp Org Chart. All rights reserved.</span>
           </div>
           <div className="flex gap-6">
-            <a className="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
-            <a className="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
-            <a className="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">Contact Admin</a>
+            <a className="text-sm font-medium text-slate-500 hover:text-[#2563eb] transition-colors font-display" href="#">Privacy Policy</a>
+            <a className="text-sm font-medium text-slate-500 hover:text-[#2563eb] transition-colors font-display" href="#">Terms of Service</a>
+            <a className="text-sm font-medium text-slate-500 hover:text-[#2563eb] transition-colors font-display" href="#">Contact Admin</a>
           </div>
         </div>
       </footer>

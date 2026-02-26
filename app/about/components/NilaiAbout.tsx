@@ -30,7 +30,7 @@ const companyValues = [
 
 export default function CompanyValuesPage() {
   return (
-    <div className="min-h-screen bg-[#f5f7f8] dark:bg-[#0f1923] text-slate-900 dark:text-slate-100 selection:bg-blue-100">
+    <div className="min-h-screen bg-[#f5f7f8] text-slate-900 selection:bg-blue-100">
       {/* Import Material Symbols Google Fonts */}
       <link
         rel="stylesheet"
@@ -39,7 +39,7 @@ export default function CompanyValuesPage() {
 
       <main className="px-6 py-32">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0056b2]/10 text-[#0056b2] mb-4">
@@ -49,7 +49,7 @@ export default function CompanyValuesPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
               Nilai-Nilai Perusahaan Kami
             </h1>
-            <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-600 text-lg leading-relaxed">
               Kami berkomitmen untuk memberikan standar tertinggi dalam setiap aspek operasional kami melalui prinsip-prinsip utama yang membentuk identitas kami.
             </p>
           </div>
@@ -57,19 +57,19 @@ export default function CompanyValuesPage() {
           {/* Values Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {companyValues.map((item, index) => (
-              <div 
-                key={index} 
-                className={`group bg-white dark:bg-slate-900 p-8 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 transition-all hover:-translate-y-1 hover:border-${item.color === 'primary' ? '[#0056b2]' : '[#28a745]'}/30`}
+              <div
+                key={index}
+                className={`group bg-white p-8 rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 transition-all hover:-translate-y-1 hover:border-${item.color === 'primary' ? '[#0056b2]' : '[#28a745]'}/30`}
               >
                 <div className={`size-14 rounded-full flex items-center justify-center mb-6 transition-colors 
-                  ${item.color === 'primary' 
-                    ? 'bg-[#0056b2]/10 text-[#0056b2] group-hover:bg-[#0056b2] group-hover:text-white' 
+                  ${item.color === 'primary'
+                    ? 'bg-[#0056b2]/10 text-[#0056b2] group-hover:bg-[#0056b2] group-hover:text-white'
                     : 'bg-[#28a745]/10 text-[#28a745] group-hover:bg-[#28a745] group-hover:text-white'}`}
                 >
                   <span className="material-symbols-outlined text-3xl">{item.icon}</span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                <p className="text-slate-500 text-sm leading-relaxed">
                   {item.desc}
                 </p>
                 <div className={`mt-6 h-1 w-12 transition-all duration-500 rounded-full group-hover:w-full
@@ -95,7 +95,7 @@ export default function CompanyValuesPage() {
                 </button>
               </div>
             </div>
-            
+
             {/* Abstract Pattern Decoration */}
             <div className="absolute -right-10 -top-10 opacity-10 text-white">
               <span className="material-symbols-outlined text-[200px]">hub</span>

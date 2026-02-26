@@ -85,7 +85,7 @@ export default function LegalitasSection() {
   }, [isModalOpen]);
 
   return (
-    <div className="bg-[#f8fafc] min-h-screen antialiased">
+    <div className="bg-white min-h-screen antialiased">
       {/* --- Inline Styles for Custom CSS & Animations --- */}
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -100,7 +100,7 @@ export default function LegalitasSection() {
           animation-play-state: paused;
         }
         .bg-pattern {
-          background-image: radial-gradient(#0056b311 1px, transparent 1px);
+          background-image: radial-gradient(#2563eb11 1px, transparent 1px);
           background-size: 40px 40px;
         }
         .smooth-shadow {
@@ -112,18 +112,18 @@ export default function LegalitasSection() {
       <section className="relative py-20 overflow-hidden bg-white bg-pattern" id="legalitas-sertifikasi">
         {/* Background Gradients */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#0056b3] rounded-full blur-[120px]"></div>
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#2563eb] rounded-full blur-[120px]"></div>
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#10b981] rounded-full blur-[120px]"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           {/* BEGIN: Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-16" data-purpose="header-content">
-            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold tracking-wider text-[#0056b3] uppercase bg-blue-50 rounded-full">
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold tracking-wider text-[#2563eb] uppercase bg-blue-50 rounded-full">
               Compliance & Safety
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-              Legalitas & Keamanan <span className="text-[#0056b3]">Terjamin</span>
+              Legalitas & Keamanan <span className="text-[#2563eb]">Terjamin</span>
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               Kami berkomitmen untuk menjaga standar operasional tertinggi melalui sertifikasi resmi dan kepatuhan hukum yang ketat untuk memberikan rasa aman bagi seluruh mitra kami.
@@ -135,22 +135,22 @@ export default function LegalitasSection() {
           <div className="relative w-full overflow-hidden" data-purpose="scrolling-container">
             {/* Main scrolling flexbox */}
             <div className="flex w-[200%] animate-infinite-scroll" data-purpose="card-track">
-              
+
               {/* Group 1: Certification Cards */}
               <div className="flex shrink-0 items-center justify-around gap-8 px-4 w-1/2">
                 {certifications.map((cert) => (
                   <div key={`group1-${cert.id}`} className="w-[350px] bg-white p-8 rounded-[24px] smooth-shadow border border-slate-50 flex flex-col items-start transition-transform hover:-translate-y-2 duration-300">
-                    <img alt={cert.title} className="w-full h-32 object-cover rounded-xl mb-6" src={cert.imgSrc} />
+                    <img alt={cert.title} className="w-full h-32 object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-500" src={cert.imgSrc} />
                     <div className={`w-12 h-12 mb-4 rounded-xl ${cert.iconBg} flex items-center justify-center ${cert.iconColor}`}>
                       {cert.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{cert.title}</h3>
                     <p className="text-sm text-slate-600 mb-6">{cert.shortDesc}</p>
-                    <button 
-                      className="w-full py-3 bg-[#0056b3] text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors"
+                    <button
+                      className="w-full py-3 bg-[#2563eb] text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
                       onClick={() => openModal(cert.title, cert.fullDesc, cert.imgSrc)}
                     >
-                      View
+                      View Certificate
                     </button>
                   </div>
                 ))}
@@ -159,18 +159,18 @@ export default function LegalitasSection() {
               {/* Group 2: Duplicate for seamless loop */}
               <div aria-hidden="true" className="flex shrink-0 items-center justify-around gap-8 px-4 w-1/2">
                 {certifications.map((cert) => (
-                  <div key={`group2-${cert.id}`} className="w-[350px] bg-white p-8 rounded-[24px] smooth-shadow border border-slate-50 flex flex-col items-start transition-transform duration-300">
-                    <img alt={cert.title} className="w-full h-32 object-cover rounded-xl mb-6" src={cert.imgSrc} />
+                  <div key={`group2-${cert.id}`} className="w-[350px] bg-white p-8 rounded-[24px] smooth-shadow border border-slate-50 flex flex-col items-start transition-transform hover:-translate-y-2 duration-300">
+                    <img alt={cert.title} className="w-full h-32 object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-500" src={cert.imgSrc} />
                     <div className={`w-12 h-12 mb-4 rounded-xl ${cert.iconBg} flex items-center justify-center ${cert.iconColor}`}>
                       {cert.icon}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{cert.title}</h3>
                     <p className="text-sm text-slate-600 mb-6">{cert.shortDesc}</p>
-                    <button 
-                      className="w-full py-3 bg-[#0056b3] text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors"
+                    <button
+                      className="w-full py-3 bg-[#2563eb] text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20"
                       onClick={() => openModal(cert.title, cert.fullDesc, cert.imgSrc)}
                     >
-                      View
+                      View Certificate
                     </button>
                   </div>
                 ))}
@@ -190,10 +190,10 @@ export default function LegalitasSection() {
       {/* BEGIN: Modal Structure */}
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm" id="certModal">
-          <div className="bg-white rounded-[24px] max-w-lg w-full overflow-hidden smooth-shadow transform transition-all">
+          <div className="bg-white rounded-[24px] max-w-lg w-full overflow-hidden smooth-shadow transform transition-all animate-in zoom-in-95 duration-200">
             <div className="p-6 flex justify-between items-center border-b border-slate-100">
               <h2 className="text-2xl font-bold text-slate-900">{modalContent.title}</h2>
-              <button className="text-slate-400 hover:text-slate-600" onClick={closeModal}>
+              <button className="text-slate-400 hover:text-slate-600 transition-colors" onClick={closeModal}>
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -204,8 +204,8 @@ export default function LegalitasSection() {
               <p className="text-slate-600 leading-relaxed">{modalContent.desc}</p>
             </div>
             <div className="p-6 border-t border-slate-100 text-right">
-              <button 
-                className="px-6 py-2 bg-slate-100 text-slate-600 font-semibold rounded-xl hover:bg-slate-200 transition-colors" 
+              <button
+                className="px-8 py-2.5 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-colors active:scale-95"
                 onClick={closeModal}
               >
                 Close
