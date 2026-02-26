@@ -1,38 +1,27 @@
 "use client"
 
 import React from 'react';
+import { dataLokasi } from '@/components/Area/AreaSection';
 
 export default function KotaArea() {
+
+
     return (
         <div className="max-w-[1280px] mx-auto w-full px-4 md:px-10 py-12 font-display">
             {/* Area Details Grid */}
             <div>
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8">Detail Layanan Per Wilayah</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                    <AreaCard
-                        title="Pulau Jawa"
-                        desc="Cakupan penuh Fiber Optic di seluruh kota utama dan kabupaten."
-                        icon="location_city"
-                        accent="blue"
-                    />
-                    <AreaCard
-                        title="Sumatera"
-                        desc="85% Wilayah terjangkau Broadband & Fiber di Medan, Palembang."
-                        icon="terrain"
-                        accent="green"
-                    />
-                    <AreaCard
-                        title="Kalimantan & Sulawesi"
-                        desc="Peningkatan infrastruktur di area IKN dan pusat bisnis Makassar."
-                        icon="water"
-                        accent="blue"
-                    />
-                    <AreaCard
-                        title="Indonesia Timur"
-                        desc="Koneksi Satelit & Broadband tersedia di area terpencil."
-                        icon="satellite_alt"
-                        accent="green"
-                    />
+                    {dataLokasi.map((item) => (
+                        <AreaCard
+                            key={item.id}
+                            title={item.nama}
+                            desc={item.info}
+                            icon="location_city"
+                            accent="blue"
+                        />
+                    ))}
+
                 </div>
             </div>
         </div>

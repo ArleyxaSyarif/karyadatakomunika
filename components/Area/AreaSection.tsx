@@ -23,11 +23,10 @@ export interface LocationData {
     info: string;
 }
 
-const dataLokasi: LocationData[] = [
+export const dataLokasi: LocationData[] = [
     { id: 1, nama: "Jakarta PoP", posisi: [-6.2088, 106.8456], info: "Pusat Jaringan Utama" },
     { id: 2, nama: "Singapore Edge", posisi: [1.3521, 103.8198], info: "Gerbang Internasional" },
     { id: 3, nama: "Surabaya Node", posisi: [-7.2575, 112.7521], info: "Hub Jawa Timur" },
-    { id: 4, nama: "Medan Hub", posisi: [3.5952, 98.6722], info: "PoP Sumatera Utara" },
     { id: 5, nama: "Makassar PoP", posisi: [-5.1476, 119.4327], info: "Gerbang Indonesia Timur" },
 ];
 
