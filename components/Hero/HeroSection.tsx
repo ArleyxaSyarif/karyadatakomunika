@@ -32,7 +32,7 @@ const HeroSection = () => {
     const isMobile = useIsMobile();
 
     return (
-        <section className="relative h-[650px] md:h-[600px] lg:h-[730px] w-full overflow-hidden bg-slate-900">
+        <section className="relative h-[100dvh] md:h-[600px] lg:h-[730px] w-full overflow-hidden bg-slate-900">
             <Swiper
                 modules={[Autoplay, EffectFade, Pagination]}
                 effect="fade"

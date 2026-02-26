@@ -100,7 +100,7 @@ const Navbar = () => {
                         <div className={`hidden h-6 w-px sm:block ${isWhiteMode ? "bg-gray-200" : "bg-white/20"}`}></div>
 
                         <Link
-                            href="#"
+                            href="/kontak"
                             className="relative hidden sm:inline-flex items-center justify-center overflow-hidden rounded-full bg-blue-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:bg-blue-700 hover:shadow-blue-600/40 active:scale-95 font-display"
                         >
                             Kontak
@@ -150,7 +150,8 @@ const Navbar = () => {
 
                     <div className="mt-6">
                         <Link
-                            href="#"
+                            href="/kontak"
+                            onClick={() => setIsMobileMenuOpen(false)}
                             className="flex w-full items-center justify-center rounded-xl bg-blue-600 py-4 text-center text-base font-bold text-white shadow-lg shadow-blue-600/30 active:scale-[0.98] transition-transform"
                         >
                             Hubungi Kami
