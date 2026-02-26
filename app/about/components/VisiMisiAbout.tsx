@@ -14,7 +14,7 @@ export default function VisiMisiAbout() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-[#f6f7f8] text-slate-900 selection:bg-blue-100">
+    <div className="min-h-screen w-full bg-[#f6f7f8] text-slate-900 selection:bg-blue-100 overflow-hidden">
       {/* Import Material Icons via Standard Head (Next.js Optimization) */}
       <link
         rel="stylesheet"

@@ -47,13 +47,13 @@ const Navbar = () => {
                 <div className="flex h-16 items-center justify-between">
 
                     {/* Left: Logo Area */}
-                    <Link href="/" className="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
-                        <div className={`relative flex h-10 w-10 items-center justify-center rounded-lg transition-all duration-300 ${isWhiteMode ? "bg-blue-600/10" : "bg-white/20"
+                    <Link href="/" className="flex-shrink flex items-center gap-2 sm:gap-3 cursor-pointer group min-w-0">
+                        <div className={`relative flex h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${isWhiteMode ? "bg-blue-600/10" : "bg-white/20"
                             }`}>
                             <MdLayers className={`text-2xl transition-colors ${isWhiteMode ? "text-blue-600" : "text-white"}`} />
                         </div>
-                        <div className="flex flex-col">
-                            <span className={`text-xl font-bold tracking-tight font-display transition-colors duration-300 ${isWhiteMode ? "text-neutral-900" : "text-white"
+                        <div className="flex flex-col min-w-0 max-w-[140px] xs:max-w-[200px] md:max-w-none">
+                            <span className={`text-sm sm:text-xl font-bold tracking-tight font-display transition-colors duration-300 truncate ${isWhiteMode ? "text-neutral-900" : "text-white"
                                 }`}>
                                 Karya Data Komunika
                             </span>

@@ -3,14 +3,17 @@
 import React from 'react';
 import { MdRocketLaunch, MdArrowForward, MdPlayCircle } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function TaglineSection() {
+    const isMobile = useIsMobile();
+
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={isMobile ? false : { opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto px-6 py-12"
         >
             {/* Headline Utama - Mix Biru & Hijau */}
@@ -28,10 +31,10 @@ export default function TaglineSection() {
 
             {/* Tombol Aksi */}
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={isMobile ? false : { opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={isMobile ? { duration: 0 } : { duration: 0.8, delay: 0.3, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 w-full"
             >
                 {/* Button Primary - Biru Tetap Solid sebagai warna utama */}

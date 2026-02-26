@@ -34,6 +34,13 @@
   --color-about-neutral: #221810;
 }
 
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

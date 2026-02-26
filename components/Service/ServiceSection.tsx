@@ -17,8 +17,11 @@ import {
     MdCheckCircle
 } from "react-icons/md";
 import { motion, Variants } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const ServiceSection = () => {
+    const isMobile = useIsMobile();
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -48,19 +51,19 @@ const ServiceSection = () => {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div className="max-w-3xl">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={isMobile ? false : { opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="flex items-center gap-2 mb-4"
                     >
                         <div className="w-12 h-[2px] bg-[#0b50da]"></div>
                         <span className="text-[#0b50da] font-bold tracking-widest uppercase text-xs">Our Services</span>
                     </motion.div>
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={isMobile ? false : { opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                         className="text-slate-900 text-5xl md:text-7xl font-bold leading-[1.1] tracking-tighter"
                     >
                         Solusi Menyeluruh. <br />
@@ -68,10 +71,10 @@ const ServiceSection = () => {
                     </motion.h2>
                 </div>
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={isMobile ? false : { opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ delay: 0.3 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={isMobile ? { duration: 0 } : { delay: 0.3 }}
                     className="max-w-xs"
                 >
                     <p className="text-slate-500 text-lg font-medium leading-relaxed mb-6">
@@ -87,7 +90,7 @@ const ServiceSection = () => {
             {/* Services Grid (Asymmetrical) */}
             <motion.div
                 variants={containerVariants}
-                initial="hidden"
+                initial={isMobile ? "visible" : "hidden"}
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 className="grid grid-cols-1 md:grid-cols-3 gap-6"

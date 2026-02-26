@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   description: "PT. Karyadata Komunika",
 };
 
+import { LazyMotion, domAnimation } from "framer-motion";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,9 +42,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <LazyMotion features={domAnimation}>
+          <div className="relative w-full overflow-x-hidden">
+            <Navbar />
+            <main className="w-full overflow-hidden">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </LazyMotion>
       </body>
     </html>
   );

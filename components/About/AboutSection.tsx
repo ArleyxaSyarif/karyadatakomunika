@@ -9,9 +9,11 @@ import {
     MdArrowForward
 } from "react-icons/md";
 import { motion, Variants } from "framer-motion";
-import { div } from "framer-motion/client";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const AboutSection = () => {
+    const isMobile = useIsMobile();
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -40,9 +42,9 @@ const AboutSection = () => {
                     <div className="space-y-8">
                         {/* Overline */}
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={isMobile ? false : { opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             className="flex items-center gap-3"
                         >
                             <span className="h-px w-8 bg-blue-500"></span>
@@ -53,10 +55,10 @@ const AboutSection = () => {
 
                         {/* Main Headline */}
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={isMobile ? false : { opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                             className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-slate-900 tracking-tight"
                         >
                             Membangun Masa Depan <span className="text-blue-500">Digital</span>
@@ -64,10 +66,10 @@ const AboutSection = () => {
 
                         {/* Description */}
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={isMobile ? false : { opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.3 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.3 }}
                             className="text-lg text-slate-600 leading-relaxed max-w-xl"
                         >
                             Kami adalah tim inovator yang berdedikasi untuk memberikan solusi modern yang mendorong dampak global. Misi kami adalah menjembatani kesenjangan antara teknologi kompleks dan pengalaman pengguna yang intuitif.
@@ -76,9 +78,9 @@ const AboutSection = () => {
                         {/* Key Benefits List */}
                         <motion.div
                             variants={containerVariants}
-                            initial="hidden"
+                            initial={isMobile ? "visible" : "hidden"}
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             className="grid grid-cols-1 gap-6"
                         >
 
@@ -128,10 +130,10 @@ const AboutSection = () => {
 
                         {/* CTA Button */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={isMobile ? false : { opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.6 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.6 }}
                             className="pt-4"
                         >
                             <button className="inline-flex items-center justify-center px-8 py-4 bg-[#0b50da] text-white font-bold rounded-xl shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 group">
@@ -143,10 +145,10 @@ const AboutSection = () => {
 
                     {/* RIGHT COLUMN: Visual */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
+                        initial={isMobile ? false : { opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
                         className="relative"
                     >
                         {/* Main Image Container */}
@@ -164,10 +166,10 @@ const AboutSection = () => {
 
                         {/* Abstract Card Overlay */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={isMobile ? false : { opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.8 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.8 }}
                             className="absolute -bottom-6 right-6 bg-white p-6 rounded-2xl shadow-2xl z-20 hidden sm:block border border-slate-100 transition-transform hover:scale-105 duration-300"
                         >
                             <div className="flex items-center gap-4">

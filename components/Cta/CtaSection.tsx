@@ -3,16 +3,19 @@
 import React from 'react';
 import { MdArrowForward } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const CtaSection = () => {
+    const isMobile = useIsMobile();
+
     return (
         <section className="relative w-full py-20 overflow-visible bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={isMobile ? false : { opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={isMobile ? { duration: 0 } : { duration: 0.8, ease: "easeOut" }}
                     className="bg-white rounded-[2.5rem] shadow-[0_32px_64px_-12px_rgba(11,80,218,0.12)] border border-slate-100 p-8 md:p-16 lg:p-20 flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative"
                 >
 
@@ -30,9 +33,10 @@ const CtaSection = () => {
                     <div className="flex flex-col gap-5 text-center md:text-left relative z-10">
                         {/* Trust Badge */}
                         <motion.div
-                            initial={{ opacity: 0, y: -10 }}
+                            initial={isMobile ? false : { opacity: 0, y: -10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
+                            viewport={{ once: true }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.1 }}
                             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 mb-2 w-fit mx-auto md:mx-0"
                         >
                             <div className="flex -space-x-1.5">
@@ -44,10 +48,10 @@ const CtaSection = () => {
                         </motion.div>
 
                         <motion.h2
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={isMobile ? false : { opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                             className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-[1.15]"
                         >
                             Siap mengoptimalkan <br className="hidden md:block" />
@@ -55,10 +59,10 @@ const CtaSection = () => {
                         </motion.h2>
 
                         <motion.p
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={isMobile ? false : { opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.3 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.3 }}
                             className="text-lg text-slate-600 max-w-md leading-relaxed"
                         >
                             Bergabunglah dengan ratusan perusahaan global yang telah mentransformasi operasional digital mereka bersama kami.
@@ -66,10 +70,10 @@ const CtaSection = () => {
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
+                        initial={isMobile ? false : { opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.4 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={isMobile ? { duration: 0 } : { delay: 0.4 }}
                         className="flex flex-col sm:flex-row gap-4 w-full md:w-auto relative z-10"
                     >
                         <button className="bg-[#0b50da] hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-2 group cursor-pointer active:scale-95">

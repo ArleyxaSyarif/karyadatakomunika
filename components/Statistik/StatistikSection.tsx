@@ -4,8 +4,11 @@ import React from 'react';
 import { FaHandshake } from 'react-icons/fa';
 import { IoRocketOutline } from "react-icons/io5";
 import { motion, Variants } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const StatistikSection = () => {
+    const isMobile = useIsMobile();
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -33,27 +36,27 @@ const StatistikSection = () => {
                 {/* Header Section */}
                 <div className="text-center mb-16 max-w-2xl mx-auto">
                     <motion.span
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={isMobile ? false : { opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="text-[#0b50da] font-bold tracking-widest text-xs uppercase mb-3 block"
                     >
                         Enterprise Excellence
                     </motion.span>
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={isMobile ? false : { opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                         className="text-slate-900 text-4xl md:text-5xl font-black mb-4 tracking-tight"
                     >
                         Metrik Performa <span className="text-[#0b50da]">High-Tech</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={isMobile ? false : { opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.3 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={isMobile ? { duration: 0 } : { delay: 0.3 }}
                         className="text-slate-500 text-lg leading-relaxed"
                     >
                         Mendorong transformasi digital dengan keandalan yang tak tertandingi dan satu dekade keahlian industri.
@@ -63,9 +66,9 @@ const StatistikSection = () => {
                 {/* Statistics Grid */}
                 <motion.div
                     variants={containerVariants}
-                    initial="hidden"
+                    initial={isMobile ? "visible" : "hidden"}
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.2, margin: "-100px" }}
+                    viewport={{ once: true, amount: 0.2, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full"
                 >
 
@@ -78,10 +81,10 @@ const StatistikSection = () => {
                             <svg className="size-full -rotate-90" viewBox="0 0 36 36">
                                 <circle className="stroke-slate-200" cx="18" cy="18" fill="none" r="16" strokeWidth="3"></circle>
                                 <motion.circle
-                                    initial={{ strokeDasharray: "0, 100" }}
+                                    initial={isMobile ? { strokeDasharray: "85, 100" } : { strokeDasharray: "0, 100" }}
                                     whileInView={{ strokeDasharray: "85, 100" }}
-                                    viewport={{ once: false, amount: 0.2 }}
-                                    transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={isMobile ? { duration: 0 } : { duration: 1.5, delay: 0.5, ease: "easeOut" }}
                                     className="stroke-[#0b50da]"
                                     cx="18" cy="18" fill="none" r="16"
                                     strokeLinecap="round"
@@ -106,10 +109,10 @@ const StatistikSection = () => {
                             <svg className="size-full -rotate-90" viewBox="0 0 36 36">
                                 <circle className="stroke-slate-200" cx="18" cy="18" fill="none" r="16" strokeWidth="3"></circle>
                                 <motion.circle
-                                    initial={{ strokeDasharray: "0, 100" }}
+                                    initial={isMobile ? { strokeDasharray: "99.9, 100" } : { strokeDasharray: "0, 100" }}
                                     whileInView={{ strokeDasharray: "99.9, 100" }}
-                                    viewport={{ once: false, amount: 0.2 }}
-                                    transition={{ duration: 1.5, delay: 0.7, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={isMobile ? { duration: 0 } : { duration: 1.5, delay: 0.7, ease: "easeOut" }}
                                     className="stroke-[#10b981]"
                                     cx="18" cy="18" fill="none" r="16"
                                     strokeLinecap="round"
@@ -147,10 +150,10 @@ const StatistikSection = () => {
                             </div>
                             <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
                                 <motion.div
-                                    initial={{ width: 0 }}
+                                    initial={isMobile ? { width: "88%" } : { width: 0 }}
                                     whileInView={{ width: "88%" }}
-                                    viewport={{ once: false, amount: 0.2 }}
-                                    transition={{ duration: 1.2, delay: 0.9, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={isMobile ? { duration: 0 } : { duration: 1.2, delay: 0.9, ease: "easeOut" }}
                                     className="bg-gradient-to-r from-[#0b50da] to-blue-400 h-full rounded-full"
                                 ></motion.div>
                             </div>
@@ -179,10 +182,10 @@ const StatistikSection = () => {
                             </div>
                             <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
                                 <motion.div
-                                    initial={{ width: 0 }}
+                                    initial={isMobile ? { width: "75%" } : { width: 0 }}
                                     whileInView={{ width: "75%" }}
-                                    viewport={{ once: false, amount: 0.2 }}
-                                    transition={{ duration: 1.2, delay: 1.1, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={isMobile ? { duration: 0 } : { duration: 1.2, delay: 1.1, ease: "easeOut" }}
                                     className="bg-gradient-to-r from-[#10b981] to-teal-400 h-full rounded-full"
                                 ></motion.div>
                             </div>

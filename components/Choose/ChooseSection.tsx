@@ -10,8 +10,11 @@ import {
     MdArrowRightAlt
 } from "react-icons/md";
 import { motion, Variants } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const ChooseSection = () => {
+    const isMobile = useIsMobile();
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -43,29 +46,29 @@ const ChooseSection = () => {
                     <div className="w-full lg:w-1/2 flex flex-col gap-8">
                         <div className="space-y-4">
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={isMobile ? false : { opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
+                                viewport={{ once: true, amount: 0.2 }}
                                 className="flex items-center gap-2"
                             >
                                 <div className="w-12 h-[2px] bg-[#0b50da]"></div>
                                 <span className="text-[#0b50da] font-bold tracking-widest uppercase text-xs">Excellence Guaranteed</span>
                             </motion.div>
                             <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={isMobile ? false : { opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                transition={{ delay: 0.2 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                                 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight"
                             >
                                 Mengapa Bermitra <br />
                                 <span className="text-[#0b50da]">Dengan Kami?</span>
                             </motion.h2>
                             <motion.p
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={isMobile ? false : { opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, amount: 0.2 }}
-                                transition={{ delay: 0.3 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={isMobile ? { duration: 0 } : { delay: 0.3 }}
                                 className="text-slate-500 text-lg max-w-lg leading-relaxed"
                             >
                                 Temukan bagaimana nilai-nilai inti kami mendorong kesuksesan jangka panjang dan pertumbuhan terukur untuk bisnis Anda melalui kolaborasi strategis.
@@ -74,10 +77,10 @@ const ChooseSection = () => {
 
                         {/* Secondary Visual Asset */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
+                            initial={isMobile ? false : { opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false, amount: 0.2 }}
-                            transition={{ delay: 0.4, duration: 0.8 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.4, duration: 0.8 }}
                             className="relative group mt-4"
                         >
                             <div className="absolute -inset-2 bg-blue-600/5 rounded-2xl blur-xl group-hover:bg-blue-600/10 transition duration-500"></div>
@@ -103,9 +106,9 @@ const ChooseSection = () => {
                     <div className="w-full lg:w-1/2 mb-10">
                         <motion.div
                             variants={containerVariants}
-                            initial="hidden"
+                            initial={isMobile ? "visible" : "hidden"}
                             whileInView="visible"
-                            viewport={{ once: false, amount: 0.2, margin: "-100px" }}
+                            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
                             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
                         >
                             {/* Card 1: Scalability */}

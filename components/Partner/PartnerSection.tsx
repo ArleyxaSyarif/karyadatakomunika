@@ -3,10 +3,13 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 import { lane1Partners, lane2Partners } from '@/data/partner';
 
 const PartnerSection = () => {
+    const isMobile = useIsMobile();
+
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -32,9 +35,9 @@ const PartnerSection = () => {
             <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col items-center">
                 {/* Badge Kecil yang Halus */}
                 <motion.div
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={isMobile ? false : { opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     className="mb-4 flex items-center gap-2"
                 >
                     <span className="h-[1px] w-6 bg-blue-200"></span>
@@ -46,10 +49,10 @@ const PartnerSection = () => {
 
                 {/* Judul yang Lebih Proporsional */}
                 <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={isMobile ? false : { opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ delay: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                     className="text-2xl md:text-4xl font-bold text-slate-800 tracking-tight text-center"
                 >
                     Dipercaya oleh  <span className="text-[#0b50da]">70+ perusahaan</span>
@@ -58,16 +61,16 @@ const PartnerSection = () => {
 
             {/* Container Marquee */}
             <motion.div
-                initial={{ opacity: 0 }}
+                initial={isMobile ? false : { opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={isMobile ? { duration: 0 } : { duration: 1 }}
                 className="space-y-6 relative"
             >
                 {/* Fade Mask Overlay - Lebih halus */}
 
                 {/* Lane 1 */}
-                <div className="flex overflow-hidden group">
+                <div className="flex w-full overflow-hidden group">
                     <div className="flex animate-scroll-left whitespace-nowrap gap-16 md:gap-28 items-center py-2">
                         {[...lane1Partners, ...lane1Partners, ...lane1Partners].map((url, idx) => (
                             <div key={`lane1-${idx}`} className="w-24 md:w-32 h-10 flex items-center justify-center hover:opacity-100 hover:grayscale-0 transition-all duration-500">
@@ -80,7 +83,7 @@ const PartnerSection = () => {
                 </div>
 
                 {/* Lane 2 */}
-                <div className="flex overflow-hidden">
+                <div className="flex w-full overflow-hidden">
                     <div className="flex animate-scroll-right whitespace-nowrap gap-16 md:gap-28 items-center py-2">
                         {[...lane2Partners, ...lane2Partners, ...lane2Partners].map((url, idx) => (
                             <div key={`lane2-${idx}`} className="w-24 md:w-32 h-10 flex items-center justify-center hover:opacity-100 hover:grayscale-0 transition-all duration-500">
@@ -95,10 +98,10 @@ const PartnerSection = () => {
 
             {/* Footer Kecil */}
             <motion.div
-                initial={{ opacity: 0 }}
+                initial={isMobile ? false : { opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ delay: 0.5 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={isMobile ? { duration: 0 } : { delay: 0.5 }}
                 className="mt-12 text-center"
             >
                 <p className="text-[11px] font-medium uppercase tracking-[0.3em] text-slate-300">

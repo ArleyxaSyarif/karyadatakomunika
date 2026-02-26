@@ -8,6 +8,7 @@ import {
     MdMyLocation,
 } from "react-icons/md";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import dynamic from 'next/dynamic';
 
 const Map = dynamic(() => import('./RealMap'), {
@@ -33,6 +34,8 @@ export const dataLokasi: LocationData[] = [
 
 
 const AreaSection = () => {
+    const isMobile = useIsMobile();
+
     const [searchQuery, setSearchQuery] = React.useState("");
     const [filteredLocations, setFilteredLocations] = React.useState<LocationData[]>(dataLokasi);
     const [selectedLocation, setSelectedLocation] = React.useState<LocationData | null>(null);
@@ -74,7 +77,7 @@ const AreaSection = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12">
                     <div className="max-w-2xl">
                         <motion.span
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={isMobile ? false : { opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
                             className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0b50da] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4 border border-blue-100"
@@ -82,29 +85,29 @@ const AreaSection = () => {
                             Coverage Area
                         </motion.span>
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={isMobile ? false : { opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
-                            transition={{ delay: 0.2 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.2 }}
                             className="text-slate-900 text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4"
                         >
                             Jangkauan <span className="text-[#0b50da]">Global</span> Kami
                         </motion.h2>
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={isMobile ? false : { opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
-                            transition={{ delay: 0.3 }}
+                            transition={isMobile ? { duration: 0 } : { delay: 0.3 }}
                             className="text-slate-600 text-base sm:text-lg leading-relaxed"
                         >
                             Rasakan konektivitas tanpa batas dengan infrastruktur jaringan kelas enterprise. Kami telah membangun tulang punggung yang tangguh di seluruh benua.
                         </motion.p>
                     </div>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
+                        initial={isMobile ? false : { opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ delay: 0.4 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={isMobile ? { duration: 0 } : { delay: 0.4 }}
                         className="w-full lg:w-96 relative z-50"
                     >
                         <label className="flex flex-col gap-2">
@@ -147,10 +150,10 @@ const AreaSection = () => {
 
                 {/* Interactive Map Visual */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={isMobile ? false : { opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.8 }}
+                    transition={isMobile ? { duration: 0 } : { duration: 0.8 }}
                     className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] rounded-2xl lg:rounded-3xl overflow-hidden bg-slate-100 border border-slate-200 shadow-2xl mb-12 group z-0"
                 >
                     {/* Real Leaflet Map */}

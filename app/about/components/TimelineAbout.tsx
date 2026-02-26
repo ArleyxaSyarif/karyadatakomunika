@@ -24,6 +24,11 @@ export default function TimelineAbout() {
         .timeline-line {
           background: linear-gradient(180deg, rgba(37,99,235,0) 0%, rgba(37,99,235,0.2) 15%, rgba(37,99,235,0.2) 85%, rgba(37,99,235,0) 100%);
         }
+        @media (max-width: 767px) {
+          .animate-ping, .animate-pulse, .animate-bounce, .animate-bounce-slow {
+            animation: none !important;
+          }
+        }
       `}} />
 
       <div className={`bg-white text-slate-900 ${manrope.className} antialiased`}>
