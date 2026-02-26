@@ -276,11 +276,7 @@ export default function LeadershipSection() {
           </div>
         </main>
 
-        <footer className="bg-white border-t border-slate-200 py-10 mt-auto">
-          <div className="layout-container px-6 lg:px-40 text-center">
-            <p className="text-sm text-slate-500">© 2024 Corporate Co. All rights reserved.</p>
-          </div>
-        </footer>
+
       </div>
     </>
   );

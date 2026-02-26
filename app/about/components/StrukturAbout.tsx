@@ -7,31 +7,22 @@ export default function OrganizationalStructure() {
         {/* Hero Section */}
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary mb-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-600/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-600 mb-4">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-600 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
               </span>
               Corporate Architecture
             </div>
             <h2 className="text-4xl font-black text-slate-900 sm:text-5xl font-display">
-              Organizational Structure
+              Organizational <span className="text-blue-600"> Structure</span>
             </h2>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed font-light">
               Visualizing the professional hierarchy and team dynamics of Global Corp.
               Manage reporting lines, department overlaps, and resource allocation in one view.
             </p>
           </div>
-          <div className="flex gap-3">
-            <button className="flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-slate-700 shadow-sm border border-slate-200 hover:bg-slate-50 transition-all font-display">
-              <span className="material-symbols-outlined text-lg">download</span>
-              Export PDF
-            </button>
-            <button className="flex items-center gap-2 rounded-xl bg-[#2563eb] px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 hover:opacity-90 transition-all font-display">
-              <span className="material-symbols-outlined text-lg">add_circle</span>
-              Add Member
-            </button>
-          </div>
+
         </div>
 
         {/* Filter Bar */}
@@ -289,52 +280,10 @@ export default function OrganizationalStructure() {
           </div>
         </div>
 
-        {/* Recent Changes / Stats Footer */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="rounded-2xl bg-white p-6 border border-slate-200/60 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">Total Employees</p>
-            <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl font-black text-slate-900 font-display">1,248</span>
-              <span className="text-sm font-bold text-[#16a34a] font-display">+12%</span>
-            </div>
-          </div>
-          <div className="rounded-2xl bg-white p-6 border border-slate-200/60 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">Departments</p>
-            <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl font-black text-slate-900 font-display">8</span>
-              <span className="text-sm font-bold text-slate-500 font-display">Global</span>
-            </div>
-          </div>
-          <div className="rounded-2xl bg-white p-6 border border-slate-200/60 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 font-display">Open Roles</p>
-            <div className="mt-2 flex items-baseline gap-2">
-              <span className="text-3xl font-black text-slate-900 font-display">34</span>
-              <span className="text-sm font-bold text-[#2563eb] font-display">Hiring</span>
-            </div>
-          </div>
-          <div className="rounded-2xl bg-[#2563eb] p-6 shadow-xl shadow-blue-600/20 flex flex-col justify-between">
-            <p className="text-xs font-bold uppercase tracking-widest text-white/70 font-display">Next Team Sync</p>
-            <div className="mt-2 text-white font-display">
-              <p className="text-xl font-bold">Tomorrow, 10:00 AM</p>
-              <p className="text-sm opacity-80">All Hands Meeting</p>
-            </div>
-          </div>
-        </div>
+
       </main>
 
-      <footer className="mt-auto border-t border-slate-200 bg-white py-8">
-        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-[#2563eb]">hub</span>
-            <span className="text-sm font-semibold text-slate-500 font-display">© 2024 Global Corp Org Chart. All rights reserved.</span>
-          </div>
-          <div className="flex gap-6">
-            <a className="text-sm font-medium text-slate-500 hover:text-[#2563eb] transition-colors font-display" href="#">Privacy Policy</a>
-            <a className="text-sm font-medium text-slate-500 hover:text-[#2563eb] transition-colors font-display" href="#">Terms of Service</a>
-            <a className="text-sm font-medium text-slate-500 hover:text-[#2563eb] transition-colors font-display" href="#">Contact Admin</a>
-          </div>
-        </div>
-      </footer>
+
     </>
   );
 }

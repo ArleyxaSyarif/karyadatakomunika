@@ -7,7 +7,7 @@ import LegalitasAbout from "./components/LegalitasAbout";
 
 export default function About() {
   return (
-    <main className="pt-20">
+    <main className="pt-16">
       <ProfilAbout />
       <VisiMisiAbout />
       <NilaiAbout />

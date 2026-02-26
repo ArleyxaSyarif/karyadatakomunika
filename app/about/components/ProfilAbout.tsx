@@ -28,14 +28,14 @@ const focusAreas = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-green-100">
+    <div className="bg-white text-slate-900 selection:bg-green-100">
       {/* Import Material Symbols Google Fonts */}
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
       />
 
-      <section className="relative py-16 px-4 md:px-8 lg:px-40 overflow-hidden font-['Public_Sans',sans-serif]">
+      <section className="relative pt-8 pb-16 px-4 md:px-8 lg:px-40 overflow-hidden font-['Public_Sans',sans-serif]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
 
