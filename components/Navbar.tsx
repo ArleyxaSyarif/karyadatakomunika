@@ -67,26 +67,9 @@ const Navbar = () => {
                             <NavLink href="/area" label="Area" active={pathname === "/area"} isWhiteMode={isWhiteMode} />
                             <NavLink href="/about" label="About" active={pathname === "/about"} isWhiteMode={isWhiteMode} />
                             <NavLink href="#" label="Layanan" isWhiteMode={isWhiteMode} />
-                            <NavLink href="#" label="Portofolio" isWhiteMode={isWhiteMode} />
+                            <NavLink href="/portofolio" label="Portofolio" isWhiteMode={isWhiteMode} />
 
-                            {/* Dropdown Desktop */}
-                            <div className="relative group">
-                                <button className={`flex items-center gap-1 px-1 py-2 text-sm font-medium transition-colors font-display ${isWhiteMode ? "text-gray-500 hover:text-blue-600" : "text-white/80 hover:text-white"
-                                    }`}>
-                                    Resources
-                                    <MdExpandMore className="text-lg transition-transform duration-300 group-hover:rotate-180" />
-                                </button>
-                                <div className="absolute left-1/2 mt-2 w-48 -translate-x-1/2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                    <div className="rounded-xl bg-white border border-gray-100 p-2 shadow-2xl ring-1 ring-black/5">
-                                        <Link href="#" className="flex items-center rounded-lg px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">
-                                            Blog
-                                        </Link>
-                                        <Link href="#" className="flex items-center rounded-lg px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-display transition-colors">
-                                            Case Studies
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
