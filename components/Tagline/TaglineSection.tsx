@@ -5,6 +5,7 @@ import { MdRocketLaunch, MdArrowForward, MdPlayCircle } from "react-icons/md";
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
+
 export default function TaglineSection() {
     const isMobile = useIsMobile();
 
