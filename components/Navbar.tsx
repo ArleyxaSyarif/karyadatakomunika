@@ -66,7 +66,7 @@ const Navbar = () => {
                             <NavLink href="/" label="Beranda" active={pathname === "/"} isWhiteMode={isWhiteMode} />
                             <NavLink href="/area" label="Area" active={pathname === "/area"} isWhiteMode={isWhiteMode} />
                             <NavLink href="/about" label="About" active={pathname === "/about"} isWhiteMode={isWhiteMode} />
-                            <NavLink href="#" label="Layanan" isWhiteMode={isWhiteMode} />
+                            <NavLink href="/service" label="Layanan" isWhiteMode={isWhiteMode} />
                             <NavLink href="/portofolio" label="Portofolio" isWhiteMode={isWhiteMode} />
 
 
