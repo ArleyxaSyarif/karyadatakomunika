@@ -32,6 +32,23 @@
   /* Added for About Section */
   --color-about-bg: #181411;
   --color-about-neutral: #221810;
+
+  /* Added for Service Page Redesign */
+  --color-brand-blue: #0056b3;
+  --color-brand-green: #28a745;
+  --color-brand-light: #f8f9fa;
+
+  --animate-infinite-scroll: infinite-scroll 45s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 html,
@@ -144,5 +161,40 @@ body {
 
 .marquee-row:hover .animate-scroll-left,
 .marquee-row:hover .animate-scroll-right {
+  animation-play-state: paused;
+}
+
+/* Service Page Redesign Utilities */
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(0, 86, 179, 0.08), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(40, 167, 69, 0.05), transparent 40%);
+}
+
+.premium-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 249, 250, 1) 100%);
+  border: 1px solid rgba(0, 86, 179, 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(0, 86, 179, 0.12);
+  border-color: rgba(0, 86, 179, 0.2);
+  background: #ffffff;
+}
+
+.icon-container-gradient {
+  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-infinite-scroll {
+  animation: var(--animate-infinite-scroll);
+}
+
+.slider-container:hover .slider-track {
   animation-play-state: paused;
 }
